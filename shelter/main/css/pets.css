@@ -215,7 +215,7 @@ img {
   justify-content: space-around;
   margin-top: 95px;
   min-width: 340px;
-  margin: 1% auto 7.5%;
+  margin: 1.5% auto 7.5%;
 }
 .button_paginator {
   border: 2px solid #f1cdb3;
@@ -242,10 +242,114 @@ footer {
   left: 0%;
   right: 0%;
   top: 0px;
-
+  /* position: relative; */
+  display: flex;
   /* footer-gradient-background */
 
   background: url(noise_lines_transparent@2X.png),
     radial-gradient(110.67% 538.64% at 5.73% 50%, #513d2f 0%, #1a1a1c 100%),
     #211f20;
+}
+.footer {
+  display: flex;
+  flex-grow: 1;
+}
+.footer-content {
+  align-items: center;
+  display: flex;
+  width: 1200px;
+  margin: auto;
+  margin-bottom: 0;
+}
+
+.contacts {
+  box-sizing: content-box;
+  /* position: relative; */
+  /* flex-direction: column; */
+  margin-top: -1px;
+  height: 275px;
+  width: 280px;
+}
+.location {
+  box-sizing: content-box;
+
+  margin-left: 158px;
+  margin-top: -35px;
+  min-height: 234px;
+  width: 304px;
+}
+.footer-puppy {
+  height: 310px;
+  margin-left: 158px;
+  object-fit: cover;
+  width: 300px;
+  margin: auto;
+  margin-right: 0;
+}
+
+.icons {
+  height: 40px;
+  width: 32px;
+  position: relative;
+
+  margin: auto;
+}
+.footer_title,
+.location-text {
+  display: flex;
+  font-family: Georgia-regular;
+  font-size: 35px;
+  font-weight: 400;
+  line-height: 45px;
+  letter-spacing: 0.06em;
+  text-align: left;
+}
+.txt {
+  font-family: Georgia-regular;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 23px;
+  letter-spacing: 0.06em;
+  text-align: left;
+  color: #f1cdb3;
+}
+
+.boston,
+.london,
+.mail,
+.phone {
+  align-items: center;
+  display: flex;
+  margin-top: 40px;
+  min-width: 253px;
+}
+.boston img,
+.london img {
+  padding: 10%;
+  margin-right: 15px;
+  padding-left: 0;
+  width: auto;
+}
+.mail img,
+.phone img {
+  width: auto;
+  padding: 6%;
+  margin-right: 10px;
+  padding-left: 0;
+}
+
+.boston {
+  margin-bottom: 10%;
+}
+.london {
+  margin-top: 5%;
+}
+.phone {
+  margin-top: 8%;
+}
+.location-text {
+  padding-top: 2%;
+}
+.london-text {
+  padding-bottom: 3%;
 }
