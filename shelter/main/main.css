@@ -44,7 +44,7 @@
 }
 .wrapper {
   width: 1200px;
-  /* margin: auto; */
+  margin: auto;
 }
 .header-container {
   position: relative;
@@ -210,7 +210,7 @@
   justify-content: flex-end;
   /* width: 1200px; */
   margin: auto;
-  margin-top: 6%;
+  padding-top: 6%;
   padding-right: 13.8%;
 }
 .content2 {
@@ -282,6 +282,131 @@
 
   color: #4c4c4c;
 }
+
+/*  */
+/* Pets */
+
 .about-pets {
   padding-right: 11.5%;
+}
+.pets {
+  height: 877px;
+  background: #f6f6f6;
+  display: flex;
+  /* align-items: flex-end; */
+}
+.pets-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 6.2%;
+}
+.slider {
+  display: flex;
+}
+.heading-pets {
+  /* width: 400px; */
+  /* height: 90px; */
+  /* left: 400px; */
+  padding-bottom: 5.1%;
+  /* h3 */
+
+  font-family: Georgia-regular;
+  /* font-style: normal; */
+  font-weight: 400;
+  font-size: 35px;
+  line-height: 130%;
+  /* or 45px */
+
+  /* display: flex; */
+  /* align-items: center; */
+  text-align: center;
+  letter-spacing: 0.06em;
+  /* color-dark-l */
+
+  color: #545454;
+}
+
+.button_arrow {
+  border: 2px solid #f1cdb3;
+  border-radius: 100px;
+  height: 100%;
+  padding: 10px;
+  align-self: center;
+  /* text-decoration: none; */
+  /* display: inline-block; */
+  font-size: 24px;
+  margin: 4px 60px;
+  margin-bottom: 5%;
+  /* line-height: 10px; */
+  color: #cdcdcd;
+}
+.pets-content .button-primary {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 15px 45px;
+
+  width: 261px;
+  height: 52px;
+  left: 470px;
+  top: 645px;
+
+  /* color-primary */
+
+  background: #f1cdb3;
+  border-radius: 100px;
+}
+.button_secondary .button_primary {
+  display: flex;
+  /* flex-direction: column; */
+  /* align-items: center; */
+  padding: 15px 45px;
+
+  /* color-primary */
+  font-family: Georgia-regular;
+  border: 2px solid #f1cdb3;
+  box-sizing: border-box;
+  border-radius: 100px;
+  margin: auto;
+  margin-bottom: 20%;
+  letter-spacing: 0.2em;
+}
+
+.names {
+  width: 74px;
+  height: 23px;
+  left: 98px;
+  top: 300px;
+
+  /* pets-card-title */
+
+  font-family: Georgia-regular;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 23px;
+  /* identical to box height */
+  margin: auto;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  letter-spacing: 0.06em;
+  margin-top: 20px;
+  margin-bottom: 7%;
+
+  /* color-dark-l */
+
+  color: #545454;
+}
+.pets-jennifer {
+  margin: 0 88px;
+}
+.jennifer {
+  margin-top: 5.1%;
+}
+.woody,
+.katrine {
+  margin-top: 9%;
+  margin-bottom: 10%;
 }
