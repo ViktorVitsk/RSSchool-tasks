@@ -374,3 +374,18 @@ footer {
 .london-text {
   padding-bottom: 3%;
 }
+.footer_title,
+.location-text {
+  font-family: Georgia-regular;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 35px;
+  line-height: 130%;
+  /* or 45px */
+
+  letter-spacing: 0.06em;
+
+  /* color-light-xl */
+
+  color: #ffffff;
+}
