@@ -43,31 +43,32 @@ body {
   margin: auto;
 }
 
-.top-gradient {
-  height: 908px;
-  background: url(noise_lines_transparent@2X.png), radial-gradient(100% 215.42% at 0% 0%, #5b483a 0%, #262425 100%) #211f20;
-}
-
 .wrapper {
   width: 1200px;
   margin: auto;
 }
 
-.header {
+.top-gradient {
+  height: 908px;
+  background: url(noise_lines_transparent@2X.png), radial-gradient(100% 215.42% at 0% 0%, #5b483a 0%, #262425 100%) #211f20;
+  display: flex;
+  flex-direction: column;
+}
+.top-gradient .header {
   display: flex;
   align-items: center;
   height: 120px;
   justify-content: space-between;
   padding-top: 60px;
 }
-.header .logo .logo__title {
+.top-gradient .header .logo .logo__title {
   font-family: Georgia-regular;
   font-size: 32px;
   letter-spacing: 0.06em;
   color: #f1cdb3;
   line-height: 44px;
 }
-.header .logo .logo__subtitle {
+.top-gradient .header .logo .logo__subtitle {
   font-family: Arial-regular;
   font-size: 13px;
   line-height: 23px;
@@ -75,11 +76,11 @@ body {
   padding-left: 0.3rem;
   color: #ffffff;
 }
-.header .menu {
+.top-gradient .header .menu {
   display: flex;
   justify-items: center;
 }
-.header .menu .link {
+.top-gradient .header .menu .link {
   padding-left: 35px;
   font-family: Arial-regular;
   font-style: normal;
@@ -88,9 +89,53 @@ body {
   color: #cdcdcd;
   letter-spacing: 0.003rem;
 }
-.header .menu .menu__link-about {
+.top-gradient .header .menu .menu__link-about {
   padding-left: 0;
   padding-bottom: 0.2rem;
   border-bottom: 3px solid #f1cdb3;
   color: #fafafa;
+}
+.top-gradient .wrapper {
+  margin-top: 0;
+}
+.top-gradient .start-screen {
+  display: flex;
+  margin-bottom: 0;
+  justify-content: space-between;
+  align-items: center;
+}
+.top-gradient .start-screen .start-screen__content {
+  display: flex;
+  flex-direction: column;
+  height: 322px;
+  justify-content: space-between;
+  position: relative;
+  bottom: 2.5rem;
+}
+.top-gradient .start-screen .start-screen__heading {
+  font-family: Georgia-regular;
+  font-size: 44px;
+  line-height: 130%;
+  color: #ffffff;
+  margin: 0;
+}
+.top-gradient .start-screen .start-screen__subheading {
+  font-family: Arial-regular;
+  font-size: 15px;
+  line-height: 160%;
+  color: #cdcdcd;
+}
+.top-gradient .start-screen .start-screen__button {
+  padding: 15px 45px;
+  width: 207px;
+  background: #f1cdb3;
+  border-radius: 100px;
+}
+.top-gradient .start-screen .start-screen__button a {
+  font-family: Georgia-regular;
+  font-size: 17px;
+  line-height: 130%;
+  letter-spacing: 0.06em;
+  white-space: nowrap;
+  color: #292929;
 }/*# sourceMappingURL=main.css.map */
