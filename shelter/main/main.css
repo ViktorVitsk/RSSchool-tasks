@@ -22,4 +22,75 @@
   box-sizing: border-box;
   padding: 0;
   margin: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: inherit;
+  font-weight: 400;
+}
+
+body {
+  width: 1280px;
+  margin: auto;
+}
+
+.top-gradient {
+  height: 908px;
+  background: url(noise_lines_transparent@2X.png), radial-gradient(100% 215.42% at 0% 0%, #5b483a 0%, #262425 100%) #211f20;
+}
+
+.wrapper {
+  width: 1200px;
+  margin: auto;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  height: 120px;
+  justify-content: space-between;
+  padding-top: 60px;
+}
+.header .logo .logo__title {
+  font-family: Georgia-regular;
+  font-size: 32px;
+  letter-spacing: 0.06em;
+  color: #f1cdb3;
+  line-height: 44px;
+}
+.header .logo .logo__subtitle {
+  font-family: Arial-regular;
+  font-size: 13px;
+  line-height: 23px;
+  letter-spacing: 0.1em;
+  padding-left: 0.3rem;
+  color: #ffffff;
+}
+.header .menu {
+  display: flex;
+  justify-items: center;
+}
+.header .menu .link {
+  padding-left: 35px;
+  font-family: Arial-regular;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 15px;
+  color: #cdcdcd;
+  letter-spacing: 0.003rem;
+}
+.header .menu .menu__link-about {
+  padding-left: 0;
+  padding-bottom: 0.2rem;
+  border-bottom: 3px solid #f1cdb3;
+  color: #fafafa;
 }/*# sourceMappingURL=main.css.map */
