@@ -144,3 +144,46 @@ body {
     }
   }
 }
+.about {
+  height: 588px;
+  display: flex;
+  align-items: center;
+  // justify-content: center;
+  .about__about-content {
+    display: flex;
+    margin: auto;
+    margin-left: 14.8%;
+    .about__text {
+      display: flex;
+      flex-direction: column;
+      margin-left: 4.4rem;
+      margin-top: 0.9rem;
+      .about__heading {
+        font-family: Georgia-regular;
+        font-size: 35px;
+        line-height: 130%;
+        letter-spacing: 0.06em;
+        color: #545454;
+        padding-bottom: 25px;
+      }
+      .about__subheading-1 {
+        font-family: Arial-regular;
+        font-size: 15px;
+        line-height: 160%;
+        color: #4c4c4c;
+        padding-bottom: 25px;
+      }
+      .about__subheading-2 {
+        font-family: Arial-regular;
+        font-size: 15px;
+        line-height: 160%;
+
+        color: #4c4c4c;
+      }
+    }
+    .about__imeg {
+      margin-bottom: 1rem;
+      margin-right: 3rem;
+    }
+  }
+}

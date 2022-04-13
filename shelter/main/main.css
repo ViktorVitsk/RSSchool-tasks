@@ -138,4 +138,46 @@ body {
   letter-spacing: 0.06em;
   white-space: nowrap;
   color: #292929;
+}
+
+.about {
+  height: 588px;
+  display: flex;
+  align-items: center;
+}
+.about .about__about-content {
+  display: flex;
+  margin: auto;
+  margin-left: 14.8%;
+}
+.about .about__about-content .about__text {
+  display: flex;
+  flex-direction: column;
+  margin-left: 4.4rem;
+  margin-top: 0.9rem;
+}
+.about .about__about-content .about__text .about__heading {
+  font-family: Georgia-regular;
+  font-size: 35px;
+  line-height: 130%;
+  letter-spacing: 0.06em;
+  color: #545454;
+  padding-bottom: 25px;
+}
+.about .about__about-content .about__text .about__subheading-1 {
+  font-family: Arial-regular;
+  font-size: 15px;
+  line-height: 160%;
+  color: #4c4c4c;
+  padding-bottom: 25px;
+}
+.about .about__about-content .about__text .about__subheading-2 {
+  font-family: Arial-regular;
+  font-size: 15px;
+  line-height: 160%;
+  color: #4c4c4c;
+}
+.about .about__about-content .about__imeg {
+  margin-bottom: 1rem;
+  margin-right: 3rem;
 }/*# sourceMappingURL=main.css.map */
