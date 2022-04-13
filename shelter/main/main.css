@@ -120,6 +120,8 @@
 }
 .link .about {
   color: #fafafa;
+  padding-bottom: 5%;
+  border-bottom: 3px solid #f1cdb3;
 }
 
 /*  */
