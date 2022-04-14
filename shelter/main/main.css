@@ -143,20 +143,20 @@ body {
 .about {
   height: 588px;
   display: flex;
-  align-items: center;
 }
-.about .about__about-content {
+
+.about__about-content {
   display: flex;
   margin: auto;
   margin-left: 14.8%;
 }
-.about .about__about-content .about__text {
+.about__about-content .about__text {
   display: flex;
   flex-direction: column;
   margin-left: 4.4rem;
   margin-top: 0.9rem;
 }
-.about .about__about-content .about__text .about__heading {
+.about__about-content .about__text .about__heading {
   font-family: Georgia-regular;
   font-size: 35px;
   line-height: 130%;
@@ -164,20 +164,20 @@ body {
   color: #545454;
   padding-bottom: 25px;
 }
-.about .about__about-content .about__text .about__subheading-1 {
+.about__about-content .about__text .about__subheading-1 {
   font-family: Arial-regular;
   font-size: 15px;
   line-height: 160%;
   color: #4c4c4c;
   padding-bottom: 25px;
 }
-.about .about__about-content .about__text .about__subheading-2 {
+.about__about-content .about__text .about__subheading-2 {
   font-family: Arial-regular;
   font-size: 15px;
   line-height: 160%;
   color: #4c4c4c;
 }
-.about .about__about-content .about__image {
+.about__about-content .about__image {
   margin-bottom: 1rem;
   margin-right: 3rem;
 }
@@ -187,14 +187,15 @@ body {
   background: #f6f6f6;
   display: flex;
 }
-.pets .pets-content {
+
+.pets-content {
   display: flex;
   flex-direction: column;
   align-items: center;
   margin: 80px auto 100px;
   justify-content: space-between;
 }
-.pets .pets-content .pets__heading {
+.pets-content .pets__heading {
   font-family: Georgia-regular;
   font-size: 35px;
   line-height: 130%;
@@ -202,13 +203,13 @@ body {
   letter-spacing: 0.06em;
   color: #545454;
 }
-.pets .pets-content .pets__slider {
+.pets-content .pets__slider {
   display: flex;
   align-items: center;
   width: 100%;
   justify-content: space-between;
 }
-.pets .pets-content .pets__slider .pets__button-arrow {
+.pets-content .pets__slider .pets__button-arrow {
   padding: 23px 19px;
   border: 2px solid #f1cdb3;
   box-sizing: border-box;
@@ -219,19 +220,19 @@ body {
   align-items: center;
   justify-content: center;
 }
-.pets .pets-content .pets__slider .pets__button-arrow a {
+.pets-content .pets__slider .pets__button-arrow a {
   color: #292929;
   font-size: 1.5rem;
   margin-bottom: 0.5rem;
 }
-.pets .pets-content .pets__slider .pets__card {
+.pets-content .pets__slider .pets__card {
   background: #fafafa;
   border-radius: 9px;
   width: 270px;
   height: 435px;
   text-align: center;
 }
-.pets .pets-content .pets__slider .pets__card .pets__name {
+.pets-content .pets__slider .pets__card .pets__name {
   font-family: Georgia-regular;
   font-size: 20px;
   line-height: 23px;
@@ -239,7 +240,7 @@ body {
   color: #545454;
   margin: 25px;
 }
-.pets .pets-content .pets__slider .pets__card .pets__button-secondary {
+.pets-content .pets__slider .pets__card .pets__button-secondary {
   border: 2px solid #f1cdb3;
   border-radius: 100px;
   padding: 15px 45px;
@@ -251,25 +252,66 @@ body {
   align-items: center;
   justify-content: center;
 }
-.pets .pets-content .pets__slider .pets__card .pets__button-secondary a {
+.pets-content .pets__slider .pets__card .pets__button-secondary a {
   font-family: Georgia-regular;
   font-size: 17px;
   line-height: 130%;
   letter-spacing: 0.06em;
   color: #292929;
 }
-.pets .pets-content .pets__slider .jennifer {
+.pets-content .pets__slider .jennifer {
   margin: 0 40px;
 }
-.pets .pets-content .pets__button-primary {
+.pets-content .pets__button-primary {
   background: #f1cdb3;
   border-radius: 100px;
   padding: 15px 45px;
 }
-.pets .pets-content .pets__button-primary a {
+.pets-content .pets__button-primary a {
   font-family: Georgia-regular;
   font-size: 17px;
   line-height: 130%;
   letter-spacing: 0.06em;
   color: #292929;
+}
+
+.help {
+  height: 611px;
+  display: flex;
+}
+
+.help-content {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  margin-top: 80px;
+  margin-bottom: 100px;
+}
+.help-content .help__heading {
+  font-family: Georgia-regular;
+  font-size: 35px;
+  line-height: 130%;
+  letter-spacing: 0.06em;
+  color: #545454;
+}
+.help-content .help__list {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.help-content .help__list .icon-container {
+  margin: 60px;
+  margin-bottom: 0;
+}
+.help-content .help__list img {
+  width: 60px;
+  height: 60px;
+  margin-bottom: 1.5rem;
+}
+.help-content .help__list .help__text {
+  font-family: Georgia-regular;
+  font-size: 20px;
+  line-height: 115%;
+  letter-spacing: 0.06em;
+  color: #545454;
 }/*# sourceMappingURL=main.css.map */

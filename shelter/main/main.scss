@@ -147,136 +147,176 @@ body {
 .about {
   height: 588px;
   display: flex;
-  align-items: center;
-  // justify-content: center;
-  .about__about-content {
+}
+.about__about-content {
+  display: flex;
+  margin: auto;
+  margin-left: 14.8%;
+  .about__text {
     display: flex;
-    margin: auto;
-    margin-left: 14.8%;
-    .about__text {
-      display: flex;
-      flex-direction: column;
-      margin-left: 4.4rem;
-      margin-top: 0.9rem;
-      .about__heading {
-        font-family: Georgia-regular;
-        font-size: 35px;
-        line-height: 130%;
-        letter-spacing: 0.06em;
-        color: #545454;
-        padding-bottom: 25px;
-      }
-      .about__subheading-1 {
-        font-family: Arial-regular;
-        font-size: 15px;
-        line-height: 160%;
-        color: #4c4c4c;
-        padding-bottom: 25px;
-      }
-      .about__subheading-2 {
-        font-family: Arial-regular;
-        font-size: 15px;
-        line-height: 160%;
-
-        color: #4c4c4c;
-      }
+    flex-direction: column;
+    margin-left: 4.4rem;
+    margin-top: 0.9rem;
+    .about__heading {
+      font-family: Georgia-regular;
+      font-size: 35px;
+      line-height: 130%;
+      letter-spacing: 0.06em;
+      color: #545454;
+      padding-bottom: 25px;
     }
-    .about__image {
-      margin-bottom: 1rem;
-      margin-right: 3rem;
+    .about__subheading-1 {
+      font-family: Arial-regular;
+      font-size: 15px;
+      line-height: 160%;
+      color: #4c4c4c;
+      padding-bottom: 25px;
+    }
+    .about__subheading-2 {
+      font-family: Arial-regular;
+      font-size: 15px;
+      line-height: 160%;
+
+      color: #4c4c4c;
     }
   }
+  .about__image {
+    margin-bottom: 1rem;
+    margin-right: 3rem;
+  }
 }
+
 .pets {
   height: 877px;
   background: #f6f6f6;
   display: flex;
-  .pets-content {
+}
+.pets-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 80px auto 100px;
+  justify-content: space-between;
+  .pets__heading {
+    font-family: Georgia-regular;
+    font-size: 35px;
+    line-height: 130%;
+    text-align: center;
+    letter-spacing: 0.06em;
+    color: #545454;
+  }
+  .pets__slider {
     display: flex;
-    flex-direction: column;
     align-items: center;
-    margin: 80px auto 100px;
+    width: 100%;
     justify-content: space-between;
-    .pets__heading {
-      font-family: Georgia-regular;
-      font-size: 35px;
-      line-height: 130%;
-      text-align: center;
-      letter-spacing: 0.06em;
-      color: #545454;
-    }
-    .pets__slider {
+    .pets__button-arrow {
+      padding: 23px 19px;
+      border: 2px solid #f1cdb3;
+      box-sizing: border-box;
+      border-radius: 100px;
+      width: 52px;
+      height: 52px;
+
       display: flex;
       align-items: center;
-      width: 100%;
-      justify-content: space-between;
-      .pets__button-arrow {
-        padding: 23px 19px;
+      justify-content: center;
+      a {
+        color: #292929;
+        font-size: 1.5rem;
+        margin-bottom: 0.5rem;
+      }
+    }
+    .pets__card {
+      background: #fafafa;
+      border-radius: 9px;
+      width: 270px;
+      height: 435px;
+      text-align: center;
+      .pets__name {
+        font-family: Georgia-regular;
+        font-size: 20px;
+        line-height: 23px;
+        letter-spacing: 0.06em;
+        color: #545454;
+        margin: 25px;
+      }
+      .pets__button-secondary {
         border: 2px solid #f1cdb3;
-        box-sizing: border-box;
         border-radius: 100px;
-        width: 52px;
+        padding: 15px 45px;
+        white-space: nowrap;
+        width: 187px;
         height: 52px;
-
+        margin: 30px auto;
         display: flex;
         align-items: center;
         justify-content: center;
-        a {
-          color: #292929;
-          font-size: 1.5rem;
-          margin-bottom: 0.5rem;
-        }
-      }
-      .pets__card {
-        background: #fafafa;
-        border-radius: 9px;
-        width: 270px;
-        height: 435px;
-        text-align: center;
-        .pets__name {
-          font-family: Georgia-regular;
-          font-size: 20px;
-          line-height: 23px;
-          letter-spacing: 0.06em;
-          color: #545454;
-          margin: 25px;
-        }
-        .pets__button-secondary {
-          border: 2px solid #f1cdb3;
-          border-radius: 100px;
-          padding: 15px 45px;
-          white-space: nowrap;
-          width: 187px;
-          height: 52px;
-          margin: 30px auto;
-          display: flex;
-          align-items: center;
-          justify-content: center;
 
-          a {
-            font-family: Georgia-regular;
-            font-size: 17px;
-            line-height: 130%;
-            letter-spacing: 0.06em;
-            color: #292929;
-          }
+        a {
+          font-family: Georgia-regular;
+          font-size: 17px;
+          line-height: 130%;
+          letter-spacing: 0.06em;
+          color: #292929;
         }
-      }
-      .jennifer {
-        margin: 0 40px;
       }
     }
-    .pets__button-primary {
-      background: #f1cdb3;
-      border-radius: 100px;
-      padding: 15px 45px;
-      a {
-        font-family: Georgia-regular;
-        font-size: 17px;
-        line-height: 130%;
-        letter-spacing: 0.06em;
-        color: #292929;
-      }
+    .jennifer {
+      margin: 0 40px;
+    }
+  }
+  .pets__button-primary {
+    background: #f1cdb3;
+    border-radius: 100px;
+    padding: 15px 45px;
+    a {
+      font-family: Georgia-regular;
+      font-size: 17px;
+      line-height: 130%;
+      letter-spacing: 0.06em;
+      color: #292929;
+    }
+  }
+}
+
+.help {
+  height: 611px;
+  display: flex;
+}
+.help-content {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  margin-top: 80px;
+  margin-bottom: 100px;
+  .help__heading {
+    font-family: Georgia-regular;
+    font-size: 35px;
+    line-height: 130%;
+    letter-spacing: 0.06em;
+    color: #545454;
+  }
+  .help__list {
+    // margin: auto;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    .icon-container {
+      margin: 60px;
+      margin-bottom: 0;
+    }
+    img {
+      width: 60px;
+      height: 60px;
+      margin-bottom: 1.5rem;
+    }
+    .help__text {
+      font-family: Georgia-regular;
+      font-size: 20px;
+      line-height: 115%;
+      letter-spacing: 0.06em;
+      color: #545454;
     }
   }
 }
