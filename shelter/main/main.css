@@ -180,4 +180,96 @@ body {
 .about .about__about-content .about__image {
   margin-bottom: 1rem;
   margin-right: 3rem;
+}
+
+.pets {
+  height: 877px;
+  background: #f6f6f6;
+  display: flex;
+}
+.pets .pets-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 80px auto 100px;
+  justify-content: space-between;
+}
+.pets .pets-content .pets__heading {
+  font-family: Georgia-regular;
+  font-size: 35px;
+  line-height: 130%;
+  text-align: center;
+  letter-spacing: 0.06em;
+  color: #545454;
+}
+.pets .pets-content .pets__slider {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  justify-content: space-between;
+}
+.pets .pets-content .pets__slider .pets__button-arrow {
+  padding: 23px 19px;
+  border: 2px solid #f1cdb3;
+  box-sizing: border-box;
+  border-radius: 100px;
+  width: 52px;
+  height: 52px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.pets .pets-content .pets__slider .pets__button-arrow a {
+  color: #292929;
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+.pets .pets-content .pets__slider .pets__card {
+  background: #fafafa;
+  border-radius: 9px;
+  width: 270px;
+  height: 435px;
+  text-align: center;
+}
+.pets .pets-content .pets__slider .pets__card .pets__name {
+  font-family: Georgia-regular;
+  font-size: 20px;
+  line-height: 23px;
+  letter-spacing: 0.06em;
+  color: #545454;
+  margin: 25px;
+}
+.pets .pets-content .pets__slider .pets__card .pets__button-secondary {
+  border: 2px solid #f1cdb3;
+  border-radius: 100px;
+  padding: 15px 45px;
+  white-space: nowrap;
+  width: 187px;
+  height: 52px;
+  margin: 30px auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.pets .pets-content .pets__slider .pets__card .pets__button-secondary a {
+  font-family: Georgia-regular;
+  font-size: 17px;
+  line-height: 130%;
+  letter-spacing: 0.06em;
+  color: #292929;
+}
+.pets .pets-content .pets__slider .jennifer {
+  margin: 0 40px;
+}
+.pets .pets-content .pets__button-primary {
+  background: #f1cdb3;
+  border-radius: 100px;
+  padding: 15px 45px;
+}
+.pets .pets-content .pets__button-primary a {
+  font-family: Georgia-regular;
+  font-size: 17px;
+  line-height: 130%;
+  letter-spacing: 0.06em;
+  color: #292929;
 }/*# sourceMappingURL=main.css.map */
