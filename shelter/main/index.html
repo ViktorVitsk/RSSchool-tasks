@@ -12,15 +12,17 @@
     <div class="top-gradient">
       <div class="wrapper">
         <header class="header wrapper">
-          <div class="logo">
+          <div href="index.html" class="logo">
             <h2><a class="logo__title" href="#">Cozy House</a></h2>
             <p class="logo__subtitle">Shelter for pets in Boston</p>
           </div>
           <nav class="menu">
             <a class="menu__link-about link" href="#">About the shelter</a>
-            <a class="menu__link-pets link" href="#">Our pets</a>
-            <a class="menu__link-help link" href="#">Help the shelter</a>
-            <a class="menu__link-contacts link" href="#">Contacts</a>
+            <a class="menu__link-pets link" href="../pets/index.html"
+              >Our pets</a
+            >
+            <a class="menu__link-help link" href="#help">Help the shelter</a>
+            <a class="menu__link-contacts link" href="#contacts">Contacts</a>
           </nav>
         </header>
       </div>
@@ -38,7 +40,7 @@
             <br />
             in the world, you will see!
           </p>
-          <div class="start-screen__button"><a href="#">Make a friend</a></div>
+          <a class="start-screen__button" href="#our-friends">Make a friend</a>
         </div>
         <img
           class="start-screen__image"
@@ -78,48 +80,56 @@
         </div>
       </div>
     </section>
-    <section class="pets">
+    <section class="pets" id="our-friends">
       <div class="pets-content wrapper">
         <h3 class="pets__heading">
           Our friends who <br />
           are looking for a house
         </h3>
         <div class="pets__slider">
-          <div class="pets__button-arrow">
-            <a class="pets__left" href="#"> &larr;</a>
-          </div>
+          <a class="pets__left pets__button-arrow" href="javascript:void(0);">
+            <img src="../assets/icons/ArrowL.png" alt="arrow"
+          /></a>
 
           <div class="pets__card katrine">
             <div class="pets__image">
               <img src="../assets/images/pets/katrine.png" alt="katrine" />
             </div>
             <div class="pets__name">Katrine</div>
-            <div class="pets__button-secondary"><a href="#">Learn more</a></div>
+            <a class="pets__button-secondary" href="javascript:void(0);"
+              >Learn more</a
+            >
           </div>
           <div class="pets__card jennifer">
             <div class="pets__image">
               <img src="../assets/images/pets/jennifer.png" alt="Jennifer" />
             </div>
             <div class="pets__name">Jennifer</div>
-            <div class="pets__button-secondary"><a href="#">Learn more</a></div>
+            <a class="pets__button-secondary" href="javascript:void(0);"
+              >Learn more</a
+            >
           </div>
           <div class="pets__card woody">
             <div class="pets__image">
               <img src="../assets/images/pets/woody.png" alt="Woody" />
             </div>
             <div class="pets__name">Woody</div>
-            <div class="pets__button-secondary"><a href="#">Learn more</a></div>
+            <a class="pets__button-secondary" href="javascript:void(0);"
+              >Learn more</a
+            >
           </div>
-          <div class="pets__button-arrow">
-            <a class="pets__rigth" href="#">&rarr;</a>
-          </div>
+          <a class="pets__right pets__button-arrow" href="javascript:void(0);">
+            <img src="../assets/icons/ArrowR.png" alt="arrow"
+          /></a>
         </div>
-        <div class="pets__button-primary">
-          <a href="#">Get to know the rest</a>
-        </div>
+        <!-- <div class="pets__button-primary"> -->
+        <a class="pets__button-primary" href="../pets/index.html"
+          >Get to know the rest</a
+        >
+        <!-- </div> -->
       </div>
     </section>
-    <section class="help">
+    <section class="help" id="help">
       <div class="help-content wrapper">
         <h3 class="help__heading">
           How you can help <br />
@@ -193,14 +203,14 @@
           <p class="donation__subheading">
             Name of the bank / Type of bank account
           </p>
-          <div class="donation__credit-card">
+          <a href="javascript:void(0);" class="donation__credit-card">
             <div class="donation__credit-card-icon">
               <img src="../assets/icons/credit-card.svg" alt="credit card" />
             </div>
             <div class="donation__credit-card-number">
               8380 2880 8028 8791 7435
             </div>
-          </div>
+          </a>
           <p class="donation__info">
             Legal information and lorem ipsum dolor sit amet, consectetur <br />
             adipiscing elit. Maecenas a ipsum at libero sagittis dignissim sed
@@ -215,7 +225,7 @@
     </section>
     <footer class="footer">
       <div class="footer__content wrapper">
-        <div class="footer__contacts">
+        <div class="footer__contacts" id="contacts">
           <h3 class="footer__title-1">
             For questions <br />
             and suggestions
@@ -226,7 +236,7 @@
               src="../assets/icons/icon-email.png"
               alt="email"
             />
-            <a href="#" class="footer__text-mail">email@shelter.com</a>
+            <a href="mailto:" class="footer__text-mail">email@shelter.com</a>
           </div>
           <div class="footer__phone">
             <img
@@ -234,7 +244,7 @@
               src="../assets/icons/icon-phone.png"
               alt="phone"
             />
-            <a href="#" class="footer__text-phone">+13 674 567 75 54</a>
+            <a href="tel:" class="footer__text-phone">+13 674 567 75 54</a>
           </div>
         </div>
         <div class="footer__location">
@@ -247,7 +257,11 @@
               src="../assets/icons/icon-marker.png"
               alt="marker"
             />
-            <a href="#" class="footer__boston-address">
+            <a
+              href="https://www.google.com/maps"
+              target="_blank"
+              class="footer__boston-address"
+            >
               1 Central Street, Boston (entrance from the store)
             </a>
           </div>
@@ -257,7 +271,12 @@
               src="../assets/icons/icon-marker.png"
               alt="marker"
             />
-            <a href="#" class="footer__london-address">18 South Park, London</a>
+            <a
+              href="https://www.google.com/maps"
+              target="_blank"
+              class="footer__london-address"
+              >18 South Park, London</a
+            >
           </div>
         </div>
         <img

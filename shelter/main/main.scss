@@ -46,6 +46,8 @@ body {
   width: $width-wrapper;
   margin: auto;
 }
+$buttonColor: #f1cdb3;
+$darkenButton: darken($buttonColor, 10%);
 .top-gradient {
   height: 908px;
   background: url(noise_lines_transparent@2X.png),
@@ -64,7 +66,7 @@ body {
         font-family: Georgia-regular;
         font-size: 32px;
         letter-spacing: 0.06em;
-        color: #f1cdb3;
+        color: $buttonColor;
         line-height: 44px;
       }
       .logo__subtitle {
@@ -91,7 +93,7 @@ body {
       .menu__link-about {
         padding-left: 0;
         padding-bottom: 0.2rem;
-        border-bottom: 3px solid #f1cdb3;
+        border-bottom: 4px solid $buttonColor;
         color: #fafafa;
       }
     }
@@ -130,16 +132,16 @@ body {
     .start-screen__button {
       padding: 15px 45px;
       width: 207px;
-      background: #f1cdb3;
+      background: $buttonColor;
       border-radius: 100px;
-      a {
-        font-family: Georgia-regular;
-
-        font-size: 17px;
-        line-height: 130%;
-        letter-spacing: 0.06em;
-        white-space: nowrap;
-        color: #292929;
+      font-family: Georgia-regular;
+      font-size: 17px;
+      line-height: 130%;
+      letter-spacing: 0.06em;
+      white-space: nowrap;
+      color: #292929;
+      &:hover {
+        background: $darkenButton;
       }
     }
   }
@@ -212,19 +214,17 @@ body {
     justify-content: space-between;
     .pets__button-arrow {
       padding: 23px 19px;
-      border: 2px solid #f1cdb3;
+      border: 2px solid $buttonColor;
       box-sizing: border-box;
       border-radius: 100px;
       width: 52px;
       height: 52px;
-
       display: flex;
       align-items: center;
       justify-content: center;
-      a {
-        color: #292929;
-        font-size: 1.5rem;
-        margin-bottom: 0.5rem;
+      color: #292929;
+      &:hover {
+        background: #fff;
       }
     }
     .pets__card {
@@ -233,6 +233,13 @@ body {
       width: 270px;
       height: 435px;
       text-align: center;
+      &:hover {
+        background: #fff;
+        cursor: pointer;
+      }
+      &:hover .pets__button-secondary {
+        background: $buttonColor;
+      }
       .pets__name {
         font-family: Georgia-regular;
         font-size: 20px;
@@ -242,7 +249,7 @@ body {
         margin: 25px;
       }
       .pets__button-secondary {
-        border: 2px solid #f1cdb3;
+        border: 2px solid $buttonColor;
         border-radius: 100px;
         padding: 15px 45px;
         white-space: nowrap;
@@ -252,13 +259,13 @@ body {
         display: flex;
         align-items: center;
         justify-content: center;
-
-        a {
-          font-family: Georgia-regular;
-          font-size: 17px;
-          line-height: 130%;
-          letter-spacing: 0.06em;
-          color: #292929;
+        font-family: Georgia-regular;
+        font-size: 17px;
+        line-height: 130%;
+        letter-spacing: 0.06em;
+        color: #292929;
+        &:hover {
+          background: $darkenButton;
         }
       }
     }
@@ -267,15 +274,16 @@ body {
     }
   }
   .pets__button-primary {
-    background: #f1cdb3;
+    background: $buttonColor;
     border-radius: 100px;
     padding: 15px 45px;
-    a {
-      font-family: Georgia-regular;
-      font-size: 17px;
-      line-height: 130%;
-      letter-spacing: 0.06em;
-      color: #292929;
+    font-family: Georgia-regular;
+    font-size: 17px;
+    line-height: 130%;
+    letter-spacing: 0.06em;
+    color: #292929;
+    &:hover {
+      background: $darkenButton;
     }
   }
 }
@@ -355,11 +363,14 @@ body {
     .donation__credit-card {
       display: flex;
       padding: 10px 15px;
-      background: #f1cdb3;
+      background: $buttonColor;
       border-radius: 9px;
       justify-content: space-between;
       width: 349px;
       height: 43px;
+      &:hover {
+        background: $darkenButton;
+      }
       .donation__credit-card-icon {
         width: 30px;
         height: 23px;
@@ -397,7 +408,7 @@ body {
     font-size: 20px;
     line-height: 115%;
     letter-spacing: 0.06em;
-    color: #f1cdb3;
+    color: $buttonColor;
   }
 }
 .footer__contacts {
