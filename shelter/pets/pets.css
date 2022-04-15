@@ -22,4 +22,69 @@
   box-sizing: border-box;
   padding: 0;
   margin: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: inherit;
+  font-weight: 400;
+}
+
+body {
+  width: 1280px;
+  margin: auto;
+}
+
+.wrapper {
+  width: 1200px;
+  margin: auto;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  height: 120px;
+  justify-content: space-between;
+  height: 120px;
+}
+.header .logo .logo__title {
+  font-family: Georgia-regular;
+  font-size: 32px;
+  letter-spacing: 0.06em;
+  color: #545454;
+  line-height: 44px;
+}
+.header .logo .logo__subtitle {
+  font-family: Arial-regular;
+  font-size: 13px;
+  line-height: 23px;
+  letter-spacing: 0.1em;
+  padding-left: 0.3rem;
+  color: #292929;
+}
+.header .menu {
+  display: flex;
+  justify-items: center;
+}
+.header .menu .link {
+  margin-left: 35px;
+  font-family: Arial-regular;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 15px;
+  color: #545454;
+  letter-spacing: 0.003rem;
+}
+.header .menu .menu__link-pets {
+  padding-bottom: 0.2rem;
+  border-bottom: 4px solid #f1cdb3;
+  color: #292929;
 }/*# sourceMappingURL=pets.css.map */

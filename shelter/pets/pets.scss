@@ -23,3 +23,75 @@
   padding: 0;
   margin: 0;
 }
+a {
+  text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: inherit;
+  font-weight: 400;
+}
+$width-wrapper: 1200px;
+
+body {
+  width: 1280px;
+  margin: auto;
+}
+.wrapper {
+  width: $width-wrapper;
+  margin: auto;
+}
+$buttonColor: #f1cdb3;
+$darkenButton: darken($buttonColor, 10%);
+
+.header {
+  display: flex;
+  align-items: center;
+  height: calc(0.1 * $width-wrapper);
+  justify-content: space-between;
+  height: 120px;
+  .logo {
+    .logo__title {
+      font-family: Georgia-regular;
+      font-size: 32px;
+      letter-spacing: 0.06em;
+      color: #545454;
+      line-height: 44px;
+    }
+    .logo__subtitle {
+      font-family: Arial-regular;
+      font-size: 13px;
+      line-height: 23px;
+      letter-spacing: 0.1em;
+      padding-left: 0.3rem;
+      color: #292929;
+    }
+  }
+  .menu {
+    display: flex;
+    justify-items: center;
+    .link {
+      margin-left: 35px;
+      font-family: Arial-regular;
+      font-style: normal;
+      font-weight: 400;
+      font-size: 15px;
+      color: #545454;
+      letter-spacing: 0.003rem;
+    }
+    .menu__link-pets {
+      padding-bottom: 0.2rem;
+      border-bottom: 4px solid $buttonColor;
+      color: #292929;
+    }
+  }
+}
+
+// body {
+//   border: 1px solid #000;
+// }
