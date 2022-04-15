@@ -381,3 +381,56 @@ body {
     }
   }
 }
+.footer {
+  background: url(noise_lines_transparent@2X.png),
+    radial-gradient(110.67% 538.64% at 5.73% 50%, #513d2f 0%, #1a1a1c 100%),
+    #211f20;
+  height: 350px;
+  display: flex;
+}
+.footer__content {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0;
+  a {
+    font-family: Georgia-regular;
+    font-size: 20px;
+    line-height: 115%;
+    letter-spacing: 0.06em;
+    color: #f1cdb3;
+  }
+}
+.footer__contacts {
+  width: 278px;
+  height: 234px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-top: 1rem;
+}
+.footer__title-1,
+.footer__title-2 {
+  font-family: Georgia-regular;
+  font-size: 35px;
+  line-height: 130%;
+  letter-spacing: 0.059em;
+  color: #ffffff;
+}
+.footer__location {
+  width: 302px;
+  height: 234px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-top: 1rem;
+}
+.footer__icon {
+  margin-right: 1.2rem;
+}
+.footer__mail,
+.footer__phone,
+.footer__boston,
+.footer__london {
+  display: flex;
+  align-items: center;
+}
