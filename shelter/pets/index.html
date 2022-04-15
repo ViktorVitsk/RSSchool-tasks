@@ -10,23 +10,27 @@
   </head>
   <body>
     <header class="header wrapper">
-      <div href="index.html" class="logo">
-        <h2><a class="logo__title" href="#">Cozy House</a></h2>
+      <div class="logo">
+        <h2><a class="logo__title" href="../main/index.html">Cozy House</a></h2>
         <p class="logo__subtitle">Shelter for pets in Boston</p>
       </div>
       <nav class="menu">
-        <a class="menu__link-about link" href="#">About the shelter</a>
-        <a class="menu__link-pets link" href="../pets/index.html">Our pets</a>
-        <a class="menu__link-help link" href="#help">Help the shelter</a>
+        <a class="menu__link-about link" href="../main/index.html"
+          >About the shelter</a
+        >
+        <a class="menu__link-pets link" href="index.html">Our pets</a>
+        <a class="menu__link-help link" href="../main/index.html#help"
+          >Help the shelter</a
+        >
         <a class="menu__link-contacts link" href="#contacts">Contacts</a>
       </nav>
     </header>
     <section class="pets">
       <div class="pets-content wrapper">
-        <h3 class="pets__heading">
+        <h1 class="pets__heading">
           Our friends who <br />
           are looking for a house
-        </h3>
+        </h1>
         <div class="pets__cards-container">
           <div class="pets__card katrine">
             <div class="pets__image">
@@ -102,15 +106,80 @@
           </div>
         </div>
         <div class="pets__navigator">
-          <div class="pets__button-paginator pets__button-inactive">
+          <div class="pets__button-paginator pets__button-inactive disabled">
             &lt;&lt;
           </div>
-          <div class="pets__button-paginator pets__button-inactive">&lt;</div>
+          <div class="pets__button-paginator pets__button-inactive disabled">
+            &lt;
+          </div>
           <div class="pets__button-paginator pets__button-active">1</div>
           <div class="pets__button-paginator pets__button">&gt;</div>
           <div class="pets__button-paginator pets__button">&gt;&gt;</div>
         </div>
       </div>
     </section>
+    <footer class="footer">
+      <div class="footer__content wrapper">
+        <div class="footer__contacts" id="contacts">
+          <h3 class="footer__title-1">
+            For questions <br />
+            and suggestions
+          </h3>
+          <div class="footer__mail">
+            <img
+              class="footer__icon"
+              src="../assets/icons/icon-email.png"
+              alt="email"
+            />
+            <a href="mailto:" class="footer__text-mail">email@shelter.com</a>
+          </div>
+          <div class="footer__phone">
+            <img
+              class="footer__icon"
+              src="../assets/icons/icon-phone.png"
+              alt="phone"
+            />
+            <a href="tel:" class="footer__text-phone">+13 674 567 75 54</a>
+          </div>
+        </div>
+        <div class="footer__location">
+          <h3 class="footer__title-2">We are waiting for your visit</h3>
+          <div class="footer__boston">
+            <img
+              class="footer__icon"
+              width="22"
+              height="32"
+              src="../assets/icons/icon-marker.png"
+              alt="marker"
+            />
+            <a
+              href="https://www.google.com/maps"
+              target="_blank"
+              class="footer__boston-address"
+            >
+              1 Central Street, Boston (entrance from the store)
+            </a>
+          </div>
+          <div class="footer__london">
+            <img
+              class="footer__icon"
+              src="../assets/icons/icon-marker.png"
+              alt="marker"
+            />
+            <a
+              href="https://www.google.com/maps"
+              target="_blank"
+              class="footer__london-address"
+              >18 South Park, London</a
+            >
+          </div>
+        </div>
+        <img
+          class="footer__image"
+          src="../assets/images/pets/footer-puppy.png"
+          alt="footer-puppy"
+        />
+      </div>
+    </footer>
   </body>
 </html>
