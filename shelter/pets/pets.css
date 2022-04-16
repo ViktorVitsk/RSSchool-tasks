@@ -265,4 +265,95 @@ body {
 .footer__london {
   display: flex;
   align-items: center;
+}
+
+/*
+
+
+MEDIA REQUESTS:
+
+
+*/
+/*
+
+|----------768----------|
+
+*/
+@media screen and (max-width: 768px) {
+  body {
+    width: 768px;
+  }
+
+  .wrapper {
+    width: 708px;
+  }
+
+  .header {
+    height: 60px;
+    margin: 30px auto;
+  }
+  .header .logo .logo__subtitle {
+    line-height: 24.95px;
+    padding-left: 0.3em;
+  }
+
+  .pets {
+    height: 1733px;
+  }
+
+  .scarlett,
+.freddie {
+    display: none;
+  }
+
+  .pets-content {
+    height: 1603px;
+    justify-content: start;
+  }
+
+  .pets__cards-container {
+    justify-content: center;
+    height: 1365px;
+    align-items: center;
+    -moz-column-gap: 2.5em;
+         column-gap: 2.5em;
+  }
+
+  .pets__card {
+    margin-top: 30px;
+  }
+
+  .pets__navigator {
+    position: relative;
+    top: 70px;
+  }
+
+  .footer {
+    height: 639px;
+  }
+
+  .footer__content {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: space-between;
+    justify-content: center;
+    gap: 4.5em;
+    margin-top: 0;
+  }
+  .footer__content .footer__image {
+    width: 300px;
+    height: 310px;
+  }
+
+  .footer__contacts {
+    position: relative;
+    top: 0.9em;
+    left: 0.38em;
+  }
+
+  .footer__location {
+    position: relative;
+    top: 0.9em;
+    right: 0.38em;
+  }
 }/*# sourceMappingURL=pets.css.map */

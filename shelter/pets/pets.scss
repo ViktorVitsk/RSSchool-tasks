@@ -38,6 +38,7 @@ h6 {
   font-weight: 400;
 }
 $width-wrapper: 1200px;
+$width-screen-768: 768px;
 
 body {
   width: 1280px;
@@ -261,4 +262,89 @@ $darkenButton: darken($buttonColor, 10%);
 .footer__london {
   display: flex;
   align-items: center;
+}
+/*
+
+
+MEDIA REQUESTS:
+
+
+*/
+/*
+
+|----------768----------|
+
+*/
+@media screen and (max-width: 768px) {
+  body {
+    width: $width-screen-768;
+  }
+  .wrapper {
+    width: calc($width-screen-768 - 60px);
+  }
+
+  .header {
+    height: 60px;
+    margin: 30px auto;
+
+    .logo {
+      .logo__subtitle {
+        line-height: 24.95px;
+        padding-left: 0.3em;
+      }
+    }
+  }
+
+  .pets {
+    height: 1733px;
+  }
+  .scarlett,
+  .freddie {
+    display: none;
+  }
+  .pets-content {
+    height: 1603px;
+    justify-content: start;
+  }
+  .pets__cards-container {
+    justify-content: center;
+    height: 1365px;
+    align-items: center;
+    column-gap: 2.5em;
+  }
+  .pets__card {
+    margin-top: 30px;
+  }
+  .pets__navigator {
+    position: relative;
+    top: 70px;
+  }
+
+  .footer {
+    height: 639px;
+  }
+  .footer__content {
+    display: flex;
+    // flex-direction: column;
+    flex-wrap: wrap;
+    align-content: space-between;
+    justify-content: center;
+    gap: 4.5em;
+    margin-top: 0;
+    .footer__image {
+      width: 300px;
+      height: 310px;
+    }
+  }
+  .footer__contacts {
+    position: relative;
+    top: 0.9em;
+    left: 0.38em;
+  }
+
+  .footer__location {
+    position: relative;
+    top: 0.9em;
+    right: 0.38em;
+  }
 }

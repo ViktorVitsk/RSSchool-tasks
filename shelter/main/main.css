@@ -590,32 +590,33 @@ MEDIA REQUESTS:
   .donation-content .donation__content {
     height: 282px;
   }
-}
-.footer {
-  height: 639px;
-}
 
-.footer__content {
-  display: flex;
-  flex-wrap: wrap;
-  align-content: space-between;
-  justify-content: center;
-  gap: 4.5em;
-  margin-top: 0;
-}
-.footer__content .footer__image {
-  width: 300px;
-  height: 310px;
-}
+  .footer {
+    height: 639px;
+  }
 
-.footer__contacts {
-  position: relative;
-  top: 0.9em;
-  left: 0.38em;
-}
+  .footer__content {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: space-between;
+    justify-content: center;
+    gap: 4.5em;
+    margin-top: 0;
+  }
+  .footer__content .footer__image {
+    width: 300px;
+    height: 310px;
+  }
 
-.footer__location {
-  position: relative;
-  top: 0.9em;
-  right: 0.38em;
+  .footer__contacts {
+    position: relative;
+    top: 0.9em;
+    left: 0.38em;
+  }
+
+  .footer__location {
+    position: relative;
+    top: 0.9em;
+    right: 0.38em;
+  }
 }/*# sourceMappingURL=main.css.map */
