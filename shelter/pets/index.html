@@ -16,7 +16,7 @@
         </h2>
         <p class="logo__subtitle">Shelter for pets in Boston</p>
       </div>
-      <nav class="menu">
+      <nav class="menu" id="burger-menu">
         <a class="menu__link-about link" href="../main/index.html"
           >About the shelter</a
         >
@@ -26,6 +26,27 @@
         >
         <a class="menu__link-contacts link" href="#contacts">Contacts</a>
       </nav>
+      <div id="burger">
+        <div class="burger__top">
+          <div class="logo">
+            <h2>
+              <a class="logo__title" href="../main/index.html">Cozy House</a>
+            </h2>
+            <p class="logo__subtitle">Shelter for pets in Boston</p>
+          </div>
+          <div class="burger__img"></div>
+        </div>
+        <nav class="menu">
+          <a class="menu__link-about link" href="../main/index.html"
+            >About the shelter</a
+          >
+          <a class="menu__link-pets link" href="index.html">Our pets</a>
+          <a class="menu__link-help link" href="../main/index.html#help"
+            >Help the shelter</a
+          >
+          <a class="menu__link-contacts link" href="#contacts">Contacts</a>
+        </nav>
+      </div>
     </header>
 
     <section class="pets">
@@ -184,5 +205,6 @@
         />
       </div>
     </footer>
+    <script src="../js/burger.js"></script>
   </body>
 </html>

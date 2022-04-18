@@ -48,6 +48,10 @@ body {
   margin: auto;
 }
 
+#burger {
+  display: none;
+}
+
 .header {
   display: flex;
   align-items: center;
@@ -189,8 +193,8 @@ body {
   border: 2px solid #f1cdb3;
   box-sizing: border-box;
   border-radius: 100px;
-  width: 52px;
-  height: 52px;
+  max-width: 52px;
+  max-height: 52px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -198,6 +202,15 @@ body {
   margin: auto 10px;
   font-size: 20px;
   letter-spacing: 0.06em;
+  width: 100%;
+  height: 100%;
+}
+@media (max-width: 372px) {
+  .pets__navigator .pets__button-paginator {
+    padding: 15px 10px;
+    font-size: 10px;
+    height: 30px;
+  }
 }
 .pets__navigator .pets__button-paginator:hover {
   background: #fff;
@@ -312,9 +325,41 @@ MEDIA REQUESTS:
     width: 95%;
   }
 }
-@media screen and (max-width: 768px) and (max-width: 608px) {
+@media screen and (max-width: 768px) and (max-width: 709px) {
+  .header {
+    margin-left: 1px;
+  }
+  .header .logo .logo__title {
+    font-size: 2em;
+    line-height: 100%;
+  }
+  .header .logo .logo__subtitle p {
+    font-size: 0.7em;
+    line-height: 50%;
+  }
+}
+@media screen and (max-width: 768px) and (max-width: 709px) and (max-width: 410px) {
+  .header .logo .logo__subtitle p {
+    font-size: 2px;
+    line-height: 50%;
+  }
+}
+@media screen and (max-width: 768px) and (max-width: 709px) {
   .header .menu .link {
+    font-size: 0.7em;
+  }
+}
+@media screen and (max-width: 768px) and (max-width: 410px) {
+  .header {
     margin-left: 0;
+  }
+  .header .logo .logo__title {
+    font-size: 1.5em;
+    line-height: 100%;
+  }
+  .header .menu .link {
+    font-size: 0.6em;
+    margin-left: 1px;
   }
 }
 @media screen and (max-width: 768px) {
