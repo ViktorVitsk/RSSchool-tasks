@@ -52,6 +52,17 @@ body {
   display: none;
 }
 
+.background {
+  background: #fff;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 3;
+}
+
 .header {
   display: flex;
   align-items: center;
@@ -63,7 +74,9 @@ body {
   position: sticky;
   top: 0;
   left: 0;
-  z-index: 1;
+  bottom: 0;
+  right: 0;
+  z-index: 3;
   width: 100%;
 }
 .header .logo .logo__title {
@@ -316,6 +329,17 @@ MEDIA REQUESTS:
 @media screen and (max-width: 768px) {
   .wrapper {
     max-width: 768px;
+  }
+
+  .background {
+    background: #fff;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 3;
   }
 
   .header {
