@@ -807,4 +807,341 @@ MEDIA REQUESTS:
     top: 0.9em;
     right: 0.38em;
   }
+}
+@media (max-width: 320px) {
+  .wrapper {
+    width: 320px;
+  }
+
+  .top-gradient {
+    height: 823px;
+    min-width: 320px;
+    margin: 0 auto;
+  }
+  .top-gradient .wrapper {
+    max-width: 708px;
+  }
+  .top-gradient .header {
+    height: 60px;
+    margin-bottom: 17%;
+    display: flex;
+    justify-content: space-around;
+    gap: 60px;
+  }
+  .top-gradient .header .logo .logo__subtitle {
+    line-height: 24.95px;
+    padding-left: 0.3em;
+  }
+  .top-gradient .header .menu {
+    background: url(../assets/icons/Burger-main.png);
+    width: 30px;
+    height: 22px;
+    position: relative;
+    right: 40px;
+  }
+  .top-gradient .header .menu .link {
+    display: none;
+  }
+  .top-gradient .start-screen {
+    display: flex;
+    flex-direction: column;
+  }
+  .top-gradient .start-screen .start-screen__image {
+    width: 260px;
+    height: 271.77px;
+    position: relative;
+    left: -10px;
+  }
+  .top-gradient .start-screen .start-screen__heading {
+    font-size: 25px;
+    line-height: 130%;
+    letter-spacing: 0.06em;
+    position: relative;
+    top: 20px;
+  }
+  .top-gradient .start-screen .start-screen__subheading {
+    width: 300px;
+    font-size: 15px;
+    line-height: 160%;
+    letter-spacing: 0;
+    position: relative;
+    top: 8px;
+    align-self: center;
+  }
+  .top-gradient .start-screen .start-screen__subheading br {
+    display: none;
+  }
+  .top-gradient .start-screen .start-screen__content {
+    bottom: 6.2rem;
+    max-width: 460px;
+    width: 100%;
+    text-align: center;
+  }
+  .top-gradient .start-screen .start-screen__button {
+    align-self: center;
+    position: relative;
+    bottom: 6px;
+  }
+
+  .about {
+    height: 974px;
+    width: 320px;
+  }
+
+  .about__about-content {
+    flex-direction: column-reverse;
+    margin: 0 auto;
+    justify-content: space-between;
+    width: 100%;
+  }
+  .about__about-content .about__text {
+    width: 300px;
+    height: 494px;
+    margin: auto;
+  }
+  .about__about-content .about__text .about__heading {
+    font-size: 25px;
+    line-height: 125%;
+    letter-spacing: 0.06em;
+    text-align: center;
+  }
+  .about__about-content .about__text .about__subheading-1,
+.about__about-content .about__text .about__subheading-2 {
+    width: 270px;
+    align-self: center;
+    font-size: 15px;
+    line-height: 158.5%;
+    letter-spacing: 0;
+    text-align: justify;
+    position: relative;
+    top: 10px;
+  }
+  .about__about-content .about__text .about__subheading-1 br,
+.about__about-content .about__text .about__subheading-2 br {
+    display: none;
+  }
+  .about__about-content .about__image {
+    width: 260px;
+    height: 353px;
+    position: relative;
+    bottom: 10px;
+  }
+
+  .pets {
+    height: 791px;
+    width: 320px;
+  }
+
+  .pets-content {
+    width: 300px;
+    height: 707px;
+    justify-content: space-around;
+  }
+  .pets-content .pets__heading {
+    font-size: 25px;
+    line-height: 130%;
+    letter-spacing: 0.06em;
+    text-align: center;
+    position: relative;
+    top: 18px;
+  }
+  .pets-content .pets__slider {
+    flex-direction: column;
+  }
+  .pets-content .pets__slider .katrine {
+    position: relative;
+    top: 24px;
+  }
+  .pets-content .pets__slider .pets__button-secondary {
+    position: relative;
+    top: 4px;
+  }
+  .pets-content .pets__slider .pets__button-arrow {
+    display: flex;
+    order: 1;
+  }
+  .pets-content .pets__slider .pets__left {
+    position: relative;
+    top: 40px;
+    left: -65px;
+  }
+  .pets-content .pets__slider .pets__right {
+    position: relative;
+    top: -12px;
+    left: 65px;
+  }
+  .pets-content .pets__button-primary {
+    padding: 15px 45px;
+    position: relative;
+    top: 25px;
+  }
+
+  .help {
+    height: 745px;
+    width: 320px;
+    min-height: 745px;
+  }
+  .help .help__heading {
+    font-size: 25px;
+    line-height: 130%;
+    text-align: center;
+    letter-spacing: 0.06em;
+  }
+  .help .help-content {
+    height: 745px;
+    margin: 0 auto;
+    justify-content: space-evenly;
+  }
+  .help .help-content .help__list {
+    height: 555px;
+    width: 290px;
+    margin: 0 auto;
+  }
+  .help .help-content .help__list img {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 15px;
+  }
+  .help .help-content .help__list .icon-container {
+    height: 87px;
+    width: 130px;
+    margin: 0;
+    margin-bottom: 30px;
+  }
+  .help .help-content .help__list .icon-container .help__text {
+    font-size: 15px;
+    line-height: 17px;
+    letter-spacing: 0.06em;
+    text-align: center;
+  }
+
+  .donation {
+    height: 542.2px;
+    width: 320px;
+    margin: 0 auto;
+    position: static;
+  }
+  .donation .donation-content {
+    justify-content: space-evenly;
+    margin: 0 auto;
+  }
+  .donation .donation-content .donation__content {
+    height: 281px;
+    min-height: 281px;
+    margin: 0 auto;
+  }
+  .donation .donation-content .donation__heading {
+    text-align: center;
+    font-size: 25px;
+    line-height: 130%;
+    letter-spacing: 0.06em;
+  }
+  .donation .donation-content .donation__subheading {
+    font-size: 15px;
+    line-height: 160%;
+    letter-spacing: normal;
+  }
+  .donation .donation-content .donation__credit-card {
+    width: 281px;
+    height: 43px;
+    justify-content: space-around;
+    padding: 15px 14px;
+  }
+  .donation .donation-content .donation__credit-card img {
+    position: relative;
+    bottom: 5px;
+    right: 5px;
+  }
+  .donation .donation-content .donation__credit-card .donation__credit-card-number {
+    line-height: 110%;
+    letter-spacing: 0.06em;
+  }
+  .donation .donation-content .donation__info {
+    font-size: 12px;
+    line-height: 18px;
+    text-align: justify;
+  }
+  .donation .donation-content .donation__info br {
+    display: none;
+  }
+  .donation .donation-content .donation__image {
+    width: 260px;
+    height: 135.2px;
+  }
+
+  .footer {
+    height: 809px;
+    height: 100%;
+    width: 320px;
+    margin: 0;
+    position: static;
+  }
+  .footer .wrapper {
+    margin-top: 0;
+  }
+
+  .footer__content {
+    margin: 0 auto;
+    height: 809px;
+    gap: 0;
+    width: 300px;
+    text-align: center;
+  }
+  .footer__content br {
+    display: none;
+  }
+  .footer__content .footer__image {
+    width: 260px;
+    height: 269px;
+  }
+  .footer__content .footer__title-1 {
+    font-size: 25px;
+    line-height: 130%;
+    position: relative;
+    top: 14px;
+  }
+  .footer__content .footer__title-2 {
+    font-size: 25px;
+    line-height: 130%;
+    letter-spacing: 0.075em;
+    position: relative;
+    bottom: 8px;
+    left: 2px;
+  }
+  .footer__content .footer__contacts {
+    position: static;
+    top: 0.9em;
+    left: 0.38em;
+  }
+  .footer__content .footer__contacts .footer__mail {
+    display: block;
+  }
+  .footer__content .footer__contacts .footer__phone {
+    display: block;
+  }
+  .footer__content .footer__contacts .footer__phone img {
+    position: relative;
+    top: -5px;
+  }
+  .footer__content .footer__contacts .footer__phone .footer__text-phone {
+    position: relative;
+    bottom: 15px;
+  }
+  .footer__content .footer__location {
+    position: static;
+    top: 0.9em;
+    right: 0.38em;
+  }
+  .footer__content .footer__boston,
+.footer__content .footer__london {
+    position: relative;
+    top: -20px;
+  }
+  .footer__content .footer__boston {
+    top: -15px;
+  }
+  .footer__content .footer__boston .footer__boston-address {
+    position: relative;
+    right: 8px;
+  }
 }/*# sourceMappingURL=main.css.map */
