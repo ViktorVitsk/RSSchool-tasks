@@ -446,4 +446,185 @@ MEDIA REQUESTS:
     top: 0.9em;
     right: 0.38em;
   }
+}
+@media (max-width: 320px) {
+  .background {
+    height: 90px;
+    width: 320px;
+    background: #fff;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 3;
+  }
+
+  .header {
+    height: 30px;
+    margin-bottom: 17%;
+    display: flex;
+    justify-content: space-around;
+    gap: 60px;
+  }
+  .header .logo .logo__title {
+    font-size: 32px;
+    line-height: 110%;
+  }
+  .header .logo .logo__subtitle {
+    line-height: 24.95px;
+    padding-left: 0.3em;
+  }
+  .header .logo .logo__title {
+    position: relative;
+    top: 15px;
+    left: 3px;
+  }
+  .header .logo .logo__subtitle {
+    position: relative;
+    top: 20px;
+    left: 3px;
+  }
+  .header .menu {
+    background: url(../assets/icons/Burger-pets.png);
+    width: 30px;
+    height: 22px;
+    position: relative;
+    right: 40px;
+    position: relative;
+    top: 15px;
+    right: 30px;
+  }
+  .header .menu .link {
+    display: none;
+  }
+
+  .pets {
+    height: 1649px;
+  }
+  .pets .sophia,
+.pets .timmy,
+.pets .charly {
+    display: none;
+  }
+  .pets .pets__cards-container {
+    overflow-y: hidden;
+  }
+  .pets .pets__heading {
+    font-size: 25px;
+    line-height: 130%;
+    letter-spacing: 0.06em;
+    position: relative;
+    top: -12.5px;
+  }
+  .pets .pets-content {
+    margin: 0 auto;
+    position: relative;
+    top: 55px;
+  }
+  .pets .pets__navigator {
+    display: flex;
+    height: 52px;
+    width: 300px;
+    position: relative;
+    left: -5px;
+  }
+  .pets .pets__navigator .pets__button-paginator {
+    padding: 23px 19px;
+    border: 2px solid #f1cdb3;
+    box-sizing: border-box;
+    border-radius: 100px;
+    max-width: 52px;
+    max-height: 52px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #292929;
+    margin: auto 5px;
+    font-size: 20px;
+    letter-spacing: 0.06em;
+    width: 100%;
+    height: 100%;
+  }
+
+  .footer {
+    height: 809px;
+    height: 100%;
+    width: 320px;
+    margin: 0;
+    position: static;
+  }
+  .footer .wrapper {
+    margin-top: 0;
+  }
+
+  .footer__content {
+    margin: 0 auto;
+    height: 809px;
+    gap: 0;
+    width: 300px;
+    text-align: center;
+  }
+  .footer__content br {
+    display: none;
+  }
+  .footer__content .footer__image {
+    width: 260px;
+    height: 269px;
+  }
+  .footer__content .footer__title-1 {
+    font-size: 25px;
+    line-height: 130%;
+    position: relative;
+    top: 14px;
+  }
+  .footer__content .footer__title-2 {
+    font-size: 25px;
+    line-height: 130%;
+    letter-spacing: 0.075em;
+    position: relative;
+    bottom: 8px;
+    left: 2px;
+  }
+  .footer__content .footer__contacts {
+    position: static;
+    top: 0.9em;
+    left: 0.38em;
+  }
+  .footer__content .footer__contacts .footer__mail {
+    display: block;
+  }
+  .footer__content .footer__contacts .footer__mail img {
+    position: relative;
+    top: 5px;
+  }
+  .footer__content .footer__contacts .footer__phone {
+    display: block;
+  }
+  .footer__content .footer__contacts .footer__phone img {
+    position: relative;
+    top: -5px;
+  }
+  .footer__content .footer__contacts .footer__phone .footer__text-phone {
+    position: relative;
+    bottom: 15px;
+  }
+  .footer__content .footer__location {
+    position: static;
+    top: 0.9em;
+    right: 0.38em;
+  }
+  .footer__content .footer__boston,
+.footer__content .footer__london {
+    position: relative;
+    top: -20px;
+  }
+  .footer__content .footer__boston {
+    top: -15px;
+  }
+  .footer__content .footer__boston .footer__boston-address {
+    position: relative;
+    right: 8px;
+  }
 }/*# sourceMappingURL=pets.css.map */

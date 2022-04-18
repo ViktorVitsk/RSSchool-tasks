@@ -1085,6 +1085,10 @@ MEDIA REQUESTS:
       left: 0.38em;
       .footer__mail {
         display: block;
+        img {
+          position: relative;
+          top: 5px;
+        }
       }
       .footer__phone {
         display: block;

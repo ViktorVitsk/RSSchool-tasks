@@ -1116,6 +1116,10 @@ MEDIA REQUESTS:
   .footer__content .footer__contacts .footer__mail {
     display: block;
   }
+  .footer__content .footer__contacts .footer__mail img {
+    position: relative;
+    top: 5px;
+  }
   .footer__content .footer__contacts .footer__phone {
     display: block;
   }
