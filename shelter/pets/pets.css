@@ -356,11 +356,11 @@ MEDIA REQUESTS:
     margin-left: 1px;
   }
   .header .logo .logo__title {
-    font-size: 2em;
+    font-size: 1.2em;
     line-height: 100%;
   }
   .header .logo .logo__subtitle p {
-    font-size: 0.7em;
+    font-size: 0.2em;
     line-height: 50%;
   }
 }
