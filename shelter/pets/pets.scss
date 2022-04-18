@@ -41,11 +41,10 @@ $width-wrapper: 1200px;
 $width-screen-768: 768px;
 
 body {
-  width: 1280px;
-  margin: auto;
+  margin: 0;
 }
 .wrapper {
-  width: $width-wrapper;
+  max-width: $width-wrapper;
   margin: auto;
 }
 $buttonColor: #f1cdb3;
@@ -57,6 +56,12 @@ $darkenButton: darken($buttonColor, 10%);
   height: calc(0.1 * $width-wrapper);
   justify-content: space-between;
   height: 120px;
+  background: #fff;
+  position: sticky;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  width: 100%;
   .logo {
     .logo__title {
       font-family: Georgia-regular;
@@ -94,7 +99,7 @@ $darkenButton: darken($buttonColor, 10%);
   }
 }
 .pets {
-  height: 1342px;
+  min-height: 1342px;
   background: #f6f6f6;
   display: flex;
 }
@@ -117,7 +122,7 @@ $darkenButton: darken($buttonColor, 10%);
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  height: 930px;
+  min-height: 930px;
   align-items: center;
 }
 .pets__image {
@@ -216,11 +221,19 @@ $darkenButton: darken($buttonColor, 10%);
     #211f20;
   height: 350px;
   display: flex;
+  max-width: 1280px;
+  margin: auto;
+  .wrapper {
+    margin-top: 40px;
+    margin-bottom: 0;
+  }
 }
 .footer__content {
   display: flex;
   justify-content: space-between;
   margin-bottom: 0;
+  width: 100%;
+  // height: 90%;
   a {
     font-family: Georgia-regular;
     font-size: 20px;
@@ -263,6 +276,13 @@ $darkenButton: darken($buttonColor, 10%);
   display: flex;
   align-items: center;
 }
+.footer__image {
+  max-width: 300px;
+  max-height: 310px;
+  width: 25vw;
+  height: 25vw;
+  align-self: flex-end;
+}
 /*
 
 
@@ -276,16 +296,28 @@ MEDIA REQUESTS:
 
 */
 @media screen and (max-width: 768px) {
-  body {
-    width: $width-screen-768;
-  }
+  // body {
+  //   width: $width-screen-768;
+  // }
+  // .wrapper {
+  //   width: calc($width-screen-768 - 60px);
+  // }
   .wrapper {
-    width: calc($width-screen-768 - 60px);
+    max-width: $width-screen-768;
+    // width: 100%;
   }
 
   .header {
     height: 60px;
-    margin: 30px auto;
+    margin: 30px;
+    max-width: 708px;
+    width: 95%;
+    @media (max-width: 608px) {
+      .menu .link {
+        margin-left: 0;
+        // width: 50%;
+      }
+    }
 
     .logo {
       .logo__subtitle {
@@ -311,6 +343,9 @@ MEDIA REQUESTS:
     height: 1365px;
     align-items: center;
     column-gap: 2.5em;
+    @media (max-width: 580px) {
+      overflow-y: scroll;
+    }
   }
   .pets__card {
     margin-top: 30px;
@@ -321,8 +356,15 @@ MEDIA REQUESTS:
   }
 
   .footer {
-    height: 639px;
+    min-height: 639px;
+    height: 100%;
+    .wrapper {
+      margin-top: 0;
+    }
+    // position: relative;
+    // top: 2px;
   }
+
   .footer__content {
     display: flex;
     // flex-direction: column;
@@ -332,8 +374,8 @@ MEDIA REQUESTS:
     gap: 4.5em;
     margin-top: 0;
     .footer__image {
-      width: 300px;
-      height: 310px;
+      width: 50vw;
+      height: 50vw;
     }
   }
   .footer__contacts {
