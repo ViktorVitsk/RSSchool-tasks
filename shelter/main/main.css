@@ -821,8 +821,6 @@ MEDIA REQUESTS:
     background: url(../assets/icons/Burger-main.png);
     width: 30px;
     height: 22px;
-    position: relative;
-    right: 40px;
   }
   .menu .link {
     display: none;
@@ -830,13 +828,13 @@ MEDIA REQUESTS:
 }
 @media (max-width: 320px) {
   .wrapper {
-    width: 320px;
+    max-width: 320px;
   }
 
   .top-gradient {
     height: 823px;
-    min-width: 320px;
-    margin: 0 auto;
+    width: 320px;
+    margin: 0;
   }
   .top-gradient .wrapper {
     max-width: 708px;
@@ -857,7 +855,7 @@ MEDIA REQUESTS:
     width: 30px;
     height: 22px;
     position: relative;
-    right: 40px;
+    left: -42px;
   }
   .top-gradient .header .menu .link {
     display: none;
@@ -906,6 +904,7 @@ MEDIA REQUESTS:
   .about {
     height: 974px;
     width: 320px;
+    margin: 0;
   }
 
   .about__about-content {
@@ -956,6 +955,8 @@ MEDIA REQUESTS:
     width: 300px;
     height: 707px;
     justify-content: space-around;
+    position: relative;
+    top: 3px;
   }
   .pets-content .pets__heading {
     font-size: 25px;
@@ -1000,6 +1001,7 @@ MEDIA REQUESTS:
     height: 745px;
     width: 320px;
     min-height: 745px;
+    margin: 0;
   }
   .help .help__heading {
     font-size: 25px;
