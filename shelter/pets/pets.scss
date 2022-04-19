@@ -452,7 +452,21 @@ MEDIA REQUESTS:
     right: 0.38em;
   }
 }
-
+@media (max-width: 767px) {
+  .menu {
+    background: url(../assets/icons/Burger-pets.png);
+    width: 30px;
+    height: 22px;
+    position: relative;
+    right: 40px;
+    position: relative;
+    top: 15px;
+    right: 30px;
+    .link {
+      display: none;
+    }
+  }
+}
 @media (max-width: 320px) {
   .background {
     height: 90px;

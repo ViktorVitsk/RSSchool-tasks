@@ -511,6 +511,19 @@ MEDIA REQUESTS:
 |----------768----------|
 
 */
+@media (max-width: 1279px) {
+  .woody {
+    display: none;
+  }
+  .pets-content .pets__slider {
+    justify-content: space-around;
+  }
+}
+@media (max-width: 767px) {
+  .jennifer {
+    display: none;
+  }
+}
 @media screen and (max-width: 768px) {
   .wrapper {
     max-width: $width-screen-768;
