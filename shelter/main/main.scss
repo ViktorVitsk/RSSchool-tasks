@@ -528,9 +528,9 @@ MEDIA REQUESTS:
     .header {
       height: 60px;
       margin-bottom: 17%;
-      @media (max-width: 399px) {
-        display: block;
-      }
+      // @media (max-width: 399px) {
+      //   display: block;
+      // }
       .logo {
         .logo__subtitle {
           line-height: 24.95px;
@@ -774,7 +774,7 @@ MEDIA REQUESTS:
     right: 0.38em;
   }
 }
-@media (max-width: 650px) {
+@media (max-width: 767px) {
   .menu {
     background: url(../assets/icons/Burger-main.png);
     width: 30px;
