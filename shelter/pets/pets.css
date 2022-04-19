@@ -324,6 +324,46 @@ MEDIA REQUESTS:
 |----------768----------|
 
 */
+@media (max-width: 1279px) {
+  .pets {
+    height: 1733px;
+  }
+
+  .scarlett,
+.freddie {
+    display: none;
+  }
+
+  .pets-content {
+    height: 1603px;
+    justify-content: start;
+    max-width: 850px;
+  }
+
+  .pets__cards-container {
+    justify-content: center;
+    height: 1365px;
+    align-items: center;
+    -moz-column-gap: 2.5em;
+         column-gap: 2.5em;
+  }
+}
+@media (max-width: 1279px) and (max-width: 580px) {
+  .pets__cards-container {
+    overflow-y: scroll;
+  }
+}
+@media (max-width: 1279px) {
+  .pets__card {
+    margin-top: 30px;
+  }
+}
+@media (max-width: 1279px) {
+  .pets__navigator {
+    position: relative;
+    top: 70px;
+  }
+}
 @media screen and (max-width: 768px) {
   .wrapper {
     max-width: 768px;
@@ -482,6 +522,52 @@ MEDIA REQUESTS:
   }
   .menu .link {
     display: none;
+  }
+
+  .pets {
+    height: 1649px;
+  }
+  .pets .sophia,
+.pets .timmy,
+.pets .charly {
+    display: none;
+  }
+  .pets .pets__heading {
+    font-size: 25px;
+    line-height: 130%;
+    letter-spacing: 0.06em;
+    position: relative;
+    top: -12.5px;
+  }
+  .pets .pets-content {
+    margin: 0 auto;
+    position: relative;
+    top: 55px;
+    max-width: 500px;
+  }
+  .pets .pets__navigator {
+    display: flex;
+    height: 52px;
+    width: 300px;
+    position: relative;
+    left: -5px;
+  }
+  .pets .pets__navigator .pets__button-paginator {
+    padding: 23px 19px;
+    border: 2px solid #f1cdb3;
+    box-sizing: border-box;
+    border-radius: 100px;
+    max-width: 52px;
+    max-height: 52px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #292929;
+    margin: auto 5px;
+    font-size: 20px;
+    letter-spacing: 0.06em;
+    width: 100%;
+    height: 100%;
   }
 }
 @media (max-width: 320px) {
