@@ -221,10 +221,6 @@ $darkenButton: darken($buttonColor, 10%);
       font-size: 10px;
       height: 30px;
     }
-    &:hover {
-      background: #fff;
-      cursor: pointer;
-    }
   }
   .pets__button-inactive {
     border-color: #cdcdcd;
