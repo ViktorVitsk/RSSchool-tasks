@@ -514,11 +514,6 @@ MEDIA REQUESTS:
     background: url(../assets/icons/Burger-pets.png);
     width: 30px;
     height: 22px;
-    position: relative;
-    right: 40px;
-    position: relative;
-    top: 15px;
-    right: 30px;
   }
   .menu .link {
     display: none;
@@ -526,6 +521,7 @@ MEDIA REQUESTS:
 
   .pets {
     height: 1649px;
+    width: 320px;
   }
   .pets .sophia,
 .pets .timmy,
@@ -574,6 +570,7 @@ MEDIA REQUESTS:
   .background {
     height: 90px;
     width: 320px;
+    max-width: 320px;
     background: #fff;
     position: -webkit-sticky;
     position: sticky;
@@ -582,6 +579,7 @@ MEDIA REQUESTS:
     bottom: 0;
     right: 0;
     z-index: 3;
+    margin: 0;
   }
 
   .header {
@@ -590,6 +588,7 @@ MEDIA REQUESTS:
     display: flex;
     justify-content: space-around;
     gap: 60px;
+    margin-right: 0;
   }
   .header .logo .logo__title {
     font-size: 32px;
@@ -614,10 +613,8 @@ MEDIA REQUESTS:
     width: 30px;
     height: 22px;
     position: relative;
-    right: 40px;
-    position: relative;
+    left: -30px;
     top: 15px;
-    right: 30px;
   }
   .header .menu .link {
     display: none;
@@ -625,6 +622,7 @@ MEDIA REQUESTS:
 
   .pets {
     height: 1649px;
+    margin: 0;
   }
   .pets .sophia,
 .pets .timmy,
