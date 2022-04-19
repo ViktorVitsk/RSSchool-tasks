@@ -206,8 +206,7 @@ body {
 }
 
 .pets {
-  height: 73vw;
-  max-height: 877px;
+  height: 877px;
   background: #f6f6f6;
   display: flex;
   max-width: 1280px;
@@ -256,8 +255,8 @@ body {
 .pets-content .pets__slider .pets__card {
   background: #fafafa;
   border-radius: 9px;
-  width: 21.0939vw;
-  height: 33.985vw;
+  width: 270px;
+  height: 435px;
   max-height: 435px;
   max-width: 270px;
   text-align: center;
@@ -520,7 +519,11 @@ MEDIA REQUESTS:
   }
 
   .pets-content .pets__slider {
-    justify-content: space-around;
+    justify-content: space-evenly;
+  }
+
+  .pet {
+    height: 877px;
   }
 }
 @media (max-width: 767px) {
