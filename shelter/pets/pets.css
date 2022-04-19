@@ -227,10 +227,6 @@ body {
     height: 30px;
   }
 }
-.pets__navigator .pets__button-paginator:hover {
-  background: #fff;
-  cursor: pointer;
-}
 .pets__navigator .pets__button-inactive {
   border-color: #cdcdcd;
   color: #cdcdcd;
