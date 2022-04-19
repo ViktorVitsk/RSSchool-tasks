@@ -532,19 +532,10 @@ MEDIA REQUESTS:
     height: 60px;
     margin-bottom: 17%;
   }
-}
-@media screen and (max-width: 768px) and (max-width: 399px) {
-  .top-gradient .header {
-    display: block;
-  }
-}
-@media screen and (max-width: 768px) {
   .top-gradient .header .logo .logo__subtitle {
     line-height: 24.95px;
     padding-left: 0.3em;
   }
-}
-@media screen and (max-width: 768px) {
   .top-gradient .header .menu .link {
     font-family: Arial-regular;
     font-size: 15px;
@@ -808,7 +799,7 @@ MEDIA REQUESTS:
     right: 0.38em;
   }
 }
-@media (max-width: 650px) {
+@media (max-width: 767px) {
   .menu {
     background: url(../assets/icons/Burger-main.png);
     width: 30px;
