@@ -774,6 +774,18 @@ MEDIA REQUESTS:
     right: 0.38em;
   }
 }
+@media (max-width: 650px) {
+  .menu {
+    background: url(../assets/icons/Burger-main.png);
+    width: 30px;
+    height: 22px;
+    position: relative;
+    right: 40px;
+    .link {
+      display: none;
+    }
+  }
+}
 @media (max-width: 320px) {
   .wrapper {
     width: 320px;
