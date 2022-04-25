@@ -9,16 +9,18 @@ const MENU = document.querySelector(
   "body > div > header > div.burger-wrapper > div"
 );
 BTN.addEventListener("click", () => {
-  // BTN.style.transform = BTN.style.transform === "" ? "rotate(90deg)" : "";
-  if (BTN.style.transform === "") {
-    BTN.style.transform = "rotate(90deg)";
-    MENU.style.right = "0px";
+  if (window.matchMedia("(max-width: 767.5px)").matches) {
+    // BTN.style.transform = BTN.style.transform === "" ? "rotate(90deg)" : "";
+    if (BTN.style.transform === "") {
+      BTN.style.transform = "rotate(90deg)";
+      MENU.style.right = "0px";
 
-    document.querySelector("body").style.overflow = "hidden";
-  } else {
-    BTN.style.transform = "";
-    MENU.style.right = "-350px";
-    document.querySelector("body").style.overflow = "auto";
+      document.querySelector("body").style.overflow = "hidden";
+    } else {
+      BTN.style.transform = "";
+      MENU.style.right = "-350px";
+      document.querySelector("body").style.overflow = "auto";
+    }
   }
 });
 const LINK_HELP = document.querySelector(
@@ -28,12 +30,16 @@ const LINK_CONTACTS = document.querySelector(
   "body > div > header > div.burger-wrapper > div > nav > a.burger__menu__link-contacts.burger__link"
 );
 LINK_HELP.addEventListener("click", () => {
-  MENU.style.right = "-350px";
-  BTN.style.transform = "";
-  document.querySelector("body").style.overflow = "auto";
+  if (window.matchMedia("(max-width: 767.5px)").matches) {
+    MENU.style.right = "-350px";
+    BTN.style.transform = "";
+    document.querySelector("body").style.overflow = "auto";
+  }
 });
 LINK_CONTACTS.addEventListener("click", () => {
-  MENU.style.right = "-350px";
-  BTN.style.transform = "";
-  document.querySelector("body").style.overflow = "auto";
+  if (window.matchMedia("(max-width: 767.5px)").matches) {
+    MENU.style.right = "-350px";
+    BTN.style.transform = "";
+    document.querySelector("body").style.overflow = "auto";
+  }
 });

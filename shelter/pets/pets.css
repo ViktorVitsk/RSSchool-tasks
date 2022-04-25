@@ -750,11 +750,11 @@ MEDIA REQUESTS:
     right: 8px;
   }
 }
-.burger {
+.burger-wrapper {
   display: none;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 767px) {
   .burger-wrapper {
     height: 823px;
     width: 320px;
@@ -763,6 +763,7 @@ MEDIA REQUESTS:
     top: 0;
     z-index: 1;
     overflow: hidden;
+    display: block;
   }
 
   .burger {

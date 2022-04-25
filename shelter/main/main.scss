@@ -1157,12 +1157,12 @@ MEDIA REQUESTS:
     }
   }
 }
-.burger {
+.burger-wrapper {
   display: none;
   // position: absolute;
   // right: 0;
 }
-@media (max-width: 768px) {
+@media (max-width: 767px) {
   .burger-wrapper {
     // border: 1px solid rgb(255, 255, 255);
     height: 823px;
@@ -1172,7 +1172,7 @@ MEDIA REQUESTS:
     top: 0;
     z-index: 1;
     overflow: hidden;
-    // display: none;
+    display: block;
   }
   .burger {
     z-index: 6;
