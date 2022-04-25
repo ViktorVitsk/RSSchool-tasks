@@ -224,7 +224,10 @@ body {
   width: 100%;
 }
 .pets-content .pets__image {
-  width: 100%;
+  width: 270px;
+  height: 270px;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 .pets-content .pets__heading {
   font-family: Georgia-regular;

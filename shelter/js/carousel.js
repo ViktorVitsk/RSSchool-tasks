@@ -109,6 +109,8 @@ const ITEM_LEFT = document.querySelector("#item-left");
 const ITEM_RIGHT = document.querySelector("#item-right");
 // контент посередине, тот что мы видим
 const ITEM_ACTIVE = document.querySelector("#item-active");
+createLeft();
+createRight();
 /*
  * Добавляет в карусель класс .transition-left,
  * который смещает контент влево
@@ -139,51 +141,17 @@ BTN_RIGHT.addEventListener("click", moveRight);
  */
 CAROUSEL.addEventListener("animationend", (animationEvent) => {
   // если анимация была запущена функцией move-left
+  // let centerCards = readCenterCards();
+
   if (animationEvent.animationName === "move-left") {
     // удаляет с карусели класс transition-left
     CAROUSEL.classList.remove("transition-left");
-    // содержимое контента слева
-    const leftItems = ITEM_LEFT.innerHTML;
-    // добавляем в середину то, что слева
-    ITEM_ACTIVE.innerHTML = leftItems;
-
-    // // первая карта
-    // const card1 = document.createElement("div");
-    // // добавляем карте класс card
-    // card1.classList.add("card");
-    // // присваиваем карте значение от
-    // card1.innerText = PETS[Math.floor(Math.random() * 8)];
-
-    // const card2 = document.createElement("div");
-    // card2.classList.add("card");
-    // card2.innerText = PETS[Math.floor(Math.random() * 8)];
-
-    // const card3 = document.createElement("div");
-    // card3.classList.add("card");
-    // card3.innerText = PETS[Math.floor(Math.random() * 8)];
-
-    // ITEM_LEFT.innerHTML = "";
-    // ITEM_LEFT.appendChild(card1);
-    // ITEM_LEFT.appendChild(card2);
-    // ITEM_LEFT.appendChild(card3);
-    ITEM_LEFT.innerHTML = "";
-    for (let i = 0; i < 3; i++) {
-      ITEM_LEFT.appendChild(randomCard());
-    }
+    createLeft();
     // если анимация была запущена функцией move-left
   } else {
     // удаляет с карусели класс transition-left
     CAROUSEL.classList.remove("transition-right");
-
-    // содержимое контента справа
-    let rightItems = ITEM_RIGHT.innerHTML;
-    // добавляем в середину то, что справа
-    ITEM_ACTIVE.innerHTML = rightItems;
-
-    ITEM_RIGHT.innerHTML = "";
-    for (let i = 0; i < 3; i++) {
-      ITEM_RIGHT.appendChild(randomCard());
-    }
+    createRight();
   }
   // добавляет слушатель по клику на левую стрелку
   BTN_LEFT.addEventListener("click", moveLeft);
@@ -191,16 +159,47 @@ CAROUSEL.addEventListener("animationend", (animationEvent) => {
   BTN_RIGHT.addEventListener("click", moveRight);
 });
 
-function randomCard() {
+function randomCard(names) {
   const result = document.querySelector(".pets__card").cloneNode(true);
-  // result.classList.add("card");
   const img = result.querySelector("img");
-  const currentPet = PETS[Math.floor(Math.random() * 8)];
-  img.setAttribute("src", currentPet.img);
   const txt = result.querySelector("div");
+  let currentPet = PETS[Math.floor(Math.random() * 8)];
+  while (names.includes(currentPet.name)) {
+    currentPet = PETS[Math.floor(Math.random() * 8)];
+  }
+  names.push(currentPet.name);
+  img.setAttribute("src", currentPet.img);
   txt.innerText = currentPet.name;
   return result;
 }
-function createCard() {
-  const result = document.createElement("div");
+
+function nameOfCenterCards() {
+  const arrCards = document.querySelectorAll("#item-active > div > div");
+  let arrNames = [];
+  arrCards.forEach((el) => {
+    arrNames.push(el.textContent);
+  });
+  return arrNames;
+}
+function createLeft() {
+  // содержимое контента слева
+  const leftItems = ITEM_LEFT.innerHTML;
+  // добавляем в середину то, что слева
+  ITEM_ACTIVE.innerHTML = leftItems;
+  ITEM_LEFT.innerHTML = "";
+  let currentNames = nameOfCenterCards();
+  for (let i = 0; i < 3; i++) {
+    ITEM_LEFT.appendChild(randomCard(currentNames));
+  }
+}
+function createRight() {
+  // содержимое контента справа
+  let rightItems = ITEM_RIGHT.innerHTML;
+  // добавляем в середину то, что справа
+  ITEM_ACTIVE.innerHTML = rightItems;
+  ITEM_RIGHT.innerHTML = "";
+  let currentNames = nameOfCenterCards();
+  for (let i = 0; i < 3; i++) {
+    ITEM_RIGHT.appendChild(randomCard(currentNames));
+  }
 }
