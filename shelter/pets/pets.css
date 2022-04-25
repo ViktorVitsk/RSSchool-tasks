@@ -97,6 +97,8 @@ body {
 .header .menu {
   display: flex;
   justify-items: center;
+  z-index: 5;
+  transition: 1s;
 }
 .header .menu .link {
   margin-left: 35px;
@@ -746,5 +748,78 @@ MEDIA REQUESTS:
   .footer__content .footer__boston .footer__boston-address {
     position: relative;
     right: 8px;
+  }
+}
+.burger {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .burger-wrapper {
+    height: 823px;
+    width: 320px;
+    position: fixed;
+    right: 0;
+    top: 0;
+    z-index: 1;
+    overflow: hidden;
+  }
+
+  .burger {
+    z-index: 6;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    right: -350px;
+    top: 0;
+    transition: 2s;
+    background: #292929;
+    height: 100%;
+    width: 100%;
+  }
+  .burger .burger__logo {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 30px 0 158px 10px;
+  }
+  .burger .burger__logo__title {
+    font-family: Georgia-regular;
+    font-size: 32px;
+    letter-spacing: 0.06em;
+    color: #f1cdb3;
+    line-height: 110%;
+  }
+  .burger .burger__logo__subtitle {
+    font-family: Arial-regular;
+    font-size: 13px;
+    line-height: 15px;
+    letter-spacing: 0.1em;
+    padding-left: 0.1em;
+    color: #fff;
+  }
+  .burger .burger__menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 243px;
+    height: 327px;
+    align-items: center;
+    margin: 0 auto;
+  }
+  .burger .burger__menu .burger__link {
+    font-family: Arial-regular;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 32px;
+    color: #cdcdcd;
+    letter-spacing: 0;
+    line-height: 160%;
+    margin: 0;
+  }
+  .burger .burger__menu .burger__menu__link-pets {
+    border-bottom: 3px solid #f1cdb3;
+    color: #fafafa;
+    margin: 0;
   }
 }/*# sourceMappingURL=pets.css.map */
