@@ -6,10 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="normalize.css" />
     <link rel="stylesheet" href="main.css" />
+    <script type="text/javascript" src="../js/pets.json" defer></script>
     <script src="../js/burger.js" defer></script>
+    <script src="../js/carousel.js" defer></script>
     <title>Cozy House</title>
   </head>
   <body>
+    <div></div>
     <div class="top-gradient">
       <header class="header wrapper">
         <div class="logo">
@@ -115,49 +118,121 @@
           are looking for a house
         </h3>
         <div class="pets__slider">
-          <a class="pets__left pets__button-arrow" href="javascript:void(0);">
-            <img src="../assets/icons/ArrowL.png" alt="arrow"
-          /></a>
-
-          <div class="pets__card katrine">
-            <img
-              class="pets__image"
-              src="../assets/images/pets/katrine.png"
-              alt="katrine"
-            />
-
-            <div class="pets__name">Katrine</div>
-            <a class="pets__button-secondary" href="javascript:void(0);"
-              >Learn more</a
-            >
+          <div class="pets__left pets__button-arrow btn" id="btn-left">
+            <img src="../assets/icons/ArrowL.png" alt="arrow" />
           </div>
-          <div class="pets__card jennifer">
-            <img
-              class="pets__image"
-              src="../assets/images/pets/jennifer.png"
-              alt="Jennifer"
-            />
+          <div class="carousel-wrapper" id="carousel-wrapper">
+            <div class="carousel" id="carousel">
+              <div class="item" id="item-left">
+                <div class="pets__card">
+                  <img
+                    class="pets__image"
+                    src="../assets/images/pets/katrine.png"
+                  />
 
-            <div class="pets__name">Jennifer</div>
-            <a class="pets__button-secondary" href="javascript:void(0);"
-              >Learn more</a
-            >
-          </div>
-          <div class="pets__card woody">
-            <img
-              class="pets__image"
-              src="../assets/images/pets/woody.png"
-              alt="Woody"
-            />
+                  <div class="pets__name">Katrine</div>
+                  <a class="pets__button-secondary" href="javascript:void(0);"
+                    >Learn more</a
+                  >
+                </div>
+                <div class="pets__card">
+                  <img
+                    class="pets__image"
+                    src="../assets/images/pets/jennifer.png"
+                  />
 
-            <div class="pets__name">Woody</div>
-            <a class="pets__button-secondary" href="javascript:void(0);"
-              >Learn more</a
-            >
+                  <div class="pets__name">Jennifer</div>
+                  <a class="pets__button-secondary" href="javascript:void(0);"
+                    >Learn more</a
+                  >
+                </div>
+                <div class="pets__card">
+                  <img
+                    class="pets__image"
+                    src="../assets/images/pets/woody.png"
+                  />
+                  <div class="pets__name">Woody</div>
+
+                  <a class="pets__button-secondary" href="javascript:void(0);"
+                    >Learn more</a
+                  >
+                </div>
+              </div>
+              <div class="item" id="item-active">
+                <div class="pets__card">
+                  <img
+                    class="pets__image"
+                    src="../assets/images/pets/katrine.png"
+                  />
+
+                  <div class="pets__name">Katrine</div>
+                  <a class="pets__button-secondary" href="javascript:void(0);"
+                    >Learn more</a
+                  >
+                </div>
+                <div class="pets__card">
+                  <img
+                    class="pets__image"
+                    src="../assets/images/pets/jennifer.png"
+                  />
+
+                  <div class="pets__name">Jennifer</div>
+                  <a class="pets__button-secondary" href="javascript:void(0);"
+                    >Learn more</a
+                  >
+                </div>
+                <div class="pets__card">
+                  <img
+                    class="pets__image"
+                    src="../assets/images/pets/woody.png"
+                  />
+                  <div class="pets__name">Woody</div>
+
+                  <a class="pets__button-secondary" href="javascript:void(0);"
+                    >Learn more</a
+                  >
+                </div>
+              </div>
+              <div class="item" id="item-right">
+                <div class="pets__card">
+                  <img
+                    class="pets__image"
+                    src="../assets/images/pets/katrine.png"
+                  />
+
+                  <div class="pets__name">Katrine</div>
+                  <a class="pets__button-secondary" href="javascript:void(0);"
+                    >Learn more</a
+                  >
+                </div>
+                <div class="pets__card">
+                  <img
+                    class="pets__image"
+                    src="../assets/images/pets/jennifer.png"
+                  />
+
+                  <div class="pets__name">Jennifer</div>
+                  <a class="pets__button-secondary" href="javascript:void(0);"
+                    >Learn more</a
+                  >
+                </div>
+                <div class="pets__card">
+                  <img
+                    class="pets__image"
+                    src="../assets/images/pets/woody.png"
+                  />
+                  <div class="pets__name">Woody</div>
+
+                  <a class="pets__button-secondary" href="javascript:void(0);"
+                    >Learn more</a
+                  >
+                </div>
+              </div>
+            </div>
           </div>
-          <a class="pets__right pets__button-arrow" href="javascript:void(0);">
-            <img src="../assets/icons/ArrowR.png" alt="arrow"
-          /></a>
+          <div class="pets__right pets__button-arrow btn" id="btn-right">
+            <img src="../assets/icons/ArrowR.png" alt="arrow" />
+          </div>
         </div>
         <!-- <div class="pets__button-primary"> -->
         <a class="pets__button-primary" href="../pets/index.html"

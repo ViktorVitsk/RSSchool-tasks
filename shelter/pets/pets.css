@@ -748,7 +748,7 @@ MEDIA REQUESTS:
     top: 0;
     z-index: 1;
     overflow: hidden;
-    display: block;
+    display: none;
   }
 
   .burger {
@@ -808,4 +808,13 @@ MEDIA REQUESTS:
     color: #fafafa;
     margin: 0;
   }
+}
+.darken {
+  background: rgba(41, 41, 41, 0.6);
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: -500px;
+  left: 0;
+  z-index: 3;
 }/*# sourceMappingURL=pets.css.map */
