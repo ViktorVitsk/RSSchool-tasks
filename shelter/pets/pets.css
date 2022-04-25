@@ -349,18 +349,11 @@ MEDIA REQUESTS:
     -moz-column-gap: 2.5em;
          column-gap: 2.5em;
   }
-}
-@media (max-width: 1279px) and (max-width: 580px) {
-  .pets__cards-container {
-    overflow-y: scroll;
-  }
-}
-@media (max-width: 1279px) {
+
   .pets__card {
     margin-top: 30px;
   }
-}
-@media (max-width: 1279px) {
+
   .pets__navigator {
     position: relative;
     top: 70px;
@@ -456,11 +449,6 @@ MEDIA REQUESTS:
     align-items: center;
     -moz-column-gap: 2.5em;
          column-gap: 2.5em;
-  }
-}
-@media screen and (max-width: 768px) and (max-width: 580px) {
-  .pets__cards-container {
-    overflow-y: scroll;
   }
 }
 @media screen and (max-width: 768px) {
@@ -629,9 +617,6 @@ MEDIA REQUESTS:
 .pets .timmy,
 .pets .charly {
     display: none;
-  }
-  .pets .pets__cards-container {
-    overflow-y: hidden;
   }
   .pets .pets__heading {
     font-size: 25px;

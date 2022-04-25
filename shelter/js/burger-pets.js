@@ -21,7 +21,7 @@ BTN.addEventListener("click", () => {
       BTN.style.transform = "";
       MENU.style.right = "-350px";
       document.querySelector("body").style.overflow = "auto";
-      BTN.style.background = "url(../assets/icons/Burger-pets.png)";
+      BTN.style.background = "";
     }
   }
 });
@@ -43,6 +43,7 @@ LINK_CONTACTS.addEventListener("click", () => {
     MENU.style.right = "-350px";
     BTN.style.transform = "";
     document.querySelector("body").style.overflow = "auto";
-    BTN.style.background = "url(../assets/icons/Burger-pets.png)";
+    // BTN.style.background = "url(../assets/icons/Burger-pets.png)";
+    BTN.style.background = "";
   }
 });

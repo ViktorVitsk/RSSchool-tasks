@@ -337,7 +337,7 @@ MEDIA REQUESTS:
     align-items: center;
     column-gap: 2.5em;
     @media (max-width: 580px) {
-      overflow-y: scroll;
+      // overflow-y: scroll;
     }
   }
   .pets__card {
@@ -438,7 +438,7 @@ MEDIA REQUESTS:
     align-items: center;
     column-gap: 2.5em;
     @media (max-width: 580px) {
-      overflow-y: scroll;
+      // overflow-y: scroll;
     }
   }
   .pets__card {
@@ -615,7 +615,7 @@ MEDIA REQUESTS:
       display: none;
     }
     .pets__cards-container {
-      overflow-y: hidden;
+      // overflow-y: hidden;
     }
     .pets__heading {
       font-size: 25px;
