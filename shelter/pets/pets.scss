@@ -743,7 +743,7 @@ MEDIA REQUESTS:
 @media (max-width: 767px) {
   .burger-wrapper {
     // border: 1px solid rgb(255, 255, 255);
-    height: 823px;
+    height: 100vh;
     width: 320px;
     position: fixed;
     right: 0;
@@ -812,93 +812,3 @@ MEDIA REQUESTS:
     }
   }
 }
-
-// @media (max-width: 608px) {
-//   .header {
-//     align-items: start;
-//     .menu {
-//       display: none;
-//     }
-
-//     #burger {
-//       background: #292929;
-//       display: flex;
-//       flex-direction: column;
-
-//       width: 320px;
-//       height: 823px;
-//       margin: 0 auto;
-//       padding-top: 30px;
-//       gap: 158px;
-//       .burger__top {
-//         margin: 0 auto;
-//         width: 300px;
-//         height: 60px;
-//         display: flex;
-
-//         gap: 43px;
-//         .burger__img {
-//           background: url(../assets/icons/Burger-main-open.png);
-//           width: 30px;
-//           height: 30px;
-//           align-self: center;
-//         }
-//         .burger__img:active {
-//           .header {
-//             #burger {
-//               display: none;
-//             }
-//           }
-//         }
-//       }
-//       .logo {
-//         display: flex;
-//         flex-direction: column;
-//         gap: 10px;
-//         .logo__title {
-//           font-family: Georgia-regular;
-//           font-size: 32px;
-//           line-height: 110%;
-//           letter-spacing: 0.06em;
-//           color: $buttonColor;
-//         }
-//         .logo__subtitle {
-//           font-family: Arial-regular;
-//           font-size: 13px;
-//           line-height: 15px;
-//           letter-spacing: 0.1em;
-//           color: #ffffff;
-//           padding-left: 4.3px;
-//         }
-//       }
-//       .menu {
-//         display: flex;
-//         flex-direction: column;
-//         justify-content: space-between;
-//         width: 243px;
-//         height: 327px;
-//         align-items: center;
-//         margin: 0 auto;
-
-//         .link {
-//           font-family: Arial-regular;
-//           font-style: normal;
-//           font-weight: 400;
-//           font-size: 32px;
-//           color: #cdcdcd;
-//           letter-spacing: 0;
-//           line-height: 160%;
-//           margin: 0;
-//         }
-//         .menu__link-pets {
-//           // border-bottom: 3px solid $buttonColor;
-//           color: #fafafa;
-//           margin: 0;
-//         }
-//       }
-//     }
-//   }
-// }
-// #burger_active {
-//   background: #000;
-// }
