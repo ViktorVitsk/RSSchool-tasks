@@ -252,6 +252,7 @@ $darkenButton: darken($buttonColor, 10%);
       color: #292929;
       &:hover {
         background: #fff;
+        cursor: pointer;
       }
     }
     .pets__card {

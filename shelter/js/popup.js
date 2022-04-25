@@ -16,6 +16,6 @@ const CARDS_ARRAY = [
 ];
 CARDS_ARRAY.forEach((pet) => {
   pet.addEventListener("click", (event) => {
-    console.log(event);
+    // console.log(event.classList);
   });
 });

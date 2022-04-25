@@ -253,6 +253,7 @@ body {
 }
 .pets-content .pets__slider .pets__button-arrow:hover {
   background: #fff;
+  cursor: pointer;
 }
 .pets-content .pets__slider .pets__card {
   background: #fafafa;
