@@ -8,18 +8,20 @@ const BTN = document.querySelector("body > div > header > nav");
 const MENU = document.querySelector(
   "body > div > header > div.burger-wrapper > div"
 );
+
 BTN.addEventListener("click", () => {
   if (window.matchMedia("(max-width: 767.5px)").matches) {
     // BTN.style.transform = BTN.style.transform === "" ? "rotate(90deg)" : "";
     if (BTN.style.transform === "") {
+      BTN.style.background = "url(../assets/icons/Burger-main.png)";
       BTN.style.transform = "rotate(90deg)";
       MENU.style.right = "0px";
-
       document.querySelector("body").style.overflow = "hidden";
     } else {
       BTN.style.transform = "";
       MENU.style.right = "-350px";
       document.querySelector("body").style.overflow = "auto";
+      BTN.style.background = "";
     }
   }
 });
@@ -41,5 +43,7 @@ LINK_CONTACTS.addEventListener("click", () => {
     MENU.style.right = "-350px";
     BTN.style.transform = "";
     document.querySelector("body").style.overflow = "auto";
+    // BTN.style.background = "url(../assets/icons/Burger-pets.png)";
+    BTN.style.background = "";
   }
 });
