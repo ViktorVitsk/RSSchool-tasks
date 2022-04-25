@@ -54,7 +54,7 @@ body {
   margin: auto;
   height: 75.67vw;
   max-height: 908px;
-  background: url(noise_lines_transparent@2X.png), radial-gradient(100% 215.42% at 0% 0%, #5b483a 0%, #262425 100%) #211f20;
+  background: radial-gradient(100% 215.42% at 0% 0%, #5b483a 0%, #262425 100%) #211f20;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -431,7 +431,7 @@ body {
 }
 
 .footer {
-  background: url(noise_lines_transparent@2X.png), radial-gradient(110.67% 538.64% at 5.73% 50%, #513d2f 0%, #1a1a1c 100%), #211f20;
+  background: radial-gradient(110.67% 538.64% at 5.73% 50%, #513d2f 0%, #1a1a1c 100%), #211f20;
   height: 350px;
   display: flex;
   max-width: 1280px;
