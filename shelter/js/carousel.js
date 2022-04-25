@@ -1,7 +1,7 @@
-const PETS_JSON = [
+const PETS = [
   {
     name: "Jennifer",
-    img: "../assets/images/jennifer.png",
+    img: "../assets/images/pets/jennifer.png",
     type: "Dog",
     breed: "Labrador",
     description:
@@ -13,7 +13,7 @@ const PETS_JSON = [
   },
   {
     name: "Sophia",
-    img: "../assets/images/sophia.png",
+    img: "../assets/images/pets/sophia.png",
     type: "Dog",
     breed: "Shih tzu",
     description:
@@ -25,7 +25,7 @@ const PETS_JSON = [
   },
   {
     name: "Woody",
-    img: "../assets/images/woody.png",
+    img: "../assets/images/pets/woody.png",
     type: "Dog",
     breed: "Golden Retriever",
     description:
@@ -37,7 +37,7 @@ const PETS_JSON = [
   },
   {
     name: "Scarlett",
-    img: "../assets/images/scarlett.png",
+    img: "../assets/images/pets/scarlett.png",
     type: "Dog",
     breed: "Jack Russell Terrier",
     description:
@@ -49,7 +49,7 @@ const PETS_JSON = [
   },
   {
     name: "Katrine",
-    img: "../assets/images/katrine.png",
+    img: "../assets/images/pets/katrine.png",
     type: "Cat",
     breed: "British Shorthair",
     description:
@@ -61,7 +61,7 @@ const PETS_JSON = [
   },
   {
     name: "Timmy",
-    img: "../assets/images/timmy.png",
+    img: "../assets/images/pets/timmy.png",
     type: "Cat",
     breed: "British Shorthair",
     description:
@@ -73,7 +73,7 @@ const PETS_JSON = [
   },
   {
     name: "Freddie",
-    img: "../assets/images/freddie.png",
+    img: "../assets/images/pets/freddie.png",
     type: "Cat",
     breed: "British Shorthair",
     description:
@@ -85,7 +85,7 @@ const PETS_JSON = [
   },
   {
     name: "Charly",
-    img: "../assets/images/charly.png",
+    img: "../assets/images/pets/charly.png",
     type: "Dog",
     breed: "Jack Russell Terrier",
     description:
@@ -96,3 +96,111 @@ const PETS_JSON = [
     parasites: ["lice", "fleas"],
   },
 ];
+
+// стрелка влево
+const BTN_LEFT = document.querySelector("#btn-left");
+// стрелка вправо
+const BTN_RIGHT = document.querySelector("#btn-right");
+// контент между стрелок
+const CAROUSEL = document.querySelector("#carousel");
+// контент слева от того, что мы видим
+const ITEM_LEFT = document.querySelector("#item-left");
+// контент справа от того, что мы видим
+const ITEM_RIGHT = document.querySelector("#item-right");
+// контент посередине, тот что мы видим
+const ITEM_ACTIVE = document.querySelector("#item-active");
+/*
+ * Добавляет в карусель класс .transition-left,
+ * который смещает контент влево
+ * Удаляет слушатель по клику с левой и правой стрелки
+ */
+const moveLeft = () => {
+  CAROUSEL.classList.add("transition-left");
+  BTN_LEFT.removeEventListener("click", moveLeft);
+  BTN_RIGHT.removeEventListener("click", moveRight);
+};
+/*
+ * Добавляет в карусель класс .transition-right,
+ * который смещает контент вправо
+ * Удаляет слушатель по клику с левой и правой стрелки
+ */
+const moveRight = () => {
+  CAROUSEL.classList.add("transition-right");
+  BTN_LEFT.removeEventListener("click", moveLeft);
+  BTN_RIGHT.removeEventListener("click", moveRight);
+};
+// добавляет слушатель по клику на левую стрелку
+BTN_LEFT.addEventListener("click", moveLeft);
+// добавляет слушатель по клику на правую стрелку
+BTN_RIGHT.addEventListener("click", moveRight);
+/*
+ * слушает контент на окончание анимации
+ * удаляет с карусели класс .transition-left/-right
+ */
+CAROUSEL.addEventListener("animationend", (animationEvent) => {
+  // если анимация была запущена функцией move-left
+  if (animationEvent.animationName === "move-left") {
+    // удаляет с карусели класс transition-left
+    CAROUSEL.classList.remove("transition-left");
+    // содержимое контента слева
+    const leftItems = ITEM_LEFT.innerHTML;
+    // добавляем в середину то, что слева
+    ITEM_ACTIVE.innerHTML = leftItems;
+
+    // // первая карта
+    // const card1 = document.createElement("div");
+    // // добавляем карте класс card
+    // card1.classList.add("card");
+    // // присваиваем карте значение от
+    // card1.innerText = PETS[Math.floor(Math.random() * 8)];
+
+    // const card2 = document.createElement("div");
+    // card2.classList.add("card");
+    // card2.innerText = PETS[Math.floor(Math.random() * 8)];
+
+    // const card3 = document.createElement("div");
+    // card3.classList.add("card");
+    // card3.innerText = PETS[Math.floor(Math.random() * 8)];
+
+    // ITEM_LEFT.innerHTML = "";
+    // ITEM_LEFT.appendChild(card1);
+    // ITEM_LEFT.appendChild(card2);
+    // ITEM_LEFT.appendChild(card3);
+    ITEM_LEFT.innerHTML = "";
+    for (let i = 0; i < 3; i++) {
+      ITEM_LEFT.appendChild(randomCard());
+    }
+    // если анимация была запущена функцией move-left
+  } else {
+    // удаляет с карусели класс transition-left
+    CAROUSEL.classList.remove("transition-right");
+
+    // содержимое контента справа
+    let rightItems = ITEM_RIGHT.innerHTML;
+    // добавляем в середину то, что справа
+    ITEM_ACTIVE.innerHTML = rightItems;
+
+    ITEM_RIGHT.innerHTML = "";
+    for (let i = 0; i < 3; i++) {
+      ITEM_RIGHT.appendChild(randomCard());
+    }
+  }
+  // добавляет слушатель по клику на левую стрелку
+  BTN_LEFT.addEventListener("click", moveLeft);
+  // добавляет слушатель по клику на правую стрелку
+  BTN_RIGHT.addEventListener("click", moveRight);
+});
+
+function randomCard() {
+  const result = document.querySelector(".pets__card").cloneNode(true);
+  // result.classList.add("card");
+  const img = result.querySelector("img");
+  const currentPet = PETS[Math.floor(Math.random() * 8)];
+  img.setAttribute("src", currentPet.img);
+  const txt = result.querySelector("div");
+  txt.innerText = currentPet.name;
+  return result;
+}
+function createCard() {
+  const result = document.createElement("div");
+}

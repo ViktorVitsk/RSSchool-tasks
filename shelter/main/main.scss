@@ -1247,3 +1247,85 @@ MEDIA REQUESTS:
   left: 0;
   z-index: 1;
 }
+/*
+* Carousel
+*/
+
+.pets-content .pets__slider .jennifer {
+  margin: 0;
+}
+.btn {
+  cursor: pointer;
+  font-size: 50px;
+  width: 50px;
+}
+
+.item,
+.carousel,
+.card {
+  display: flex;
+}
+
+.carousel-wrapper {
+  width: 990px;
+  margin: 0 10px;
+  overflow: hidden;
+}
+
+// .card {
+//   width: 100px;
+//   height: 100px;
+//   background: red;
+//   justify-content: center;
+//   align-items: center;
+//   font-size: 50px;
+//   cursor: pointer;
+// }
+
+.card.activated {
+  // background: #ccc;
+}
+
+.item:first-child .card {
+  // background: LawnGreen;
+}
+
+.item:last-child .card {
+  // background: LightSkyBlue;
+}
+
+.item {
+  gap: 90px;
+}
+.carousel {
+  position: relative;
+  left: -990px;
+}
+@keyframes move-right {
+  from {
+    left: -990px;
+  }
+  to {
+    left: -1980px;
+  }
+}
+.transition-right {
+  animation-name: move-right;
+  animation-duration: 3s;
+}
+@keyframes move-left {
+  from {
+    left: -990px;
+  }
+  to {
+    left: 0;
+  }
+}
+.transition-left {
+  animation-name: move-left;
+  animation-duration: 3s;
+}
+.pets-content .pets__slider .pets__card {
+  justify-content: center;
+  align-items: center;
+}

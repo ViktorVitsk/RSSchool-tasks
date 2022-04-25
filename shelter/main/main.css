@@ -1258,4 +1258,91 @@ MEDIA REQUESTS:
   bottom: 0;
   left: 0;
   z-index: 1;
+}
+
+/*
+* Carousel
+*/
+.pets-content .pets__slider .jennifer {
+  margin: 0;
+}
+
+.btn {
+  cursor: pointer;
+  font-size: 50px;
+  width: 50px;
+}
+
+.item,
+.carousel,
+.card {
+  display: flex;
+}
+
+.carousel-wrapper {
+  width: 990px;
+  margin: 0 10px;
+  overflow: hidden;
+}
+
+.item {
+  gap: 90px;
+}
+
+.carousel {
+  position: relative;
+  left: -990px;
+}
+
+@-webkit-keyframes move-right {
+  from {
+    left: -990px;
+  }
+  to {
+    left: -1980px;
+  }
+}
+
+@keyframes move-right {
+  from {
+    left: -990px;
+  }
+  to {
+    left: -1980px;
+  }
+}
+.transition-right {
+  -webkit-animation-name: move-right;
+          animation-name: move-right;
+  -webkit-animation-duration: 3s;
+          animation-duration: 3s;
+}
+
+@-webkit-keyframes move-left {
+  from {
+    left: -990px;
+  }
+  to {
+    left: 0;
+  }
+}
+
+@keyframes move-left {
+  from {
+    left: -990px;
+  }
+  to {
+    left: 0;
+  }
+}
+.transition-left {
+  -webkit-animation-name: move-left;
+          animation-name: move-left;
+  -webkit-animation-duration: 3s;
+          animation-duration: 3s;
+}
+
+.pets-content .pets__slider .pets__card {
+  justify-content: center;
+  align-items: center;
 }/*# sourceMappingURL=main.css.map */
