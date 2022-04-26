@@ -232,13 +232,13 @@ body {
 .pets__navigator .pets__button-inactive {
   border-color: #cdcdcd;
   color: #cdcdcd;
+  cursor: alias;
 }
 .pets__navigator .pets__button-active {
   background: #f1cdb3;
 }
-.pets__navigator .pets__button:hover:hover {
-  background: #fff;
-  cursor: pointer;
+.pets__navigator .pets__button {
+  cursor: alias;
 }
 
 .footer {

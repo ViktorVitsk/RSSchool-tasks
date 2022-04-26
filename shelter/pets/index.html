@@ -7,7 +7,8 @@
     <link rel="stylesheet" href="../main/normalize.css" />
     <link rel="stylesheet" href="pets.css" />
     <script src="../js/burger-pets.js" defer></script>
-    <script src="../js/popup.js" defer></script>
+    <!-- <script src="../js/popup.js" defer></script> -->
+    <script src="../js/pagination.js" defer></script>
     <title>Cozy House-pets</title>
   </head>
   <body>
@@ -70,73 +71,73 @@
           Our friends who <br />
           are looking for a house
         </h1>
-        <div class="pets__cards-container">
-          <div class="pets__card katrine">
+        <div class="pets__cards-container" id="all-cards">
+          <div class="pets__card">
             <div class="pets__image">
-              <img src="../assets/images/pets/katrine.png" alt="katrine" />
+              <img src="../assets/images/pets/katrine.png" />
             </div>
             <div class="pets__name">Katrine</div>
             <a class="pets__button-secondary" href="javascript:void(0);"
               >Learn more</a
             >
           </div>
-          <div class="pets__card jennifer">
+          <div class="pets__card">
             <div class="pets__image">
-              <img src="../assets/images/pets/jennifer.png" alt="Jennifer" />
+              <img src="../assets/images/pets/jennifer.png" />
             </div>
             <div class="pets__name">Jennifer</div>
             <a class="pets__button-secondary" href="javascript:void(0);"
               >Learn more</a
             >
           </div>
-          <div class="pets__card woody">
+          <div class="pets__card">
             <div class="pets__image">
-              <img src="../assets/images/pets/woody.png" alt="Woody" />
+              <img src="../assets/images/pets/woody.png" />
             </div>
             <div class="pets__name">Woody</div>
             <a class="pets__button-secondary" href="javascript:void(0);"
               >Learn more</a
             >
           </div>
-          <div class="pets__card sophia">
+          <div class="pets__card">
             <div class="pets__image">
-              <img src="../assets/images/pets/sophia.png" alt="Sophia" />
+              <img src="../assets/images/pets/sophia.png" />
             </div>
             <div class="pets__name">Sophia</div>
             <a class="pets__button-secondary" href="javascript:void(0);"
               >Learn more</a
             >
           </div>
-          <div class="pets__card timmy">
+          <div class="pets__card">
             <div class="pets__image">
-              <img src="../assets/images/pets/timmy.png" alt="Timmy" />
+              <img src="../assets/images/pets/timmy.png" />
             </div>
             <div class="pets__name">Timmy</div>
             <a class="pets__button-secondary" href="javascript:void(0);"
               >Learn more</a
             >
           </div>
-          <div class="pets__card charly">
+          <div class="pets__card">
             <div class="pets__image">
-              <img src="../assets/images/pets/charly.png" alt="Charly" />
+              <img src="../assets/images/pets/charly.png" />
             </div>
             <div class="pets__name">Charly</div>
             <a class="pets__button-secondary" href="javascript:void(0);"
               >Learn more</a
             >
           </div>
-          <div class="pets__card scarlett">
+          <div class="pets__card">
             <div class="pets__image">
-              <img src="../assets/images/pets/scarlett.png" alt="Scarlett" />
+              <img src="../assets/images/pets/scarlett.png" />
             </div>
             <div class="pets__name">Scarlett</div>
             <a class="pets__button-secondary" href="javascript:void(0);"
               >Learn more</a
             >
           </div>
-          <div class="pets__card freddie">
+          <div class="pets__card">
             <div class="pets__image">
-              <img src="../assets/images/pets/freddie.png" alt="Freddie" />
+              <img src="../assets/images/pets/freddie.png" />
             </div>
             <div class="pets__name">Freddie</div>
             <a class="pets__button-secondary" href="javascript:void(0);"
@@ -145,12 +146,10 @@
           </div>
         </div>
         <div class="pets__navigator">
-          <div class="pets__button-paginator pets__button-inactive disabled">
+          <div class="pets__button-paginator pets__button-inactive">
             &lt;&lt;
           </div>
-          <div class="pets__button-paginator pets__button-inactive disabled">
-            &lt;
-          </div>
+          <div class="pets__button-paginator pets__button-inactive">&lt;</div>
           <div class="pets__button-paginator pets__button-active">1</div>
           <div class="pets__button-paginator pets__button">&gt;</div>
           <div class="pets__button-paginator pets__button">&gt;&gt;</div>
