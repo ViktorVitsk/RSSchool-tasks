@@ -1274,28 +1274,6 @@ MEDIA REQUESTS:
   overflow: hidden;
 }
 
-// .card {
-//   width: 100px;
-//   height: 100px;
-//   background: red;
-//   justify-content: center;
-//   align-items: center;
-//   font-size: 50px;
-//   cursor: pointer;
-// }
-
-.card.activated {
-  // background: #ccc;
-}
-
-.item:first-child .card {
-  // background: LawnGreen;
-}
-
-.item:last-child .card {
-  // background: LightSkyBlue;
-}
-
 .item {
   gap: 90px;
 }
@@ -1330,4 +1308,83 @@ MEDIA REQUESTS:
 .pets-content .pets__slider .pets__card {
   justify-content: center;
   align-items: center;
+}
+
+@media (max-width: 1279px) {
+  .carousel-wrapper {
+    width: 580px;
+    margin: 0 10px;
+    overflow: hidden;
+  }
+
+  .item {
+    gap: 40px;
+  }
+  .carousel {
+    position: relative;
+    left: -580px;
+  }
+  @keyframes move-right {
+    from {
+      left: -580px;
+    }
+    to {
+      left: -1160px;
+    }
+  }
+  .transition-right {
+    animation-name: move-right;
+    animation-duration: 3s;
+  }
+  @keyframes move-left {
+    from {
+      left: -580px;
+    }
+    to {
+      left: 0;
+    }
+  }
+}
+@media (max-width: 768px) {
+  // .pets-content .pets__slider {
+  //   flex-direction: column;
+  // }
+  // #btn-left {
+  //   order: 3;
+  //   position: relative;
+  //   left: -10px;
+  // }
+  .carousel-wrapper {
+    width: 270px;
+    margin: 0 0px;
+    overflow: hidden;
+  }
+
+  .item {
+    gap: 40px;
+  }
+  .carousel {
+    position: relative;
+    left: -270px;
+  }
+  @keyframes move-right {
+    from {
+      left: -270px;
+    }
+    to {
+      left: -540px;
+    }
+  }
+  .transition-right {
+    animation-name: move-right;
+    animation-duration: 3s;
+  }
+  @keyframes move-left {
+    from {
+      left: -270px;
+    }
+    to {
+      left: 0;
+    }
+  }
 }

@@ -109,8 +109,17 @@ const ITEM_LEFT = document.querySelector("#item-left");
 const ITEM_RIGHT = document.querySelector("#item-right");
 // контент посередине, тот что мы видим
 const ITEM_ACTIVE = document.querySelector("#item-active");
-createLeft();
-createRight();
+let numCards = 3;
+if (window.matchMedia("(max-width: 1279px)").matches) {
+  numCards = 2;
+}
+if (window.matchMedia("(max-width: 767.5px)").matches) {
+  numCards = 1;
+}
+createLeft(numCards);
+createRight(numCards);
+
+document.querySelector("#item-active").lastChild.remove();
 /*
  * Добавляет в карусель класс .transition-left,
  * который смещает контент влево
@@ -146,12 +155,12 @@ CAROUSEL.addEventListener("animationend", (animationEvent) => {
   if (animationEvent.animationName === "move-left") {
     // удаляет с карусели класс transition-left
     CAROUSEL.classList.remove("transition-left");
-    createLeft();
+    createLeft(numCards);
     // если анимация была запущена функцией move-left
   } else {
     // удаляет с карусели класс transition-left
     CAROUSEL.classList.remove("transition-right");
-    createRight();
+    createRight(numCards);
   }
   // добавляет слушатель по клику на левую стрелку
   BTN_LEFT.addEventListener("click", moveLeft);
@@ -181,25 +190,36 @@ function nameOfCenterCards() {
   });
   return arrNames;
 }
-function createLeft() {
+
+function createLeft(iter) {
   // содержимое контента слева
   const leftItems = ITEM_LEFT.innerHTML;
   // добавляем в середину то, что слева
   ITEM_ACTIVE.innerHTML = leftItems;
   ITEM_LEFT.innerHTML = "";
   let currentNames = nameOfCenterCards();
-  for (let i = 0; i < 3; i++) {
+  for (let i = 0; i < iter; i++) {
     ITEM_LEFT.appendChild(randomCard(currentNames));
   }
 }
-function createRight() {
+function createRight(iter) {
   // содержимое контента справа
   let rightItems = ITEM_RIGHT.innerHTML;
   // добавляем в середину то, что справа
   ITEM_ACTIVE.innerHTML = rightItems;
   ITEM_RIGHT.innerHTML = "";
   let currentNames = nameOfCenterCards();
-  for (let i = 0; i < 3; i++) {
+  for (let i = 0; i < iter; i++) {
     ITEM_RIGHT.appendChild(randomCard(currentNames));
   }
+}
+
+if (window.matchMedia("(max-width: 1279px)").matches) {
+  numCards = 2;
+  document.querySelector("#item-active").lastChild.remove();
+}
+if (window.matchMedia("(max-width: 767.5px)").matches) {
+  numCards = 1;
+  document.querySelector("#item-active").lastChild.remove();
+  document.querySelector("#item-active").lastChild.remove();
 }

@@ -1348,4 +1348,121 @@ MEDIA REQUESTS:
 .pets-content .pets__slider .pets__card {
   justify-content: center;
   align-items: center;
+}
+
+@media (max-width: 1279px) {
+  .carousel-wrapper {
+    width: 580px;
+    margin: 0 10px;
+    overflow: hidden;
+  }
+
+  .item {
+    gap: 40px;
+  }
+
+  .carousel {
+    position: relative;
+    left: -580px;
+  }
+
+  @-webkit-keyframes move-right {
+    from {
+      left: -580px;
+    }
+    to {
+      left: -1160px;
+    }
+  }
+
+  @keyframes move-right {
+    from {
+      left: -580px;
+    }
+    to {
+      left: -1160px;
+    }
+  }
+  .transition-right {
+    -webkit-animation-name: move-right;
+            animation-name: move-right;
+    -webkit-animation-duration: 3s;
+            animation-duration: 3s;
+  }
+
+  @-webkit-keyframes move-left {
+    from {
+      left: -580px;
+    }
+    to {
+      left: 0;
+    }
+  }
+
+  @keyframes move-left {
+    from {
+      left: -580px;
+    }
+    to {
+      left: 0;
+    }
+  }
+}
+@media (max-width: 768px) {
+  .carousel-wrapper {
+    width: 270px;
+    margin: 0 0px;
+    overflow: hidden;
+  }
+
+  .item {
+    gap: 40px;
+  }
+
+  .carousel {
+    position: relative;
+    left: -270px;
+  }
+
+  @-webkit-keyframes move-right {
+    from {
+      left: -270px;
+    }
+    to {
+      left: -540px;
+    }
+  }
+
+  @keyframes move-right {
+    from {
+      left: -270px;
+    }
+    to {
+      left: -540px;
+    }
+  }
+  .transition-right {
+    -webkit-animation-name: move-right;
+            animation-name: move-right;
+    -webkit-animation-duration: 3s;
+            animation-duration: 3s;
+  }
+
+  @-webkit-keyframes move-left {
+    from {
+      left: -270px;
+    }
+    to {
+      left: 0;
+    }
+  }
+
+  @keyframes move-left {
+    from {
+      left: -270px;
+    }
+    to {
+      left: 0;
+    }
+  }
 }/*# sourceMappingURL=main.css.map */
