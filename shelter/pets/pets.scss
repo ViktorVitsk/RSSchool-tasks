@@ -227,13 +227,13 @@ $darkenButton: darken($buttonColor, 10%);
   .pets__button-inactive {
     border-color: #cdcdcd;
     color: #cdcdcd;
-    cursor: alias;
+    cursor: default;
   }
   .pets__button-active {
     background: $buttonColor;
   }
   .pets__button {
-    cursor: alias;
+    cursor: default;
   }
 }
 .footer {
@@ -545,6 +545,11 @@ MEDIA REQUESTS:
         letter-spacing: 0.06em;
         width: 100%;
         height: 100%;
+      }
+      .pets__button-inactive {
+        border-color: #cdcdcd;
+        color: #cdcdcd;
+        cursor: default;
       }
     }
   }

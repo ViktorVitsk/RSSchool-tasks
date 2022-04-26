@@ -233,8 +233,8 @@ function btnLeftEnd() {
   BTN_LEFT.style.color = "#cdcdcd";
   BTN_LEFT_END.style.borderColor = "#cdcdcd";
   BTN_LEFT_END.style.color = "#cdcdcd";
-  BTN_LEFT_END.style.pointer = "alias";
-  BTN_LEFT.style.pointer = "alias";
+  BTN_LEFT_END.style.pointer = "default";
+  BTN_LEFT.style.pointer = "default";
 }
 function btnRightEnd() {
   BTN_LEFT.style.borderColor = "#f1cdb3";
@@ -247,8 +247,8 @@ function btnRightEnd() {
   BTN_RIGHT.style.color = "#cdcdcd";
   BTN_RIGHT_END.style.borderColor = "#cdcdcd";
   BTN_RIGHT_END.style.color = "#cdcdcd";
-  BTN_RIGHT_END.style.pointer = "alias";
-  BTN_RIGHT.style.pointer = "alias";
+  BTN_RIGHT_END.style.pointer = "default";
+  BTN_RIGHT.style.pointer = "default";
 }
 
 BTN_LEFT_END.addEventListener("mouseover", (event) => {
