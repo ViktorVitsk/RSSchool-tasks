@@ -26,3 +26,11 @@ export interface DataNews {
   url: string;
   urlToImage: string;
 }
+
+export interface DataSources extends source{
+  category: string
+  country: string
+  description: string
+  language: string
+  url: string
+}
