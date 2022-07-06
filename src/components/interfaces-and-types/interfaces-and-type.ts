@@ -34,3 +34,14 @@ export interface DataSources extends source{
   language: string
   url: string
 }
+
+
+export interface DataDrawNews {
+  articles: DataNews[];
+  status: string;
+  totalResults: number;
+}
+export interface DataDrawSources {
+  sources: DataSources[];
+  status: string;
+}
