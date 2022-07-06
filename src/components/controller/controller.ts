@@ -1,9 +1,8 @@
 import AppLoader from './appLoader';
-import { CallbackVoid, DataDrawNews, DataDrawSources } from '../interfaces-and-types/interfaces-and-type'
+import { CallbackVoid, DataDrawNews, DataDrawSources } from '../interfaces-and-types/interfaces-and-type';
 
 class AppController extends AppLoader {
     getSources(callback: CallbackVoid<DataDrawSources>) {
-        
         super.getResp(
             {
                 endpoint: 'sources',

@@ -1,12 +1,18 @@
-import { ApiKey, Endpoint, IGetResp, CallbackVoid, DataDrawNews, DataDrawSources } from '../interfaces-and-types/interfaces-and-type';
+import {
+    ApiKey,
+    Endpoint,
+    IGetResp,
+    CallbackVoid,
+    DataDrawNews,
+    DataDrawSources,
+} from '../interfaces-and-types/interfaces-and-type';
 
-type CallbackDraw = CallbackVoid<DataDrawNews> | CallbackVoid<DataDrawSources>
+type CallbackDraw = CallbackVoid<DataDrawNews> | CallbackVoid<DataDrawSources>;
 class Loader {
     baseLink: string;
     private options: ApiKey;
 
     constructor(baseLink: string, options: ApiKey) {
-        
         this.baseLink = baseLink;
         this.options = options;
     }
@@ -42,7 +48,6 @@ class Loader {
     }
 
     load(method: 'GET' | 'POST', endpoint: Endpoint, callback: CallbackDraw, options = {}) {
-        
         fetch(this.makeUrl(options, endpoint), { method })
             .then(this.errorHandler)
             .then((res) => res.json())
