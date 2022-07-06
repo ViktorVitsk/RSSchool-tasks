@@ -1,5 +1,6 @@
-import { ApiKey, Endpoint, IGetResp, CallbackVoid } from '../interfaces-and-types/interfaces-and-type';
+import { ApiKey, Endpoint, IGetResp, CallbackVoid, DataDrawNews, DataDrawSources } from '../interfaces-and-types/interfaces-and-type';
 
+type CallbackDraw = CallbackVoid<DataDrawNews> | CallbackVoid<DataDrawSources>
 class Loader {
     baseLink: string;
     private options: ApiKey;
@@ -12,7 +13,7 @@ class Loader {
 
     getResp(
         { endpoint, options = {} }: IGetResp,
-        callback = () => {
+        callback: CallbackDraw = () => {
             console.error('No callback for GET response');
         }
     ) {
@@ -40,7 +41,7 @@ class Loader {
         return url.slice(0, -1);
     }
 
-    load(method: 'GET' | 'POST', endpoint: Endpoint, callback: CallbackVoid<string>, options = {}) {
+    load(method: 'GET' | 'POST', endpoint: Endpoint, callback: CallbackDraw, options = {}) {
         
         fetch(this.makeUrl(options, endpoint), { method })
             .then(this.errorHandler)

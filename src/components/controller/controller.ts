@@ -1,8 +1,8 @@
 import AppLoader from './appLoader';
-import { CallbackVoid } from '../interfaces-and-types/interfaces-and-type'
+import { CallbackVoid, DataDrawNews, DataDrawSources } from '../interfaces-and-types/interfaces-and-type'
 
 class AppController extends AppLoader {
-    getSources(callback: CallbackVoid<void>) {
+    getSources(callback: CallbackVoid<DataDrawSources>) {
         
         super.getResp(
             {
@@ -12,7 +12,7 @@ class AppController extends AppLoader {
         );
     }
 
-    getNews(e: Event, callback: CallbackVoid<void>) {
+    getNews(e: Event, callback: CallbackVoid<DataDrawNews>) {
         let target = e.target as HTMLElement;
         const newsContainer = e.currentTarget as HTMLElement;
 
