@@ -11,6 +11,8 @@ header {
 header h1 {
     font-size: 40px;
     font-weight: 800;
+    text-align: center;
+    text-shadow: 1.5px -1.5px 3px rgba(180, 236, 253, 0.836);
 }
 
 footer {
@@ -32,4 +34,9 @@ footer .copyright a:hover {
 }
 footer .copyright:before {
     content: '©';
+}
+
+main {
+    display: flex;
+    /* flex-direction: column; */
 }
