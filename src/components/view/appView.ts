@@ -3,8 +3,8 @@ import Sources from './sources/sources';
 import { DataDrawNews, DataDrawSources } from '../interfaces-and-types/interfaces-and-type';
 
 export class AppView {
-    news: News;
-    sources: Sources;
+    private readonly news: News;
+    private readonly sources: Sources;
 
     constructor() {
         this.news = new News();
