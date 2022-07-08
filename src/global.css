@@ -19,24 +19,32 @@ footer {
     height: 100px;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-around;
 }
 footer .copyright {
     font-size: 14px;
-    color: #333;
+    color: #999;
     text-align: center;
 }
 footer .copyright a {
-    color: #444;
+    color: #e0e0e0;
 }
 footer .copyright a:hover {
-    color: #555;
+    color: #888;
 }
 footer .copyright:before {
     content: '©';
 }
 
+.rs-school {
+    width: 180px;
+    height: 68px;
+    background:#fff;
+    background-image: url('assets/rs_school_js.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
 main {
     display: flex;
-    /* flex-direction: column; */
 }
