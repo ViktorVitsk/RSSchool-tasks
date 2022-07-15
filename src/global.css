@@ -1,0 +1,137 @@
+@import url(./css/normalize.css);
+
+html, body {
+  height: 100%;
+}
+body {
+  background: url(assets/images/background/1023-3955x2094.jpg) 0 0/cover no-repeat fixed;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.header {
+  background: #121c1e;
+  border-bottom: 2px solid #fff;
+  border-radius: 0px 0px 20px 20px;
+  height: 7rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.wrapper {
+  width: 1600px;
+  margin: auto;
+}
+
+.header__container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.header__logo {
+  display: flex;
+  gap: 5rem;
+}
+
+.header__img {
+  background-image: url(assets/images/cart/logo.svg);
+  background-size: 4.8rem 6rem;
+  height: 6rem;
+  width: 4.8rem;
+}
+
+.header__title {
+  color: #fff;
+  align-self: center;
+  font-size: 2.4rem;
+  font-family: sans-serif;
+}
+
+.header__cart {
+  background-image: url(assets/images/cart/cart-img.png);
+  height: 6rem;
+  width: 4.8rem;
+  background-repeat: no-repeat;
+  background-size: 4.8rem 6rem;
+}
+
+.main {
+  flex: 1 0 auto;
+  display: flex;
+  flex-direction: column;
+  font-size: 1.8rem;
+  color:#fff;
+  gap: 1rem;
+}
+
+.filters {
+  display: flex;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.filters__wrapper {
+  background: rgba(25, 40, 32, 0.521);
+  height: 300px;
+  width: 520px;
+  border: 2px solid #fff;
+  border-radius: 1rem;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+}
+
+.filters__list {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  height: 100%;
+}
+
+.items-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.item {
+  border: 3px solid rgb(59, 226, 218);
+  width: 420px;
+  height: 500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  border-radius: 5rem 0.2rem 5rem 0.2rem;
+  background: rgba(52, 57, 37, 0.397);
+}
+
+.item__img {
+  background: url(assets/images/bikes/01.jpg) 0 0/contain no-repeat;
+  height: 235px;
+  width: 400px;
+  border-radius: 8rem;
+}
+
+
+
+
+.footer {
+  /* flex-shrink: 0; */
+  background: #121c1e;
+  height: 45px;
+  display: flex;
+}
+
+.footer__container {
+  display: flex;
+  justify-content: space-between;
+  font-size: 1.8rem;
+}
+
+.footer__logo {
+  background: url(assets/images/rs-school/logo_rss.svg) 0 0/contain no-repeat;;
+  height: 23px;
+  width: 61px;
+}
