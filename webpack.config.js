@@ -3,7 +3,7 @@ const { merge } = require('webpack-merge');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const EslintPlugin = require('eslint-webpack-plugin');
-// const CopyPlugin = require("copy-webpack-plugin");
+const CopyPlugin = require('copy-webpack-plugin');
 
 const baseConfig = {
   entry: path.resolve(__dirname, './src/index.ts'),
@@ -31,10 +31,10 @@ const baseConfig = {
   output: {
     filename: 'index.js',
     path: path.resolve(__dirname, './dist'),
-  //   assetModuleFilename:  pathData => {
-  //     const filepath = path.dirname(pathData.filename).split('/').slice(1).join('/');
-  //     return `${filepath}/[name][ext]`;
-  // },
+    //   assetModuleFilename:  pathData => {
+    //     const filepath = path.dirname(pathData.filename).split('/').slice(1).join('/');
+    //     return `${filepath}/[name][ext]`;
+    // },
   },
   plugins: [
     new HtmlWebpackPlugin({
@@ -43,6 +43,14 @@ const baseConfig = {
     }),
     new CleanWebpackPlugin(),
     new EslintPlugin({ extensions: 'ts' }),
+    new CopyPlugin({
+      patterns: [
+        {
+          from: path.resolve(__dirname, './src/assets/images/bikes'),
+          to: path.resolve(__dirname, './dist/assets/images/bikes'),
+        },
+      ],
+    }),
   ],
 };
 

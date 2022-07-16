@@ -109,10 +109,11 @@ body {
 }
 
 .item__img {
-  background: url(assets/images/bikes/01.jpg) 0 0/contain no-repeat;
+  /* background:  0 0/contain no-repeat; */
   height: 187px;
   width: 320px;
   border-radius: 6rem;
+  display: block;
 }
 
 

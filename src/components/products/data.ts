@@ -16,7 +16,7 @@ const data = [
     amount: '5',
     year: '2020',
     color: 'белый',
-    size: '28',  
+    size: '28',
     electric: false,
   },
   {
