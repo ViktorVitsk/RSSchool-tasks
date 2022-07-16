@@ -90,44 +90,45 @@ body {
 }
 
 .items-list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  margin: auto;
 }
 
 .item {
   border: 3px solid rgb(59, 226, 218);
-  width: 420px;
-  height: 500px;
+  width: 350px;
+  height: 450px;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
   border-radius: 5rem 0.2rem 5rem 0.2rem;
   background: rgba(52, 57, 37, 0.397);
+  margin: 10px;
 }
 
 .item__img {
   background: url(assets/images/bikes/01.jpg) 0 0/contain no-repeat;
-  height: 235px;
-  width: 400px;
-  border-radius: 8rem;
+  height: 187px;
+  width: 320px;
+  border-radius: 6rem;
 }
 
 
 
 
 .footer {
-  /* flex-shrink: 0; */
   background: #121c1e;
-  height: 45px;
   display: flex;
 }
 
 .footer__container {
+  height: 45px;
   display: flex;
   justify-content: space-between;
   font-size: 1.8rem;
+  align-items: center;
 }
 
 .footer__logo {
