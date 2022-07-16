@@ -1,10 +1,11 @@
 @import url(./css/normalize.css);
 
-html, body {
+html,
+body {
   height: 100%;
 }
 body {
-  background: url(assets/images/background/1023-3955x2094.jpg) 0 0/cover no-repeat fixed;
+  background: url(assets/images/background/1023-3955x2094.jpg) 0 0 / cover no-repeat fixed;
   display: flex;
   flex-direction: column;
   height: 100%;
@@ -61,7 +62,7 @@ body {
   display: flex;
   flex-direction: column;
   font-size: 1.8rem;
-  color:#fff;
+  color: #fff;
   gap: 1rem;
 }
 
@@ -93,19 +94,31 @@ body {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   margin: auto;
+  font-size: 1.9rem;
 }
 
 .item {
-  border: 3px solid rgb(59, 226, 218);
+  border: 3px solid rgb(255, 255, 255);
   width: 350px;
   height: 450px;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
-  border-radius: 5rem 0.2rem 5rem 0.2rem;
-  background: rgba(52, 57, 37, 0.397);
+  border-radius: 5rem ;
+  background: rgba(0, 0, 0, 0.4);
+  text-shadow: 0.1rem -0.1em 0.3rem #000;
   margin: 10px;
+}
+
+.item__name {
+  font-size: 2rem;
+  font-weight: bold;
+  margin: 0.4rem;
+  padding: 1rem;
+  letter-spacing: 0.05rem;
+  background: rgba(180, 189, 182, 0.658);
+  border-radius: 2rem;
 }
 
 .item__img {
@@ -115,9 +128,6 @@ body {
   border-radius: 6rem;
   display: block;
 }
-
-
-
 
 .footer {
   background: #121c1e;
@@ -133,7 +143,7 @@ body {
 }
 
 .footer__logo {
-  background: url(assets/images/rs-school/logo_rss.svg) 0 0/contain no-repeat;;
+  background: url(assets/images/rs-school/logo_rss.svg) 0 0 / contain no-repeat;
   height: 23px;
   width: 61px;
 }
