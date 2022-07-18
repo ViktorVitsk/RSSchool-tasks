@@ -1,0 +1,23 @@
+.filters {
+  display: flex;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.filters__wrapper {
+  background: rgba(25, 40, 32, 0.521);
+  height: 300px;
+  width: 520px;
+  border: 2px solid #fff;
+  border-radius: 1rem;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+}
+
+.filters__list {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  height: 100%;
+}
