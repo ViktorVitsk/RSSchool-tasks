@@ -111,7 +111,7 @@ const data = [
   },
   {
     id: '12',
-    brand: 'Santa Cruz',
+    brand: 'Santa-Cruz',
     name: 'Santa Cruz Tallboy 4 C S-Kit',
     amount: '5',
     year: '2021',
@@ -241,7 +241,7 @@ const data = [
   },
   {
     id: '25',
-    brand: 'Eleek',
+    brand: 'Haibike',
     name: 'Haibike SDURO FullSeven',
     amount: '12',
     year: '2020',

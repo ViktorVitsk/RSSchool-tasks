@@ -4,7 +4,7 @@ import Item from '../interfaces/IItem';
 
 export class AppView {
   private readonly products: Item[];
-  private itemsList = document.querySelector('.items-list');
+  private readonly itemsList = document.querySelector('.items-list');
 
   constructor() {
     this.products = data;

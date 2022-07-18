@@ -1,4 +1,7 @@
 @import url(./css/normalize.css);
+@import url(./css/filters/filters.css);
+@import url(./css/items/items.css);
+@import url(./css/filters/buttons.css);
 
 html,
 body {
@@ -66,7 +69,7 @@ body {
   gap: 1rem;
 }
 
-.filters {
+/* .filters {
   display: flex;
   gap: 2rem;
   margin-top: 2rem;
@@ -88,8 +91,8 @@ body {
   flex-direction: column;
   justify-content: space-evenly;
   height: 100%;
-}
-
+} */
+/* 
 .items-list {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -122,12 +125,11 @@ body {
 }
 
 .item__img {
-  /* background:  0 0/contain no-repeat; */
   height: 187px;
   width: 320px;
   border-radius: 6rem;
   display: block;
-}
+} */
 
 .footer {
   background: #121c1e;
@@ -143,7 +145,11 @@ body {
 }
 
 .footer__logo {
-  background: url(assets/images/rs-school/logo_rss.svg) 0 0 / contain no-repeat;
+  /* background: url(assets/images/rs-school/logo_rss.svg) 0 0 / contain no-repeat; */
   height: 23px;
   width: 61px;
+}
+
+.none {
+  display: none;
 }

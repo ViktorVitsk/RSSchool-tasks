@@ -21,3 +21,14 @@
   justify-content: space-evenly;
   height: 100%;
 }
+
+.brands {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.brand {
+  width: 40px;
+  height: 40px;
+  margin: 1rem;
+}

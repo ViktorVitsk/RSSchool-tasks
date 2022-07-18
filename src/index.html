@@ -4,7 +4,6 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="css/styles.css" />
     <title>Document</title>
   </head>
   <body>
@@ -22,17 +21,51 @@
         <div class="filters__by-value filters__wrapper">
           <h3 class="filters__title">Фильтры по значению</h3>
           <div class="filters__list">
-            <div class="filters__by-value_brand"><span>Производитель:</span></div>
-            <div class="filters__by-value_size"><span>Диаметр колеса:</span></div>
-            <div class="filters__by-value_color"><span>Цвет:</span></div>
+            <div class="filters__by-value_brand">
+              <span>Производитель:</span>
+              <div class="brands">
+                <div class="brand btns" data-brand="Bergamont"></div>
+                <div class="brand btns" data-brand="Bianchi"></div>
+                <div class="brand btns" data-brand="Bottecchia"></div>
+                <div class="brand btns" data-brand="Giant"></div>
+                <div class="brand btns" data-brand="Haibike"></div>
+                <div class="brand btns" data-brand="Kona"></div>
+                <div class="brand btns" data-brand="Kreidler"></div>
+                <div class="brand btns" data-brand="Orbea"></div>
+                <div class="brand btns" data-brand="Santa-Cruz"></div>
+                <div class="brand btns" data-brand="Scott"></div>
+              </div>
+            </div>
+            <div class="filters__by-value_size">
+              <span>Диаметр колеса:</span>
+              <button data-size="27" class="btn btns">27</button>
+              <button data-size="28" class="btn btns">28</button>
+              <button data-size="29" class="btn btns">29</button>
+            </div>
+            <div class="filters__by-value_color">
+              <span>Цвет:</span>
+              <button data-color="зеленый" class="btnColor btns btn_green"></button>
+              <button data-color="белый" class="btnColor btns btn_white"></button>
+              <button data-color="серый" class="btnColor btns btn_grey"></button>
+              <button data-color="синий" class="btnColor btns btn_blue"></button>
+              <button data-color="красный" class="btnColor btns btn_red"></button>
+              <button data-color="черный" class="btnColor btns btn_black"></button>
+              <button data-color="золотистый" class="btnColor btns btn_gold"></button>
+            </div>
             <div class="filters__by-value_electric"><span>Электровелосипеды:</span></div>
           </div>
         </div>
         <div class="filters__by-range filters__wrapper">
           <h3 class="filters__title">Фильтры по диапазону</h3>
           <div class="filters__list">
-            <div class="filters__by-range_amount"><span>Количество на складе:</span></div>
-            <div class="filters__by-range_year"><span>Год выхода на рынок:</span></div>
+            <div class="filters__by-range_amount">
+              <span>Количество на складе:</span>
+              <div id="slider1"></div>
+            </div>
+            <div class="filters__by-range_year">
+              <span>Год выхода на рынок:</span>
+              <div id="slider2"></div>
+            </div>
           </div>
         </div>
         <div class="filters__search filters__wrapper">
@@ -46,9 +79,7 @@
           </div>
         </div>
       </div>
-      <div class="items-list">
-        
-      </div>
+      <div class="items-list"></div>
     </main>
     <footer class="footer">
       <div class="footer__container wrapper">

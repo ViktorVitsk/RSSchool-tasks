@@ -49,6 +49,10 @@ const baseConfig = {
           from: path.resolve(__dirname, './src/assets/images/bikes'),
           to: path.resolve(__dirname, './dist/assets/images/bikes'),
         },
+        {
+          from: path.resolve(__dirname, './src/assets/images/brands'),
+          to: path.resolve(__dirname, './dist/assets/images/brands'),
+        },
       ],
     }),
   ],
