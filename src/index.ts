@@ -4,18 +4,18 @@ import './global.css';
 import { AppView } from './components/view/AppView';
 import brandsDraw from './components/view/brands';
 import { Filters } from './components/filters/Filters';
-import { Brands, Sizes, Colors, Electrics } from './components/interfaces/IFilters';
+import { Brands, Sizes, Colors, Electrics, Range } from './components/interfaces/IFilters';
 import * as noUiSlider from 'nouislider';
 const wNumb = require('wnumb');
 
 brandsDraw();
 // определяем фильтры (потом добавить localStorage)
 const filters = new Filters();
-noslider('slider1', [2017, 2022]);
-noslider('slider2', [1, 12]);
-
 // получаем все товары
 const PRODUCTS = new AllProducts(data);
+noslider('year', [2017, 2022]);
+noslider('amount', [1, 12]);
+
 // подготавливаем массив товаров для рендеринга
 const arrProducts = PRODUCTS.products.map((prod) => prod.render());
 
@@ -50,7 +50,7 @@ filtersHTML?.addEventListener('click', (event) => {
       filters.setElectrics(currentElectrics);
     }
   }
-  renderThroughFiltersValue(filters.getAllOnFiltersValue());
+  renderThroughFiltersValue(filters.getAllOnFiltersValue(), filters.getYears(), filters.getAmounts());
 });
 
 function noslider(id: string, range: [number, number]) {
@@ -73,30 +73,46 @@ function noslider(id: string, range: [number, number]) {
     });
     if (slider.noUiSlider) {
       slider.noUiSlider.on('update', (val) => {
-        filters.setAmounts(val);
+        if (id === 'year') {
+          filters.setYears(val);
+        }
+        if (id === 'amount') {
+          filters.setAmounts(val);
+        }
       });
     }
   }
 }
 
-function renderThroughFiltersValue(arrFiltersValue: string[]) {
+function renderThroughFiltersValue(arrFiltersValue: string[], year: Range, amount: Range) {
   let currentProducts = PRODUCTS.products;
 
+  // фильтры по значениям
   if (arrFiltersValue.length > 0) {
-    // фильтры по значениям
-    currentProducts = PRODUCTS.products.filter((prod) => {
+    currentProducts = currentProducts.filter((prod) => {
       let check = true;
       arrFiltersValue.forEach((val) => {
         if (!prod.getValues().includes(val)) {
+          console.log(prod.amount);
           check = false;
         }
       });
       return check;
     });
-
-    // фильтры по диапазону
-    // ...
   }
+  currentProducts = currentProducts.filter((prod) => {
+    let check = true;
+
+    if (+prod.year < +year[0] || +prod.year > +year[1]) {
+      check = false;
+    }
+    if (+prod.amount < +amount[0] || +prod.amount > +amount[1]) {
+      check = false;
+    }
+    return check;
+  });
+  // фильтры по диапазону
+  // ...
   itemsClear();
   const arrProducts = currentProducts.map((prod) => prod.render());
   AppView.renderProducts(arrProducts);
