@@ -15,9 +15,9 @@ noslider('slider1', [2017, 2022]);
 noslider('slider2', [1, 12]);
 
 // получаем все товары
-const products = new AllProducts(data);
+const PRODUCTS = new AllProducts(data);
 // подготавливаем массив товаров для рендеринга
-const arrProducts = products.products.map((prod) => prod.render());
+const arrProducts = PRODUCTS.products.map((prod) => prod.render());
 
 AppView.renderProducts(arrProducts);
 const filtersHTML = document.querySelector('.filters');
@@ -50,6 +50,7 @@ filtersHTML?.addEventListener('click', (event) => {
       filters.setElectrics(currentElectrics);
     }
   }
+  renderThroughFiltersValue(filters.getAllOnFiltersValue());
 });
 
 function noslider(id: string, range: [number, number]) {
@@ -75,5 +76,34 @@ function noslider(id: string, range: [number, number]) {
         filters.setAmounts(val);
       });
     }
+  }
+}
+
+function renderThroughFiltersValue(arrFiltersValue: string[]) {
+  let currentProducts = PRODUCTS.products;
+
+  if (arrFiltersValue.length > 0) {
+    // фильтры по значениям
+    currentProducts = PRODUCTS.products.filter((prod) => {
+      let check = true;
+      arrFiltersValue.forEach((val) => {
+        if (!prod.getValues().includes(val)) {
+          check = false;
+        }
+      });
+      return check;
+    });
+
+    // фильтры по диапазону
+    // ...
+  }
+  itemsClear();
+  const arrProducts = currentProducts.map((prod) => prod.render());
+  AppView.renderProducts(arrProducts);
+}
+function itemsClear() {
+  const itemContainer = document.querySelector('.items-list');
+  while (itemContainer?.firstChild) {
+    itemContainer.removeChild(itemContainer.firstChild);
   }
 }

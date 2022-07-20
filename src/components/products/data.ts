@@ -7,7 +7,7 @@ const data = [
     year: '2021',
     color: 'зеленый',
     size: '29',
-    electric: false,
+    electric: 'нет',
   },
   {
     id: '02',
@@ -17,7 +17,7 @@ const data = [
     year: '2020',
     color: 'белый',
     size: '28',
-    electric: false,
+    electric: 'нет',
   },
   {
     id: '03',
@@ -27,7 +27,7 @@ const data = [
     year: '2019',
     color: 'зеленый',
     size: '27',
-    electric: false,
+    electric: 'нет',
   },
   {
     id: '04',
@@ -37,7 +37,7 @@ const data = [
     year: '2021',
     color: 'серый',
     size: '28',
-    electric: false,
+    electric: 'нет',
   },
   {
     id: '05',
@@ -47,7 +47,7 @@ const data = [
     year: '2020',
     color: 'серый',
     size: '28',
-    electric: false,
+    electric: 'нет',
   },
   {
     id: '06',
@@ -57,7 +57,7 @@ const data = [
     year: '2021',
     color: 'синий',
     size: '28',
-    electric: false,
+    electric: 'нет',
   },
   {
     id: '07',
@@ -67,7 +67,7 @@ const data = [
     year: '2021',
     color: 'синий',
     size: '28',
-    electric: true,
+    electric: 'да',
   },
   {
     id: '08',
@@ -77,7 +77,7 @@ const data = [
     year: '2021',
     color: 'серый',
     size: '28',
-    electric: false,
+    electric: 'нет',
   },
   {
     id: '09',
@@ -87,7 +87,7 @@ const data = [
     year: '2021',
     color: 'серый',
     size: '27',
-    electric: false,
+    electric: 'нет',
   },
   {
     id: '10',
@@ -97,7 +97,7 @@ const data = [
     year: '2021',
     color: 'красный',
     size: '29',
-    electric: false,
+    electric: 'нет',
   },
   {
     id: '11',
@@ -107,17 +107,17 @@ const data = [
     year: '2020',
     color: 'серый',
     size: '29',
-    electric: false,
+    electric: 'нет',
   },
   {
     id: '12',
-    brand: 'Santa Cruz',
+    brand: 'Santa-Cruz',
     name: 'Santa Cruz Tallboy 4 C S-Kit',
     amount: '5',
     year: '2021',
     color: 'черный',
     size: '29',
-    electric: false,
+    electric: 'нет',
   },
   {
     id: '13',
@@ -127,7 +127,7 @@ const data = [
     year: '2021',
     color: 'зеленый',
     size: '29',
-    electric: false,
+    electric: 'нет',
   },
   {
     id: '14',
@@ -137,7 +137,7 @@ const data = [
     year: '2021',
     color: 'синий',
     size: '29',
-    electric: false,
+    electric: 'нет',
   },
   {
     id: '15',
@@ -147,7 +147,7 @@ const data = [
     year: '2021',
     color: 'синий',
     size: '29',
-    electric: false,
+    electric: 'нет',
   },
   {
     id: '16',
@@ -157,7 +157,7 @@ const data = [
     year: '2017',
     color: 'черный',
     size: '27',
-    electric: true,
+    electric: 'да',
   },
   {
     id: '17',
@@ -167,7 +167,7 @@ const data = [
     year: '2021',
     color: 'синий',
     size: '28',
-    electric: false,
+    electric: 'нет',
   },
   {
     id: '18',
@@ -177,7 +177,7 @@ const data = [
     year: '2021',
     color: 'синий',
     size: '28',
-    electric: false,
+    electric: 'нет',
   },
   {
     id: '19',
@@ -187,7 +187,7 @@ const data = [
     year: '2021',
     color: 'золотистый',
     size: '29',
-    electric: true,
+    electric: 'да',
   },
   {
     id: '20',
@@ -197,7 +197,7 @@ const data = [
     year: '2021',
     color: 'черный',
     size: '28',
-    electric: false,
+    electric: 'нет',
   },
   {
     id: '21',
@@ -207,7 +207,7 @@ const data = [
     year: '2021',
     color: 'красный',
     size: '28',
-    electric: false,
+    electric: 'нет',
   },
   {
     id: '22',
@@ -217,7 +217,7 @@ const data = [
     year: '2021',
     color: 'черный',
     size: '28',
-    electric: false,
+    electric: 'нет',
   },
   {
     id: '23',
@@ -227,7 +227,7 @@ const data = [
     year: '2019',
     color: 'синий',
     size: '28',
-    electric: false,
+    electric: 'нет',
   },
   {
     id: '24',
@@ -237,7 +237,7 @@ const data = [
     year: '2021',
     color: 'золотистый',
     size: '28',
-    electric: false,
+    electric: 'нет',
   },
   {
     id: '25',
@@ -247,7 +247,7 @@ const data = [
     year: '2020',
     color: 'черный',
     size: '27',
-    electric: true,
+    electric: 'да',
   },
   {
     id: '26',
@@ -257,7 +257,7 @@ const data = [
     year: '2020',
     color: 'белый',
     size: '27',
-    electric: true,
+    electric: 'да',
   },
   {
     id: '27',
@@ -267,7 +267,7 @@ const data = [
     year: '2021',
     color: 'черный',
     size: '29',
-    electric: false,
+    electric: 'нет',
   },
   {
     id: '28',
@@ -277,7 +277,7 @@ const data = [
     year: '2021',
     color: 'красный',
     size: '29',
-    electric: false,
+    electric: 'нет',
   },
   {
     id: '29',
@@ -287,7 +287,7 @@ const data = [
     year: '2019',
     color: 'серый',
     size: '28',
-    electric: false,
+    electric: 'нет',
   },
   {
     id: '30',
@@ -297,7 +297,7 @@ const data = [
     year: '2018',
     color: 'серый',
     size: '29',
-    electric: true,
+    electric: 'да',
   },
 ];
 

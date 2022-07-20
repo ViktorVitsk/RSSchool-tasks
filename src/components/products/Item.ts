@@ -8,7 +8,7 @@ export default class Item {
   private readonly _year: string;
   private readonly _color: string;
   private readonly _size: string;
-  private readonly _electric: boolean;
+  private readonly _electric: string;
 
   constructor(item: IItem) {
     this._id = item.id;
@@ -31,10 +31,10 @@ export default class Item {
       <div>Бренд: ${this._brand}</div>
       <div>Цвет: ${this._color}</div>
       <div>Диаметр колёс: ${this._size}</div>
-      <div>Электровелосипед: ${this._electric ? 'да' : 'нет'}</div>
+      <div>Электровелосипед: ${this._electric}</div>
     </div>`;
   }
-  public get electric(): boolean {
+  public get electric(): string {
     return this._electric;
   }
   public get size(): string {
@@ -57,5 +57,8 @@ export default class Item {
   }
   public get id(): number {
     return parseInt(this._id);
+  }
+  public getValues(): string[] {
+    return [this._brand, this._size, this._color, this._electric];
   }
 }

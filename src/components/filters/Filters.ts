@@ -1,7 +1,10 @@
 import { Brands, Sizes, Colors, Electrics, Range } from '../interfaces/IFilters';
 
+interface IValues {
+  [index: string]: boolean;
+}
 export class Filters {
-  brands = {
+  brands: IValues = {
     Bergamont: false,
     Bianchi: false,
     Bottecchia: false,
@@ -14,13 +17,13 @@ export class Filters {
     Scott: false,
   };
 
-  sizes = {
+  sizes: IValues = {
     27: false,
     28: false,
     29: false,
   };
 
-  colors = {
+  colors: IValues = {
     зеленый: false,
     белый: false,
     серый: false,
@@ -30,7 +33,7 @@ export class Filters {
     золотистый: false,
   };
 
-  electrics = {
+  electrics: IValues = {
     да: false,
     нет: false,
   };
@@ -45,19 +48,19 @@ export class Filters {
 
   setBrands(target: Brands) {
     this.brands[target] = this.brands[target] ? false : true;
-    console.log(this.brands);
+    this.getAllOnFiltersValue();
   }
   setSizes(target: Sizes) {
     this.sizes[target] = this.sizes[target] ? false : true;
-    console.log(this.sizes);
+    this.getAllOnFiltersValue();
   }
   setColors(target: Colors) {
     this.colors[target] = this.colors[target] ? false : true;
-    console.log(this.colors);
+    this.getAllOnFiltersValue();
   }
   setElectrics(target: Electrics) {
     this.electrics[target] = this.electrics[target] ? false : true;
-    console.log(this.electrics);
+    this.getAllOnFiltersValue();
   }
   setAmounts(target: Range) {
     this.amounts = target;
@@ -74,5 +77,24 @@ export class Filters {
   setSort(value: string) {
     this.sort = value;
     console.log(this.sort);
+  }
+  getAllOnFiltersValue(): string[] {
+    const result: string[] = [];
+    const brands = this.getOnFiltersValue(this.brands);
+    const sizes = this.getOnFiltersValue(this.sizes);
+    const colors = this.getOnFiltersValue(this.colors);
+    const electrics = this.getOnFiltersValue(this.electrics);
+    result.push(...brands, ...sizes, ...colors, ...electrics);
+    return result;
+  }
+  private getOnFiltersValue(filtersObj: IValues) {
+    const brandsKeys: string[] = Object.keys(filtersObj);
+    return brandsKeys.filter((key) => filtersObj[key]);
+  }
+  getAmounts() {
+    return this.amounts;
+  }
+  getYears() {
+    return this.years;
   }
 }

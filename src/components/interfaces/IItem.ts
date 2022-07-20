@@ -6,5 +6,5 @@ export default interface Item {
   year: string;
   color: string;
   size: string;
-  electric: boolean;
+  electric: string;
 }
