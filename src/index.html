@@ -52,30 +52,45 @@
               <button data-color="черный" class="btnColor btns btn_black"></button>
               <button data-color="золотистый" class="btnColor btns btn_gold"></button>
             </div>
-            <div class="filters__by-value_electric"><span>Электровелосипеды:</span></div>
+            <div class="filters__by-value_electric">
+              <span>Электровелосипеды:</span>
+              <button data-electric="да" class="btn btns">Да</button>
+              <button data-electric="нет" class="btn btns">Нет</button>
+            </div>
           </div>
         </div>
         <div class="filters__by-range filters__wrapper">
           <h3 class="filters__title">Фильтры по диапазону</h3>
           <div class="filters__list">
             <div class="filters__by-range_amount">
-              <span>Количество на складе:</span>
+              <span class="filters__title-range">Количество на складе:</span>
               <div id="slider1"></div>
             </div>
             <div class="filters__by-range_year">
-              <span>Год выхода на рынок:</span>
+              <span class="filters__title-range">Год выхода на рынок:</span>
               <div id="slider2"></div>
             </div>
           </div>
         </div>
         <div class="filters__search filters__wrapper">
           <h3 class="filters__title">Поиск</h3>
-          <div class="filters__search_field"></div>
+          <div class="filters__search_field">
+            <input type="text" name="search" id="search" />
+          </div>
           <h3 class="filters__title">Сортировка</h3>
-          <div class="filters__search_sort"></div>
+          <div class="filters__search_sort">
+            <select class="select-css">
+              <option class="drop" data-sort="false"></option>
+              <option class="drop" data-sort="nameUp">По названию (по возрастанию)</option>
+              <option class="drop" data-sort="nameDown">По названию (по убыванию)</option>
+              <option class="drop" data-sort="yearUp">По году(по возрастанию)</option>
+              <option class="drop" data-sort="yearDown">По году(по убыванию)</option>
+            </select>
+          </div>
+          
           <div class="filters__reset">
-            <button class="filters__reset_filter"></button>
-            <button class="filters__reset_settings"></button>
+            <button class="filters__reset_filter">Сброс Фильтров</button>
+            <button class="filters__reset_settings">Сброс Настроек</button>
           </div>
         </div>
       </div>

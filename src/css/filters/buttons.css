@@ -7,7 +7,6 @@
 /* General Buttons */
 .btn {
   width: 130px;
-  height: 40px;
   background: linear-gradient(to bottom, #4eb5e5 0%, #389ed5 100%);
   border: none;
   border-radius: 5px;
@@ -25,7 +24,6 @@
 
   display: block;
   margin-left: 2rem;
-  margin-bottom: 20px;
 }
 .btn:active {
   box-shadow: 0px 2px 0px 0px rgba(0, 0, 0, 0.2);
@@ -106,3 +104,29 @@ button.btn:after {
   box-shadow: 5px 5px 15px #fc894d;
 }
 
+.filters__reset_settings,
+.filters__reset_filter {
+  display: inline-block;
+  padding: 15px 25px;
+  font-size: 24px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: #fff;
+  background: #4eb5e5;
+
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 9px #999;
+}
+.filters__reset_settings:active,
+.filters__reset_filter:active {
+  background-color: #2b8bc6;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+.filters__reset_settings:hover,
+.filters__reset_filter:hover {
+  background-color: #389ed5;
+}

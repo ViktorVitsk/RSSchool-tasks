@@ -2,6 +2,8 @@
 @import url(./css/filters/filters.css);
 @import url(./css/items/items.css);
 @import url(./css/filters/buttons.css);
+@import url(./css/filters/nouislider.css);
+@import url(./css/filters/select.css);
 
 html,
 body {
@@ -68,8 +70,8 @@ body {
   color: #fff;
   gap: 1rem;
 }
-
-/* .filters {
+/* 
+.filters {
   display: flex;
   gap: 2rem;
   margin-top: 2rem;
@@ -91,8 +93,8 @@ body {
   flex-direction: column;
   justify-content: space-evenly;
   height: 100%;
-} */
-/* 
+}
+
 .items-list {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -148,8 +150,4 @@ body {
   /* background: url(assets/images/rs-school/logo_rss.svg) 0 0 / contain no-repeat; */
   height: 23px;
   width: 61px;
-}
-
-.none {
-  display: none;
 }
