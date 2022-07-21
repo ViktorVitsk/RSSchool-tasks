@@ -130,3 +130,9 @@ button.btn:after {
 .filters__reset_filter:hover {
   background-color: #389ed5;
 }
+.brand:hover {
+  cursor: pointer;
+}
+.drop:hover {
+  cursor: pointer;
+}

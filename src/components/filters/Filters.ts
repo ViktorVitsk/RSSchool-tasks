@@ -130,4 +130,30 @@ export class Filters {
     this.sort = storage.sort;
     console.log(this.years, storage.years);
   }
+  reset() {
+    this.brands['Bergamont'] = false;
+    this.brands['Bianchi'] = false;
+    this.brands['Bottecchia'] = false;
+    this.brands['Giant'] = false;
+    this.brands['Haibike'] = false;
+    this.brands['Kona'] = false;
+    this.brands['Kreidler'] = false;
+    this.brands['Orbea'] = false;
+    this.brands['Santa-Cruz'] = false;
+    this.brands['Scott'] = false;
+    this.sizes['27'] = false;
+    this.sizes['28'] = false;
+    this.sizes['29'] = false;
+    this.colors['зеленый'] = false;
+    this.colors['белый'] = false;
+    this.colors['серый'] = false;
+    this.colors['синий'] = false;
+    this.colors['красный'] = false;
+    this.colors['черный'] = false;
+    this.colors['золотистый'] = false;
+    this.electrics['да'] = false;
+    this.electrics['нет'] = false;
+    this.amounts = ['1', '12'];
+    this.years = ['2017', '2022'];
+  }
 }

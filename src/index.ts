@@ -32,6 +32,7 @@ const filtersHTML = document.querySelector('.filters');
 const search = document.getElementById('search');
 
 if (search instanceof HTMLInputElement) {
+  search.focus();
   search.value = filters.search;
   search.oninput = function () {
     filters.setSearch(search.value);
@@ -62,8 +63,10 @@ filtersHTML?.addEventListener('click', (event) => {
       const currentSort: string = target.getAttribute('data-sort') as string;
       filters.setSort(currentSort);
     }
+    if (target.hasAttribute('reset-filters')) {
+      filters.reset();
+    }
     if (target.hasAttribute('reset-settings')) {
-      console.log('ls');
       localStorage.removeItem('filtersVitsk');
     } else {
       renderThroughFiltersValue();

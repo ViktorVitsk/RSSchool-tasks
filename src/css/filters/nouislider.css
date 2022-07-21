@@ -334,3 +334,6 @@
 .noUi-horizontal .noUi-tooltip {
   bottom: -250%;
 }
+.noUi-tooltip:hover, .noUi-touch-area:hover {
+  cursor: pointer;
+}
