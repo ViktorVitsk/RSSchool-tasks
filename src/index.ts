@@ -4,7 +4,7 @@ import './global.css';
 import { AppView } from './components/view/AppView';
 import brandsDraw from './components/view/brands';
 import { Filters } from './components/filters/Filters';
-import { Brands, Sizes, Colors, Electrics, Range } from './components/interfaces/IFilters';
+import { Brands, Sizes, Colors, Electrics } from './components/interfaces/IFilters';
 import * as noUiSlider from 'nouislider';
 const wNumb = require('wnumb');
 
@@ -27,6 +27,7 @@ const search = document.getElementById('search');
 if (search instanceof HTMLInputElement) {
   search.oninput = function () {
     filters.setSearch(search.value);
+    renderThroughFiltersValue();
   };
 }
 
@@ -50,7 +51,8 @@ filtersHTML?.addEventListener('click', (event) => {
       filters.setElectrics(currentElectrics);
     }
   }
-  renderThroughFiltersValue(filters.getAllOnFiltersValue(), filters.getYears(), filters.getAmounts());
+
+  renderThroughFiltersValue();
 });
 
 function noslider(id: string, range: [number, number]) {
@@ -84,7 +86,11 @@ function noslider(id: string, range: [number, number]) {
   }
 }
 
-function renderThroughFiltersValue(arrFiltersValue: string[], year: Range, amount: Range) {
+function renderThroughFiltersValue() {
+  const arrFiltersValue = filters.getAllOnFiltersValue();
+  const year = filters.getYears();
+  const amount = filters.getAmounts();
+  const search = filters.getSearch();
   let currentProducts = PRODUCTS.products;
 
   // фильтры по значениям
@@ -93,13 +99,14 @@ function renderThroughFiltersValue(arrFiltersValue: string[], year: Range, amoun
       let check = true;
       arrFiltersValue.forEach((val) => {
         if (!prod.getValues().includes(val)) {
-          console.log(prod.amount);
           check = false;
         }
       });
       return check;
     });
   }
+  // фильтры по диапазону
+  // ...
   currentProducts = currentProducts.filter((prod) => {
     let check = true;
 
@@ -111,8 +118,18 @@ function renderThroughFiltersValue(arrFiltersValue: string[], year: Range, amoun
     }
     return check;
   });
-  // фильтры по диапазону
-  // ...
+  if (search) {
+    currentProducts = currentProducts.filter((prod) => {
+      const prodName = prod.name.toLowerCase();
+      const searchStr = search.toLowerCase();
+      let check = true;
+      if (!prodName.includes(searchStr)) {
+        check = false;
+      }
+      return check;
+    });
+  }
+
   itemsClear();
   const arrProducts = currentProducts.map((prod) => prod.render());
   AppView.renderProducts(arrProducts);

@@ -64,19 +64,17 @@ export class Filters {
   }
   setAmounts(target: Range) {
     this.amounts = target;
-    console.log(this.amounts);
   }
   setYears(target: Range) {
     this.years = target;
-    console.log(this.years);
   }
   setSearch(value: string) {
     this.search = value;
-    console.log(this.search);
+    // console.log(this.search);
   }
   setSort(value: string) {
     this.sort = value;
-    console.log(this.sort);
+    // console.log(this.sort);
   }
   getAllOnFiltersValue(): string[] {
     const result: string[] = [];
@@ -96,5 +94,8 @@ export class Filters {
   }
   getYears() {
     return this.years;
+  }
+  getSearch() {
+    return this.search;
   }
 }
