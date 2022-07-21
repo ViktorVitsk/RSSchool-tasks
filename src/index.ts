@@ -14,9 +14,52 @@ const temp = localStorage.getItem('filtersVitsk');
 const inst = JSON.parse(temp as string);
 const filters = new Filters();
 const PRODUCTS = new AllProducts(data);
-// получаем все товары
-noslider('year', [2017, 2022]);
-noslider('amount', [1, 12]);
+
+const sliderYear: noUiSlider.target = document.getElementById('year') as noUiSlider.target;
+
+if (sliderYear) {
+  noUiSlider.create(sliderYear, {
+    start: [2017, 2022],
+    connect: true,
+    range: {
+      min: 2017,
+      max: 2022,
+    },
+    step: 1,
+    behaviour: 'tap-drag',
+    tooltips: true,
+    format: wNumb({
+      decimals: 0,
+    }),
+  });
+  sliderYear.noUiSlider?.on('update', (val) => {
+    filters.setYears(val);
+  });
+}
+
+const sliderAmount: noUiSlider.target = document.getElementById('amount') as noUiSlider.target;
+
+if (sliderAmount) {
+  noUiSlider.create(sliderAmount, {
+    start: [1, 12],
+    connect: true,
+    range: {
+      min: 1,
+      max: 12,
+    },
+    step: 1,
+    behaviour: 'tap-drag',
+    tooltips: true,
+    format: wNumb({
+      decimals: 0,
+    }),
+  });
+
+  sliderAmount.noUiSlider?.on('update', (val) => {
+    filters.setAmounts(val);
+  });
+}
+
 const temp2 = localStorage.getItem('cartVitsk') as string;
 const cartArr = JSON.parse(temp2);
 
@@ -31,8 +74,9 @@ if (inst) {
   AppView.renderProducts(arrProducts);
 }
 renderThroughFiltersValue();
+sliderYear.noUiSlider?.set(filters.getYears());
+sliderAmount.noUiSlider?.set(filters.getAmounts());
 const filtersHTML = document.querySelector('.filters');
-
 const search = document.getElementById('search');
 
 if (search instanceof HTMLInputElement) {
@@ -70,6 +114,8 @@ filtersHTML?.addEventListener('click', (event) => {
     }
     if (target.hasAttribute('reset-filters')) {
       filters.reset();
+      sliderYear.noUiSlider?.reset();
+      sliderAmount.noUiSlider?.reset();
     }
     if (target.hasAttribute('reset-settings')) {
       localStorage.removeItem('filtersVitsk');
@@ -104,40 +150,6 @@ itemsHTML?.addEventListener('click', (event) => {
     }
   }
 });
-
-function noslider(id: string, range: [number, number]) {
-  const slider: noUiSlider.target = document.getElementById(id) as noUiSlider.target;
-
-  if (slider) {
-    noUiSlider.create(slider, {
-      start: [range[0], range[1]],
-      connect: true,
-      range: {
-        min: range[0],
-        max: range[1],
-      },
-      step: 1,
-      behaviour: 'tap-drag',
-      tooltips: true,
-      format: wNumb({
-        decimals: 0,
-      }),
-    });
-    if (slider.noUiSlider) {
-      slider.noUiSlider.on('update', (val) => {
-        if (id === 'year') {
-          filters.setYears(val);
-        }
-        if (id === 'amount') {
-          filters.setAmounts(val);
-        }
-      });
-      // document.querySelector('.item')?.addEventListener('click', () => {
-      //   console.log(slider.noUiSlider);
-      // });
-    }
-  }
-}
 
 function renderThroughFiltersValue() {
   const arrFiltersValue = filters.getAllOnFiltersValue();
