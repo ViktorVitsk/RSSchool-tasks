@@ -37,7 +37,7 @@ class Loader {
     }
 
     makeUrl(options: ApiKey, endpoint: Endpoint) {
-        const urlOptions = { ...this.options, ...options };
+        const urlOptions = { ...this.options, ...options } as ApiKey;
         let url = `${this.baseLink}${endpoint}?`;
 
         Object.keys(urlOptions).forEach((key) => {

@@ -2,7 +2,7 @@ import AppLoader from './appLoader';
 import { CallbackVoid, DataDrawNews, DataDrawSources } from '../interfaces-and-types/interfaces-and-type';
 
 class AppController extends AppLoader {
-    getSources(callback: CallbackVoid<DataDrawSources>) {
+    getSources(callback: CallbackVoid<DataDrawSources>): void {
         super.getResp(
             {
                 endpoint: 'sources',
@@ -11,28 +11,33 @@ class AppController extends AppLoader {
         );
     }
 
-    getNews(e: Event, callback: CallbackVoid<DataDrawNews>) {
-        let target = e.target as HTMLElement;
-        const newsContainer = e.currentTarget as HTMLElement;
+    getNews(e: Event, callback: CallbackVoid<DataDrawNews>): void {
+        if (e.target instanceof HTMLElement && e.currentTarget instanceof HTMLElement) {
+            let target = e.target;
 
-        while (target !== newsContainer) {
-            if (target.classList.contains('source__item')) {
-                const sourceId = target.getAttribute('data-source-id') as string;
-                if (newsContainer.getAttribute('data-source') !== sourceId) {
-                    newsContainer.setAttribute('data-source', sourceId);
-                    super.getResp(
-                        {
-                            endpoint: 'everything',
-                            options: {
-                                sources: sourceId,
+            const newsContainer = e.currentTarget;
+
+            while (target !== newsContainer) {
+                if (target.classList.contains('source__item')) {
+                    const sourceId: string = <string>target.getAttribute('data-source-id');
+                    if (newsContainer.getAttribute('data-source') !== sourceId) {
+                        newsContainer.setAttribute('data-source', sourceId);
+                        super.getResp(
+                            {
+                                endpoint: 'everything',
+                                options: {
+                                    sources: sourceId,
+                                },
                             },
-                        },
-                        callback
-                    );
+                            callback
+                        );
+                    }
+                    return;
                 }
-                return;
+                if (target.parentNode instanceof HTMLElement) {
+                    target = target.parentNode;
+                }
             }
-            target = target.parentNode as HTMLElement;
         }
     }
 }
