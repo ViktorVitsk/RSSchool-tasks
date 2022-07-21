@@ -111,9 +111,9 @@ export class Filters {
     this.brands['Orbea'] = storage.brands['Orbea'];
     this.brands['Santa-Cruz'] = storage.brands['Santa-Cruz'];
     this.brands['Scott'] = storage.brands['Scott'];
-    this.sizes['27'] = storage.brands['27'];
-    this.sizes['28'] = storage.brands['28'];
-    this.sizes['29'] = storage.brands['29'];
+    this.sizes['27'] = storage.sizes['27'];
+    this.sizes['28'] = storage.sizes['28'];
+    this.sizes['29'] = storage.sizes['29'];
     this.colors['зеленый'] = storage.colors['зеленый'];
     this.colors['белый'] = storage.colors['белый'];
     this.colors['серый'] = storage.colors['серый'];
