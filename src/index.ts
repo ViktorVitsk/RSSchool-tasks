@@ -8,7 +8,6 @@ import { Brands, Sizes, Colors, Electrics } from './components/interfaces/IFilte
 import * as noUiSlider from 'nouislider';
 import Item from './components/products/Item';
 const wNumb = require('wnumb');
-
 brandsDraw();
 // определяем фильтры (потом добавить localStorage)
 const temp = localStorage.getItem('filtersVitsk');
@@ -18,15 +17,20 @@ const PRODUCTS = new AllProducts(data);
 // получаем все товары
 noslider('year', [2017, 2022]);
 noslider('amount', [1, 12]);
+const temp2 = localStorage.getItem('cartVitsk') as string;
+const cartArr = JSON.parse(temp2);
 
+const CART_AMOUNT = document.querySelector('.header__cart-amount') as HTMLElement;
+const CART: string[] = cartArr ? cartArr : [];
+// renderCART();
 // подготавливаем массив товаров для рендеринга
 const arrProducts = PRODUCTS.products.map((prod) => prod.render());
 if (inst) {
   filters.setAllField(inst);
-  renderThroughFiltersValue();
 } else {
   AppView.renderProducts(arrProducts);
 }
+renderThroughFiltersValue();
 const filtersHTML = document.querySelector('.filters');
 
 const search = document.getElementById('search');
@@ -43,21 +47,22 @@ if (search instanceof HTMLInputElement) {
 filtersHTML?.addEventListener('click', (event) => {
   if (event.target instanceof HTMLElement) {
     const target = event.target;
+    // target.classList.toggle('btn_active');
     if (target.hasAttribute('data-brand')) {
       const currentBrand: Brands = target.getAttribute('data-brand') as Brands;
-      filters.setBrands(currentBrand);
+      filters.setBrands(currentBrand, target);
     }
     if (target.hasAttribute('data-size')) {
       const currentSize: Sizes = target.getAttribute('data-size') as Sizes;
-      filters.setSizes(currentSize);
+      filters.setSizes(currentSize, target);
     }
     if (target.hasAttribute('data-color')) {
       const currentColors: Colors = target.getAttribute('data-color') as Colors;
-      filters.setColors(currentColors);
+      filters.setColors(currentColors, target);
     }
     if (target.hasAttribute('data-electric')) {
       const currentElectrics: Electrics = target.getAttribute('data-electric') as Electrics;
-      filters.setElectrics(currentElectrics);
+      filters.setElectrics(currentElectrics, target);
     }
     if (target.hasAttribute('data-sort')) {
       const currentSort: string = target.getAttribute('data-sort') as string;
@@ -68,8 +73,34 @@ filtersHTML?.addEventListener('click', (event) => {
     }
     if (target.hasAttribute('reset-settings')) {
       localStorage.removeItem('filtersVitsk');
+      localStorage.removeItem('cartVitsk');
+      // CART.length = 0;
     } else {
       renderThroughFiltersValue();
+    }
+  }
+});
+
+const itemsHTML = document.querySelector('.items-list');
+itemsHTML?.addEventListener('click', (event) => {
+  if (event.target instanceof HTMLElement) {
+    const target = event.target;
+    const bike = target.closest('.item');
+    if (bike) {
+      const bikeId: string | null = bike.getAttribute('data-id');
+      if (bikeId) {
+        const index = CART.indexOf(bikeId);
+        if (index > -1) {
+          CART.splice(index, 1);
+          bike.classList.remove('in-cart');
+          CART_AMOUNT.innerText = CART.length + '';
+        } else {
+          CART.push(bikeId);
+          bike.classList.add('in-cart');
+          CART_AMOUNT.innerText = CART.length + '';
+        }
+        localStorage.setItem('cartVitsk', JSON.stringify(CART));
+      }
     }
   }
 });
@@ -101,6 +132,9 @@ function noslider(id: string, range: [number, number]) {
           filters.setAmounts(val);
         }
       });
+      // document.querySelector('.item')?.addEventListener('click', () => {
+      //   console.log(slider.noUiSlider);
+      // });
     }
   }
 }
@@ -151,11 +185,12 @@ function renderThroughFiltersValue() {
   }
   // Порядок
   currentProducts = sort(currentProducts, filters.getSort());
-  console.log(filters.getSort());
   itemsClear();
   const arrProducts = currentProducts.map((prod) => prod.render());
   AppView.renderProducts(arrProducts);
+  renderCART();
   localStorage.setItem('filtersVitsk', JSON.stringify(filters));
+  localStorage.setItem('cartVitsk', JSON.stringify(CART));
 }
 function itemsClear() {
   const itemContainer = document.querySelector('.items-list');
@@ -176,4 +211,20 @@ function sort(arr: Item[], by: string) {
     default:
       return arr;
   }
+}
+function renderCART() {
+  const bikes = document.querySelectorAll('.item');
+  if (CART.length > 0) {
+    bikes.forEach((item) => {
+      const bikeId = item.getAttribute('data-id');
+      if (bikeId) {
+        if (CART.includes(bikeId)) {
+          item.classList.add('in-cart');
+        } else {
+          item.classList.remove('in-cart');
+        }
+      }
+    });
+  }
+  CART_AMOUNT.innerText = CART.length + '';
 }

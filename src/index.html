@@ -13,7 +13,7 @@
           <div class="header__img"></div>
           <h1 class="header__title">Online Store</h1>
         </div>
-        <div class="header__cart"></div>
+        <div class="header__cart"><span class="header__cart-amount">0</span></div>
       </div>
     </header>
     <main class="main wrapper">
@@ -87,11 +87,11 @@
 
           <div class="filters__reset">
             <button class="filters__reset_filter" reset-filters>Сброс Фильтров</button>
-            <button class="filters__reset_settings" reset-settings>Сброс Настроек</button>
+            <button class="filters__reset_settings" reset-settings>Сброс localStorage</button>
           </div>
         </div>
       </div>
-      <div class="items-list wrapper"></div>
+      <div class="items-list wrapper" onmousedown="return false" onselectstart="return false"></div>
     </main>
     <footer class="footer">
       <div class="footer__container wrapper">

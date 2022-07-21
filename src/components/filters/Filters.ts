@@ -46,28 +46,31 @@ export class Filters {
 
   sort = '';
 
-  setBrands(target: Brands) {
-    this.brands[target] = this.brands[target] ? false : true;
+  setBrands(value: Brands, target: HTMLElement) {
+    this.brands[value] = this.brands[value] ? false : true;
     this.getAllOnFiltersValue();
+    this.brands[value] ? target.classList.add('btn_active') : target.classList.remove('btn_active');
   }
-  setSizes(target: Sizes) {
-    this.sizes[target] = this.sizes[target] ? false : true;
+  setSizes(value: Sizes, target: HTMLElement) {
+    this.sizes[value] = this.sizes[value] ? false : true;
     this.getAllOnFiltersValue();
+    this.sizes[value] ? target.classList.add('btn_active') : target.classList.remove('btn_active');
   }
-  setColors(target: Colors) {
-    this.colors[target] = this.colors[target] ? false : true;
+  setColors(value: Colors, target: HTMLElement) {
+    this.colors[value] = this.colors[value] ? false : true;
     this.getAllOnFiltersValue();
+    this.colors[value] ? target.classList.add('btn_active') : target.classList.remove('btn_active');
   }
-  setElectrics(target: Electrics) {
-    this.electrics[target] = this.electrics[target] ? false : true;
-
+  setElectrics(value: Electrics, target: HTMLElement) {
+    this.electrics[value] = this.electrics[value] ? false : true;
     this.getAllOnFiltersValue();
+    this.electrics[value] ? target.classList.add('btn_active') : target.classList.remove('btn_active');
   }
-  setAmounts(target: Range) {
-    this.amounts = target;
+  setAmounts(value: Range) {
+    this.amounts = value;
   }
-  setYears(target: Range) {
-    this.years = target;
+  setYears(value: Range) {
+    this.years = value;
   }
   setSearch(value: string) {
     this.search = value;
@@ -128,7 +131,6 @@ export class Filters {
     this.years = storage.years;
     this.search = storage.search;
     this.sort = storage.sort;
-    console.log(this.years, storage.years);
   }
   reset() {
     this.brands['Bergamont'] = false;
@@ -155,5 +157,7 @@ export class Filters {
     this.electrics['нет'] = false;
     this.amounts = ['1', '12'];
     this.years = ['2017', '2022'];
+    const activeBtn = document.querySelectorAll('.btn_active');
+    activeBtn.forEach((el) => el.classList.remove('btn_active'));
   }
 }
