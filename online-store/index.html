@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  <script defer src="index.js"></script></head>
+  <body>
+    <header class="header">
+      <div class="header__container wrapper">
+        <div class="header__logo">
+          <div class="header__img"></div>
+          <h1 class="header__title">Online Store</h1>
+        </div>
+        <div class="header__cart"><span class="header__cart-amount">0</span></div>
+      </div>
+    </header>
+    <main class="main wrapper">
+      <div class="filters">
+        <div class="filters__by-value filters__wrapper">
+          <h3 class="filters__title">Фильтры по значению</h3>
+          <div class="filters__list">
+            <div class="filters__by-value_brand">
+              <span>Производитель:</span>
+              <div class="brands">
+                <div class="brand btns" data-brand="Bergamont"></div>
+                <div class="brand btns" data-brand="Bianchi"></div>
+                <div class="brand btns" data-brand="Bottecchia"></div>
+                <div class="brand btns" data-brand="Giant"></div>
+                <div class="brand btns" data-brand="Haibike"></div>
+                <div class="brand btns" data-brand="Kona"></div>
+                <div class="brand btns" data-brand="Kreidler"></div>
+                <div class="brand btns" data-brand="Orbea"></div>
+                <div class="brand btns" data-brand="Santa-Cruz"></div>
+                <div class="brand btns" data-brand="Scott"></div>
+              </div>
+            </div>
+            <div class="filters__by-value_size">
+              <span>Диаметр колеса:</span>
+              <button data-size="27" class="btn btns">27</button>
+              <button data-size="28" class="btn btns">28</button>
+              <button data-size="29" class="btn btns">29</button>
+            </div>
+            <div class="filters__by-value_color">
+              <span>Цвет:</span>
+              <button data-color="зеленый" class="btnColor btns btn_green"></button>
+              <button data-color="белый" class="btnColor btns btn_white"></button>
+              <button data-color="серый" class="btnColor btns btn_grey"></button>
+              <button data-color="синий" class="btnColor btns btn_blue"></button>
+              <button data-color="красный" class="btnColor btns btn_red"></button>
+              <button data-color="черный" class="btnColor btns btn_black"></button>
+              <button data-color="золотистый" class="btnColor btns btn_gold"></button>
+            </div>
+            <div class="filters__by-value_electric">
+              <span>Только электровелосипеды:</span>
+              <button data-electric="да" class="btn btns">Да</button>
+              <!-- <button data-electric="нет" class="btn btns">Нет</button> -->
+            </div>
+          </div>
+        </div>
+        <div class="filters__by-range filters__wrapper">
+          <h3 class="filters__title">Фильтры по диапазону</h3>
+          <div class="filters__list filters__list-range">
+            <div class="filters__by-range_amount">
+              <span class="filters__title-range">Год выхода на рынок:</span>
+              <div id="year"></div>
+            </div>
+            <div class="filters__by-range_year">
+              <span class="filters__title-range">Количество на складе:</span>
+              <div id="amount"></div>
+            </div>
+          </div>
+        </div>
+        <div class="filters__search filters__wrapper">
+          <h3 class="filters__title">Поиск</h3>
+          <div class="filters__search_field">
+            <input type="text" name="search" id="search" placeholder="поиск" />
+          </div>
+          <h3 class="filters__title">Сортировка</h3>
+          <div class="filters__search_sort">
+            <button class="drop" data-sort="nameUp">Имя возрастание</button>
+            <button class="drop" data-sort="nameDown">Имя убывание</button>
+            <button class="drop" data-sort="yearUp">Год возрастание</button>
+            <button class="drop" data-sort="yearDown">Год убывание</button>
+          </div>
+
+          <div class="filters__reset">
+            <button class="filters__reset_filter" reset-filters>Сброс Фильтров</button>
+            <button class="filters__reset_settings" reset-settings>Сброс localStorage</button>
+          </div>
+        </div>
+      </div>
+      <div class="items-list wrapper" onmousedown="return false" onselectstart="return false"></div>
+    </main>
+    <footer class="footer">
+      <div class="footer__container wrapper">
+        <a href="https://rs.school/" target="_blank">
+          <div class="footer__logo"></div>
+        </a>
+        <div class="footer__link">
+          <a href="https://rollingscopes.com/" target="_blank">© Rolling Scopes School, 2022</a>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
