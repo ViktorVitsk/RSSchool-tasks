@@ -6,25 +6,33 @@ import brandsDraw from './components/view/brands';
 import { Filters } from './components/filters/Filters';
 import { Brands, Sizes, Colors, Electrics } from './components/interfaces/IFilters';
 import * as noUiSlider from 'nouislider';
+import Item from './components/products/Item';
 const wNumb = require('wnumb');
 
 brandsDraw();
 // определяем фильтры (потом добавить localStorage)
+const temp = localStorage.getItem('filtersVitsk');
+const inst = JSON.parse(temp as string);
 const filters = new Filters();
-// получаем все товары
 const PRODUCTS = new AllProducts(data);
+// получаем все товары
 noslider('year', [2017, 2022]);
 noslider('amount', [1, 12]);
 
 // подготавливаем массив товаров для рендеринга
 const arrProducts = PRODUCTS.products.map((prod) => prod.render());
-
-AppView.renderProducts(arrProducts);
+if (inst) {
+  filters.setAllField(inst);
+  renderThroughFiltersValue();
+} else {
+  AppView.renderProducts(arrProducts);
+}
 const filtersHTML = document.querySelector('.filters');
 
 const search = document.getElementById('search');
 
 if (search instanceof HTMLInputElement) {
+  search.value = filters.search;
   search.oninput = function () {
     filters.setSearch(search.value);
     renderThroughFiltersValue();
@@ -50,9 +58,17 @@ filtersHTML?.addEventListener('click', (event) => {
       const currentElectrics: Electrics = target.getAttribute('data-electric') as Electrics;
       filters.setElectrics(currentElectrics);
     }
+    if (target.hasAttribute('data-sort')) {
+      const currentSort: string = target.getAttribute('data-sort') as string;
+      filters.setSort(currentSort);
+    }
+    if (target.hasAttribute('reset-settings')) {
+      console.log('ls');
+      localStorage.removeItem('filtersVitsk');
+    } else {
+      renderThroughFiltersValue();
+    }
   }
-
-  renderThroughFiltersValue();
 });
 
 function noslider(id: string, range: [number, number]) {
@@ -118,6 +134,7 @@ function renderThroughFiltersValue() {
     }
     return check;
   });
+  // фильтры по поиску
   if (search) {
     currentProducts = currentProducts.filter((prod) => {
       const prodName = prod.name.toLowerCase();
@@ -129,14 +146,31 @@ function renderThroughFiltersValue() {
       return check;
     });
   }
-
+  // Порядок
+  currentProducts = sort(currentProducts, filters.getSort());
+  console.log(filters.getSort());
   itemsClear();
   const arrProducts = currentProducts.map((prod) => prod.render());
   AppView.renderProducts(arrProducts);
+  localStorage.setItem('filtersVitsk', JSON.stringify(filters));
 }
 function itemsClear() {
   const itemContainer = document.querySelector('.items-list');
   while (itemContainer?.firstChild) {
     itemContainer.removeChild(itemContainer.firstChild);
+  }
+}
+function sort(arr: Item[], by: string) {
+  switch (by) {
+    case 'nameUp':
+      return arr.sort((a, b) => (a.name > b.name ? 1 : -1));
+    case 'nameDown':
+      return arr.sort((a, b) => (a.name < b.name ? 1 : -1));
+    case 'yearUp':
+      return arr.sort((a, b) => (a.year > b.year ? 1 : -1));
+    case 'yearDown':
+      return arr.sort((a, b) => (a.year < b.year ? 1 : -1));
+    default:
+      return arr;
   }
 }

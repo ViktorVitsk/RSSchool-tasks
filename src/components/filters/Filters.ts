@@ -38,13 +38,13 @@ export class Filters {
     нет: false,
   };
 
-  amounts: (string | number)[] = ['2017', '2022'];
+  years: (string | number)[] = ['2017', '2022'];
 
-  years: (string | number)[] = ['1', '12'];
+  amounts: (string | number)[] = ['1', '12'];
 
   search = '';
 
-  sort = 'false';
+  sort = '';
 
   setBrands(target: Brands) {
     this.brands[target] = this.brands[target] ? false : true;
@@ -70,11 +70,10 @@ export class Filters {
   }
   setSearch(value: string) {
     this.search = value;
-    // console.log(this.search);
   }
   setSort(value: string) {
     this.sort = value;
-    // console.log(this.sort);
+    console.log(this.sort);
   }
   getAllOnFiltersValue(): string[] {
     const result: string[] = [];
@@ -97,5 +96,38 @@ export class Filters {
   }
   getSearch() {
     return this.search;
+  }
+  getSort() {
+    return this.sort;
+  }
+  setAllField(storage: any) {
+    this.brands['Bergamont'] = storage.brands['Bergamont'];
+    this.brands['Bianchi'] = storage.brands['Bianchi'];
+    this.brands['Bottecchia'] = storage.brands['Bottecchia'];
+    this.brands['Giant'] = storage.brands['Giant'];
+    this.brands['Haibike'] = storage.brands['Haibike'];
+    this.brands['Kona'] = storage.brands['Kona'];
+    this.brands['Kreidler'] = storage.brands['Kreidler'];
+    this.brands['Orbea'] = storage.brands['Orbea'];
+    this.brands['Santa-Cruz'] = storage.brands['Santa-Cruz'];
+    this.brands['Scott'] = storage.brands['Scott'];
+    this.sizes['27'] = storage.brands['27'];
+    this.sizes['28'] = storage.brands['28'];
+    this.sizes['29'] = storage.brands['29'];
+    this.colors['зеленый'] = storage.colors['зеленый'];
+    this.colors['белый'] = storage.colors['белый'];
+    this.colors['серый'] = storage.colors['серый'];
+    this.colors['синий'] = storage.colors['синий'];
+    this.colors['красный'] = storage.colors['красный'];
+    this.colors['черный'] = storage.colors['черный'];
+    this.colors['золотистый'] = storage.colors['золотистый'];
+    this.electrics['да'] = storage.electrics['да'];
+    this.electrics['нет'] = storage.electrics['нет'];
+    this.amounts = storage.amounts;
+
+    this.years = storage.years;
+    this.search = storage.search;
+    this.sort = storage.sort;
+    console.log(this.years, storage.years);
   }
 }

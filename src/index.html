@@ -61,7 +61,7 @@
         </div>
         <div class="filters__by-range filters__wrapper">
           <h3 class="filters__title">Фильтры по диапазону</h3>
-          <div class="filters__list">
+          <div class="filters__list filters__list-range">
             <div class="filters__by-range_amount">
               <span class="filters__title-range">Год выхода на рынок:</span>
               <div id="year"></div>
@@ -75,26 +75,23 @@
         <div class="filters__search filters__wrapper">
           <h3 class="filters__title">Поиск</h3>
           <div class="filters__search_field">
-            <input type="text" name="search" id="search" />
+            <input type="text" name="search" id="search" placeholder="поиск" />
           </div>
           <h3 class="filters__title">Сортировка</h3>
           <div class="filters__search_sort">
-            <select class="select-css">
-              <option class="drop" data-sort="false"></option>
-              <option class="drop" data-sort="nameUp">По названию (по возрастанию)</option>
-              <option class="drop" data-sort="nameDown">По названию (по убыванию)</option>
-              <option class="drop" data-sort="yearUp">По году(по возрастанию)</option>
-              <option class="drop" data-sort="yearDown">По году(по убыванию)</option>
-            </select>
+            <button class="drop" data-sort="nameUp">Имя возрастание</button>
+            <button class="drop" data-sort="nameDown">Имя убывание</button>
+            <button class="drop" data-sort="yearUp">Год возрастание</button>
+            <button class="drop" data-sort="yearDown">Год убывание</button>
           </div>
-          
+
           <div class="filters__reset">
             <button class="filters__reset_filter">Сброс Фильтров</button>
-            <button class="filters__reset_settings">Сброс Настроек</button>
+            <button class="filters__reset_settings" reset-settings >Сброс Настроек</button>
           </div>
         </div>
       </div>
-      <div class="items-list"></div>
+      <div class="items-list wrapper"></div>
     </main>
     <footer class="footer">
       <div class="footer__container wrapper">
