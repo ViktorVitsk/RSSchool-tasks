@@ -4401,7 +4401,6 @@ itemsHTML === null || itemsHTML === void 0 ? void 0 : itemsHTML.addEventListener
 function noElementAlert() {
     const itemsList = document.querySelector('.items-list');
     if (!itemsList.hasChildNodes()) {
-        console.log('nema');
         const element = document.createElement('div');
         element.classList.add('no-element');
         element.innerText = 'Извините, совпадений не обнаружено';
