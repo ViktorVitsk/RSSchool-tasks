@@ -141,15 +141,31 @@ itemsHTML?.addEventListener('click', (event) => {
           bike.classList.remove('in-cart');
           CART_AMOUNT.innerText = CART.length + '';
         } else {
-          CART.push(bikeId);
-          bike.classList.add('in-cart');
-          CART_AMOUNT.innerText = CART.length + '';
+          if (CART.length >= 20) {
+            alert('Извините, все слоты заполнены');
+          } else {
+            CART.push(bikeId);
+            bike.classList.add('in-cart');
+            CART_AMOUNT.innerText = CART.length + '';
+          }
         }
         localStorage.setItem('cartVitsk', JSON.stringify(CART));
       }
     }
   }
 });
+
+function noElementAlert() {
+  const itemsList = document.querySelector('.items-list') as HTMLElement;
+  if (!itemsList.hasChildNodes()) {
+    console.log('nema');
+
+    const element = document.createElement('div');
+    element.classList.add('no-element');
+    element.innerText = 'Извините, совпадений не обнаружено';
+    itemsList.appendChild(element);
+  }
+}
 
 function renderThroughFiltersValue() {
   const arrFiltersValue = filters.getAllOnFiltersValue();
@@ -203,6 +219,7 @@ function renderThroughFiltersValue() {
   renderCART();
   localStorage.setItem('filtersVitsk', JSON.stringify(filters));
   localStorage.setItem('cartVitsk', JSON.stringify(CART));
+  noElementAlert();
 }
 function itemsClear() {
   const itemContainer = document.querySelector('.items-list');
@@ -226,7 +243,7 @@ function sort(arr: Item[], by: string) {
 }
 function renderCART() {
   const bikes = document.querySelectorAll('.item');
-  if (CART.length > 0) {
+  if (CART.length > 0 && CART.length < 21) {
     bikes.forEach((item) => {
       const bikeId = item.getAttribute('data-id');
       if (bikeId) {
@@ -237,6 +254,9 @@ function renderCART() {
         }
       }
     });
+  } else if (CART.length > 20) {
+    alert('Извините, все слоты заполнены');
   }
+
   CART_AMOUNT.innerText = CART.length + '';
 }
