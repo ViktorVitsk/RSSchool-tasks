@@ -60,6 +60,7 @@ export class Filters {
   }
   setElectrics(target: Electrics) {
     this.electrics[target] = this.electrics[target] ? false : true;
+
     this.getAllOnFiltersValue();
   }
   setAmounts(target: Range) {
@@ -124,7 +125,6 @@ export class Filters {
     this.electrics['да'] = storage.electrics['да'];
     this.electrics['нет'] = storage.electrics['нет'];
     this.amounts = storage.amounts;
-
     this.years = storage.years;
     this.search = storage.search;
     this.sort = storage.sort;
