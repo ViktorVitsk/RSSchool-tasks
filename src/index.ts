@@ -177,10 +177,10 @@ function renderThroughFiltersValue() {
   // фильтры по значениям
   if (arrFiltersValue.length > 0) {
     currentProducts = currentProducts.filter((prod) => {
-      let check = true;
+      let check = false;
       arrFiltersValue.forEach((val) => {
-        if (!prod.getValues().includes(val)) {
-          check = false;
+        if (prod.getValues().includes(val)) {
+          check = true;
         }
       });
       return check;
