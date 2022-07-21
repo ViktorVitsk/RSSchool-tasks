@@ -168,17 +168,53 @@ function noElementAlert() {
 }
 
 function renderThroughFiltersValue() {
-  const arrFiltersValue = filters.getAllOnFiltersValue();
+  const arrFiltersBrands = filters.getAllBrands();
+  const arrFiltersSizes = filters.getAllSizes();
+  const arrFiltersColors = filters.getAllColors();
+  const arrFiltersElectrics = filters.getAllElectrics();
   const year = filters.getYears();
   const amount = filters.getAmounts();
   const search = filters.getSearch();
   let currentProducts = PRODUCTS.products;
 
   // фильтры по значениям
-  if (arrFiltersValue.length > 0) {
+  if (arrFiltersBrands.length > 0) {
     currentProducts = currentProducts.filter((prod) => {
       let check = false;
-      arrFiltersValue.forEach((val) => {
+      arrFiltersBrands.forEach((val) => {
+        if (prod.getValues().includes(val)) {
+          check = true;
+        }
+      });
+      return check;
+    });
+  }
+  if (arrFiltersSizes.length > 0) {
+    currentProducts = currentProducts.filter((prod) => {
+      let check = false;
+      arrFiltersSizes.forEach((val) => {
+        if (prod.getValues().includes(val)) {
+          check = true;
+        }
+      });
+      return check;
+    });
+  }
+  if (arrFiltersColors.length > 0) {
+    currentProducts = currentProducts.filter((prod) => {
+      let check = false;
+      arrFiltersColors.forEach((val) => {
+        if (prod.getValues().includes(val)) {
+          check = true;
+        }
+      });
+      return check;
+    });
+  }
+  if (arrFiltersElectrics.length > 0) {
+    currentProducts = currentProducts.filter((prod) => {
+      let check = false;
+      arrFiltersElectrics.forEach((val) => {
         if (prod.getValues().includes(val)) {
           check = true;
         }

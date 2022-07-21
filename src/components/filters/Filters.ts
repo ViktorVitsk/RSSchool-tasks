@@ -48,22 +48,18 @@ export class Filters {
 
   setBrands(value: Brands, target: HTMLElement) {
     this.brands[value] = this.brands[value] ? false : true;
-    this.getAllOnFiltersValue();
     this.brands[value] ? target.classList.add('btn_active') : target.classList.remove('btn_active');
   }
   setSizes(value: Sizes, target: HTMLElement) {
     this.sizes[value] = this.sizes[value] ? false : true;
-    this.getAllOnFiltersValue();
     this.sizes[value] ? target.classList.add('btn_active') : target.classList.remove('btn_active');
   }
   setColors(value: Colors, target: HTMLElement) {
     this.colors[value] = this.colors[value] ? false : true;
-    this.getAllOnFiltersValue();
     this.colors[value] ? target.classList.add('btn_active') : target.classList.remove('btn_active');
   }
   setElectrics(value: Electrics, target: HTMLElement) {
     this.electrics[value] = this.electrics[value] ? false : true;
-    this.getAllOnFiltersValue();
     this.electrics[value] ? target.classList.add('btn_active') : target.classList.remove('btn_active');
   }
   setAmounts(value: Range) {
@@ -79,14 +75,17 @@ export class Filters {
     this.sort = value;
     console.log(this.sort);
   }
-  getAllOnFiltersValue(): string[] {
-    const result: string[] = [];
-    const brands = this.getOnFiltersValue(this.brands);
-    const sizes = this.getOnFiltersValue(this.sizes);
-    const colors = this.getOnFiltersValue(this.colors);
-    const electrics = this.getOnFiltersValue(this.electrics);
-    result.push(...brands, ...sizes, ...colors, ...electrics);
-    return result;
+  getAllBrands(): string[] {
+    return this.getOnFiltersValue(this.brands);
+  }
+  getAllSizes(): string[] {
+    return this.getOnFiltersValue(this.sizes);
+  }
+  getAllColors(): string[] {
+    return this.getOnFiltersValue(this.colors);
+  }
+  getAllElectrics(): string[] {
+    return this.getOnFiltersValue(this.electrics);
   }
   private getOnFiltersValue(filtersObj: IValues) {
     const brandsKeys: string[] = Object.keys(filtersObj);
