@@ -25,6 +25,7 @@
 .brands {
   display: flex;
   flex-wrap: wrap;
+  background: #0f2c0e3d;
 }
 
 .brand {
