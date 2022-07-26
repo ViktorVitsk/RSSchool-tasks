@@ -1,4 +1,3 @@
-// import data from './data';
 import IItem from '../interfaces/IItem';
 export default class Item {
   private readonly _id: string;
@@ -10,6 +9,7 @@ export default class Item {
   private readonly _size: string;
   private readonly _electric: string;
 
+  // создает единицу товара со всеми свойствами
   constructor(item: IItem) {
     this._id = item.id;
     this._brand = item.brand;
@@ -20,7 +20,7 @@ export default class Item {
     this._size = item.size;
     this._electric = item.electric;
   }
-
+  // возвращает HTMLElement товара в виде строки
   render(): string {
     return `
     <div class="item" data-id=${this._id}>

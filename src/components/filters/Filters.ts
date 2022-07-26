@@ -1,4 +1,7 @@
 import { Brands, Sizes, Colors, Electrics, Range, IValues } from '../interfaces/IFilters';
+import { AllProducts } from '../products/AllProducts';
+import Item from '../products/Item';
+import { AppView } from '../view/AppView';
 
 export class Filters {
   brands: IValues = {
@@ -99,7 +102,8 @@ export class Filters {
   getSort(): string {
     return this.sort;
   }
-  setAllFieldFromStorage(storage: Filters): void {
+
+  setAllFieldFromLocalStorage(storage: Filters): void {
     this.brands['Bergamont'] = storage.brands['Bergamont'];
     this.brands['Bianchi'] = storage.brands['Bianchi'];
     this.brands['Bottecchia'] = storage.brands['Bottecchia'];
@@ -127,6 +131,7 @@ export class Filters {
     this.search = storage.search;
     this.sort = storage.sort;
   }
+  // для кнопки сброс фильтров
   reset(): void {
     this.brands['Bergamont'] = false;
     this.brands['Bianchi'] = false;
@@ -154,5 +159,127 @@ export class Filters {
     this.years = ['2017', '2022'];
     const activeBtn: NodeListOf<Element> = document.querySelectorAll('.btn_active');
     activeBtn.forEach((el) => el.classList.remove('btn_active'));
+  }
+
+  renderThroughFiltersValue(cart: string[], cartAmount: HTMLElement, allProducts: AllProducts): void {
+    const arrFiltersBrands: string[] = this.getAllBrands();
+    const arrFiltersSizes: string[] = this.getAllSizes();
+    const arrFiltersColors: string[] = this.getAllColors();
+    const arrFiltersElectrics: string[] = this.getAllElectrics();
+    const year: Range = this.getYears();
+    const amount: Range = this.getAmounts();
+    const search: string = this.getSearch();
+    let currentProducts: Item[] = allProducts.products;
+
+    // фильтры по значениям
+    if (arrFiltersBrands.length > 0) {
+      currentProducts = currentProducts.filter((prod: Item) => {
+        let check = false;
+        arrFiltersBrands.forEach((val: string) => {
+          if (prod.getValues().includes(val)) {
+            check = true;
+          }
+        });
+        return check;
+      });
+    }
+    if (arrFiltersSizes.length > 0) {
+      currentProducts = currentProducts.filter((prod: Item) => {
+        let check = false;
+        arrFiltersSizes.forEach((val: string) => {
+          if (prod.getValues().includes(val)) {
+            check = true;
+          }
+        });
+        return check;
+      });
+    }
+    if (arrFiltersColors.length > 0) {
+      currentProducts = currentProducts.filter((prod: Item) => {
+        let check = false;
+        arrFiltersColors.forEach((val: string) => {
+          if (prod.getValues().includes(val)) {
+            check = true;
+          }
+        });
+        return check;
+      });
+    }
+    if (arrFiltersElectrics.length > 0) {
+      currentProducts = currentProducts.filter((prod: Item) => {
+        let check = false;
+        arrFiltersElectrics.forEach((val: string) => {
+          if (prod.getValues().includes(val)) {
+            check = true;
+          }
+        });
+        return check;
+      });
+    }
+    // фильтры по диапазону
+    currentProducts = currentProducts.filter((prod: Item) => {
+      let check = true;
+
+      if (+prod.year < +year[0] || +prod.year > +year[1]) {
+        check = false;
+      }
+      if (+prod.amount < +amount[0] || +prod.amount > +amount[1]) {
+        check = false;
+      }
+      return check;
+    });
+    // фильтры по поиску
+    if (search) {
+      currentProducts = currentProducts.filter((prod: Item) => {
+        const prodName: string = prod.name.toLowerCase();
+        const searchStr: string = search.toLowerCase();
+        let check = true;
+        if (!prodName.includes(searchStr)) {
+          check = false;
+        }
+        return check;
+      });
+    }
+    // Фильтры по порядку
+    currentProducts = this.sorting(currentProducts, this.getSort());
+    this.itemsClear();
+    const arrProducts: string[] = currentProducts.map((prod) => prod.render());
+    AppView.renderProducts(arrProducts);
+    AppView.renderCART(cart, cartAmount);
+    localStorage.setItem('filtersVitsk', JSON.stringify(this));
+    localStorage.setItem('cartVitsk', JSON.stringify(cart));
+    this.noElementAlert();
+  }
+  // удаляет все товары
+  private itemsClear(): void {
+    const itemContainer: Element | null = document.querySelector('.items-list');
+    while (itemContainer?.firstChild) {
+      itemContainer.removeChild(itemContainer.firstChild);
+    }
+  }
+
+  private sorting(arr: Item[], by: string): Item[] {
+    switch (by) {
+      case 'nameUp':
+        return arr.sort((a, b) => (a.name > b.name ? 1 : -1));
+      case 'nameDown':
+        return arr.sort((a, b) => (a.name < b.name ? 1 : -1));
+      case 'yearUp':
+        return arr.sort((a, b) => (a.year > b.year ? 1 : -1));
+      case 'yearDown':
+        return arr.sort((a, b) => (a.year < b.year ? 1 : -1));
+      default:
+        return arr;
+    }
+  }
+  // выводит сообщение, если нет совпадений по фильтрам
+  private noElementAlert(): void {
+    const itemsList: HTMLElement = document.querySelector('.items-list') as HTMLElement;
+    if (!itemsList.hasChildNodes()) {
+      const element: HTMLDivElement = document.createElement('div');
+      element.classList.add('no-element');
+      element.innerText = 'Извините, совпадений не обнаружено';
+      itemsList.appendChild(element);
+    }
   }
 }
