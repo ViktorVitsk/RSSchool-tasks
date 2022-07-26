@@ -1,8 +1,5 @@
-import { Brands, Sizes, Colors, Electrics, Range } from '../interfaces/IFilters';
+import { Brands, Sizes, Colors, Electrics, Range, IValues } from '../interfaces/IFilters';
 
-interface IValues {
-  [index: string]: boolean;
-}
 export class Filters {
   brands: IValues = {
     Bergamont: false,
@@ -46,34 +43,33 @@ export class Filters {
 
   sort = '';
 
-  setBrands(value: Brands, target: HTMLElement) {
+  setBrands(value: Brands, target: HTMLElement): void {
     this.brands[value] = this.brands[value] ? false : true;
     this.brands[value] ? target.classList.add('btn_active') : target.classList.remove('btn_active');
   }
-  setSizes(value: Sizes, target: HTMLElement) {
+  setSizes(value: Sizes, target: HTMLElement): void {
     this.sizes[value] = this.sizes[value] ? false : true;
     this.sizes[value] ? target.classList.add('btn_active') : target.classList.remove('btn_active');
   }
-  setColors(value: Colors, target: HTMLElement) {
+  setColors(value: Colors, target: HTMLElement): void {
     this.colors[value] = this.colors[value] ? false : true;
     this.colors[value] ? target.classList.add('btn_active') : target.classList.remove('btn_active');
   }
-  setElectrics(value: Electrics, target: HTMLElement) {
+  setElectrics(value: Electrics, target: HTMLElement): void {
     this.electrics[value] = this.electrics[value] ? false : true;
     this.electrics[value] ? target.classList.add('btn_active') : target.classList.remove('btn_active');
   }
-  setAmounts(value: Range) {
+  setAmounts(value: Range): void {
     this.amounts = value;
   }
-  setYears(value: Range) {
+  setYears(value: Range): void {
     this.years = value;
   }
-  setSearch(value: string) {
+  setSearch(value: string): void {
     this.search = value;
   }
-  setSort(value: string) {
+  setSort(value: string): void {
     this.sort = value;
-    console.log(this.sort);
   }
   getAllBrands(): string[] {
     return this.getOnFiltersValue(this.brands);
@@ -87,23 +83,23 @@ export class Filters {
   getAllElectrics(): string[] {
     return this.getOnFiltersValue(this.electrics);
   }
-  private getOnFiltersValue(filtersObj: IValues) {
+  private getOnFiltersValue(filtersObj: IValues): string[] {
     const brandsKeys: string[] = Object.keys(filtersObj);
     return brandsKeys.filter((key) => filtersObj[key]);
   }
-  getAmounts() {
+  getAmounts(): Range {
     return this.amounts;
   }
-  getYears() {
+  getYears(): Range {
     return this.years;
   }
-  getSearch() {
+  getSearch(): string {
     return this.search;
   }
-  getSort() {
+  getSort(): string {
     return this.sort;
   }
-  setAllField(storage: Filters) {
+  setAllFieldFromStorage(storage: Filters): void {
     this.brands['Bergamont'] = storage.brands['Bergamont'];
     this.brands['Bianchi'] = storage.brands['Bianchi'];
     this.brands['Bottecchia'] = storage.brands['Bottecchia'];
@@ -131,7 +127,7 @@ export class Filters {
     this.search = storage.search;
     this.sort = storage.sort;
   }
-  reset() {
+  reset(): void {
     this.brands['Bergamont'] = false;
     this.brands['Bianchi'] = false;
     this.brands['Bottecchia'] = false;
@@ -156,7 +152,7 @@ export class Filters {
     this.electrics['нет'] = false;
     this.amounts = ['1', '12'];
     this.years = ['2017', '2022'];
-    const activeBtn = document.querySelectorAll('.btn_active');
+    const activeBtn: NodeListOf<Element> = document.querySelectorAll('.btn_active');
     activeBtn.forEach((el) => el.classList.remove('btn_active'));
   }
 }

@@ -1,4 +1,5 @@
-const data = [
+import IItem from '../interfaces/IItem';
+const data: IItem[] = [
   {
     id: '01',
     brand: 'Scott',

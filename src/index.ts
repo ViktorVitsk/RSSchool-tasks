@@ -4,16 +4,16 @@ import './global.css';
 import { AppView } from './components/view/AppView';
 import brandsDraw from './components/view/brands';
 import { Filters } from './components/filters/Filters';
-import { Brands, Sizes, Colors, Electrics } from './components/interfaces/IFilters';
+import { Brands, Sizes, Colors, Electrics, Range } from './components/interfaces/IFilters';
 import * as noUiSlider from 'nouislider';
 import Item from './components/products/Item';
 import wNumb from 'wnumb';
 brandsDraw();
 // определяем фильтры (потом добавить localStorage)
-const temp = localStorage.getItem('filtersVitsk');
-const inst = JSON.parse(temp as string);
-const filters = new Filters();
-const PRODUCTS = new AllProducts(data);
+const temp: string | null = localStorage.getItem('filtersVitsk');
+const inst: Filters = JSON.parse(temp as string);
+const filters: Filters = new Filters();
+const PRODUCTS: AllProducts = new AllProducts(data);
 
 const sliderYear: noUiSlider.target = document.getElementById('year') as noUiSlider.target;
 
@@ -60,24 +60,24 @@ if (sliderAmount) {
   });
 }
 
-const temp2 = localStorage.getItem('cartVitsk') as string;
-const cartArr = JSON.parse(temp2);
+const temp2: string = localStorage.getItem('cartVitsk') as string;
+const cartArr: string[] = JSON.parse(temp2);
 
-const CART_AMOUNT = document.querySelector('.header__cart-amount') as HTMLElement;
+const CART_AMOUNT: HTMLElement = document.querySelector('.header__cart-amount') as HTMLElement;
 const CART: string[] = cartArr ? cartArr : [];
 // renderCART();
 // подготавливаем массив товаров для рендеринга
-const arrProducts = PRODUCTS.products.map((prod) => prod.render());
+const arrProducts: string[] = PRODUCTS.products.map((prod) => prod.render());
 if (inst) {
-  filters.setAllField(inst);
+  filters.setAllFieldFromStorage(inst);
 } else {
   AppView.renderProducts(arrProducts);
 }
 renderThroughFiltersValue();
 sliderYear.noUiSlider?.set(filters.getYears());
 sliderAmount.noUiSlider?.set(filters.getAmounts());
-const filtersHTML = document.querySelector('.filters');
-const search = document.getElementById('search');
+const filtersHTML: Element | null = document.querySelector('.filters');
+const search: Element | null = document.getElementById('search');
 
 if (search instanceof HTMLInputElement) {
   search.focus();
@@ -91,7 +91,6 @@ if (search instanceof HTMLInputElement) {
 filtersHTML?.addEventListener('click', (event) => {
   if (event.target instanceof HTMLElement) {
     const target = event.target;
-    // target.classList.toggle('btn_active');
     if (target.hasAttribute('data-brand')) {
       const currentBrand: Brands = target.getAttribute('data-brand') as Brands;
       filters.setBrands(currentBrand, target);
@@ -120,22 +119,21 @@ filtersHTML?.addEventListener('click', (event) => {
     if (target.hasAttribute('reset-settings')) {
       localStorage.removeItem('filtersVitsk');
       localStorage.removeItem('cartVitsk');
-      // CART.length = 0;
     } else {
       renderThroughFiltersValue();
     }
   }
 });
 
-const itemsHTML = document.querySelector('.items-list');
+const itemsHTML: Element | null = document.querySelector('.items-list');
 itemsHTML?.addEventListener('click', (event) => {
   if (event.target instanceof HTMLElement) {
-    const target = event.target;
-    const bike = target.closest('.item');
+    const target: HTMLElement = event.target;
+    const bike: Element | null = target.closest('.item');
     if (bike) {
       const bikeId: string | null = bike.getAttribute('data-id');
       if (bikeId) {
-        const index = CART.indexOf(bikeId);
+        const index: number = CART.indexOf(bikeId);
         if (index > -1) {
           CART.splice(index, 1);
           bike.classList.remove('in-cart');
@@ -155,33 +153,31 @@ itemsHTML?.addEventListener('click', (event) => {
   }
 });
 
-function noElementAlert() {
-  const itemsList = document.querySelector('.items-list') as HTMLElement;
+function noElementAlert(): void {
+  const itemsList: HTMLElement = document.querySelector('.items-list') as HTMLElement;
   if (!itemsList.hasChildNodes()) {
-    console.log('nema');
-
-    const element = document.createElement('div');
+    const element: HTMLDivElement = document.createElement('div');
     element.classList.add('no-element');
     element.innerText = 'Извините, совпадений не обнаружено';
     itemsList.appendChild(element);
   }
 }
 
-function renderThroughFiltersValue() {
-  const arrFiltersBrands = filters.getAllBrands();
-  const arrFiltersSizes = filters.getAllSizes();
-  const arrFiltersColors = filters.getAllColors();
-  const arrFiltersElectrics = filters.getAllElectrics();
-  const year = filters.getYears();
-  const amount = filters.getAmounts();
-  const search = filters.getSearch();
-  let currentProducts = PRODUCTS.products;
+function renderThroughFiltersValue(): void {
+  const arrFiltersBrands: string[] = filters.getAllBrands();
+  const arrFiltersSizes: string[] = filters.getAllSizes();
+  const arrFiltersColors: string[] = filters.getAllColors();
+  const arrFiltersElectrics: string[] = filters.getAllElectrics();
+  const year: Range = filters.getYears();
+  const amount: Range = filters.getAmounts();
+  const search: string = filters.getSearch();
+  let currentProducts: Item[] = PRODUCTS.products;
 
   // фильтры по значениям
   if (arrFiltersBrands.length > 0) {
-    currentProducts = currentProducts.filter((prod) => {
+    currentProducts = currentProducts.filter((prod: Item) => {
       let check = false;
-      arrFiltersBrands.forEach((val) => {
+      arrFiltersBrands.forEach((val: string) => {
         if (prod.getValues().includes(val)) {
           check = true;
         }
@@ -190,9 +186,9 @@ function renderThroughFiltersValue() {
     });
   }
   if (arrFiltersSizes.length > 0) {
-    currentProducts = currentProducts.filter((prod) => {
+    currentProducts = currentProducts.filter((prod: Item) => {
       let check = false;
-      arrFiltersSizes.forEach((val) => {
+      arrFiltersSizes.forEach((val: string) => {
         if (prod.getValues().includes(val)) {
           check = true;
         }
@@ -201,9 +197,9 @@ function renderThroughFiltersValue() {
     });
   }
   if (arrFiltersColors.length > 0) {
-    currentProducts = currentProducts.filter((prod) => {
+    currentProducts = currentProducts.filter((prod: Item) => {
       let check = false;
-      arrFiltersColors.forEach((val) => {
+      arrFiltersColors.forEach((val: string) => {
         if (prod.getValues().includes(val)) {
           check = true;
         }
@@ -212,9 +208,9 @@ function renderThroughFiltersValue() {
     });
   }
   if (arrFiltersElectrics.length > 0) {
-    currentProducts = currentProducts.filter((prod) => {
+    currentProducts = currentProducts.filter((prod: Item) => {
       let check = false;
-      arrFiltersElectrics.forEach((val) => {
+      arrFiltersElectrics.forEach((val: string) => {
         if (prod.getValues().includes(val)) {
           check = true;
         }
@@ -224,7 +220,7 @@ function renderThroughFiltersValue() {
   }
   // фильтры по диапазону
   // ...
-  currentProducts = currentProducts.filter((prod) => {
+  currentProducts = currentProducts.filter((prod: Item) => {
     let check = true;
 
     if (+prod.year < +year[0] || +prod.year > +year[1]) {
@@ -237,9 +233,9 @@ function renderThroughFiltersValue() {
   });
   // фильтры по поиску
   if (search) {
-    currentProducts = currentProducts.filter((prod) => {
-      const prodName = prod.name.toLowerCase();
-      const searchStr = search.toLowerCase();
+    currentProducts = currentProducts.filter((prod: Item) => {
+      const prodName: string = prod.name.toLowerCase();
+      const searchStr: string = search.toLowerCase();
       let check = true;
       if (!prodName.includes(searchStr)) {
         check = false;
@@ -250,20 +246,20 @@ function renderThroughFiltersValue() {
   // Порядок
   currentProducts = sort(currentProducts, filters.getSort());
   itemsClear();
-  const arrProducts = currentProducts.map((prod) => prod.render());
+  const arrProducts: string[] = currentProducts.map((prod) => prod.render());
   AppView.renderProducts(arrProducts);
   renderCART();
   localStorage.setItem('filtersVitsk', JSON.stringify(filters));
   localStorage.setItem('cartVitsk', JSON.stringify(CART));
   noElementAlert();
 }
-function itemsClear() {
-  const itemContainer = document.querySelector('.items-list');
+function itemsClear(): void {
+  const itemContainer: Element | null = document.querySelector('.items-list');
   while (itemContainer?.firstChild) {
     itemContainer.removeChild(itemContainer.firstChild);
   }
 }
-function sort(arr: Item[], by: string) {
+function sort(arr: Item[], by: string): Item[] {
   switch (by) {
     case 'nameUp':
       return arr.sort((a, b) => (a.name > b.name ? 1 : -1));
@@ -277,11 +273,11 @@ function sort(arr: Item[], by: string) {
       return arr;
   }
 }
-function renderCART() {
-  const bikes = document.querySelectorAll('.item');
+function renderCART(): void {
+  const bikes: NodeListOf<Element> = document.querySelectorAll('.item');
   if (CART.length > 0 && CART.length < 21) {
-    bikes.forEach((item) => {
-      const bikeId = item.getAttribute('data-id');
+    bikes.forEach((item: Element) => {
+      const bikeId: string | null = item.getAttribute('data-id');
       if (bikeId) {
         if (CART.includes(bikeId)) {
           item.classList.add('in-cart');

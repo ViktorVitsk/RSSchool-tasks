@@ -21,7 +21,7 @@ export default class Item {
     this._electric = item.electric;
   }
 
-  render() {
+  render(): string {
     return `
     <div class="item" data-id=${this._id}>
       <div class="item__name">${this._name}</div>

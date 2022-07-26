@@ -17,3 +17,7 @@ export type Colors = 'зеленый' | 'белый' | 'серый' | 'сини�
 export type Electrics = 'да' | 'нет';
 
 export type Range = (string | number)[];
+
+export interface IValues {
+  [index: string]: boolean;
+}

@@ -1,4 +1,4 @@
-export default interface Item {
+export default interface IItem {
   id: string;
   brand: string;
   name: string;
