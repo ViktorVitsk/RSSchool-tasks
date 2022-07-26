@@ -7,7 +7,7 @@ import { Filters } from './components/filters/Filters';
 import { Brands, Sizes, Colors, Electrics } from './components/interfaces/IFilters';
 import * as noUiSlider from 'nouislider';
 import Item from './components/products/Item';
-const wNumb = require('wnumb');
+import wNumb from 'wnumb';
 brandsDraw();
 // определяем фильтры (потом добавить localStorage)
 const temp = localStorage.getItem('filtersVitsk');

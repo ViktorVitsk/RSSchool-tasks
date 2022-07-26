@@ -103,7 +103,7 @@ export class Filters {
   getSort() {
     return this.sort;
   }
-  setAllField(storage: any) {
+  setAllField(storage: Filters) {
     this.brands['Bergamont'] = storage.brands['Bergamont'];
     this.brands['Bianchi'] = storage.brands['Bianchi'];
     this.brands['Bottecchia'] = storage.brands['Bottecchia'];
