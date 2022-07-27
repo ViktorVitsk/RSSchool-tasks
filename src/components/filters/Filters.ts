@@ -1,7 +1,9 @@
+import { Cart } from '../cart/Cart';
 import * as IFilters from '../interfaces/IFilters';
 import { AllProducts } from '../products/AllProducts';
 import Item from '../products/Item';
 import { AppView } from '../view/AppView';
+import * as noUiSlider from 'nouislider';
 
 export class Filters {
   brands: IFilters.IValues = {
@@ -281,5 +283,50 @@ export class Filters {
       element.innerText = 'Извините, совпадений не обнаружено';
       itemsList.appendChild(element);
     }
+  }
+
+  startFiltersItemsListener(
+    allProducts: AllProducts,
+    cart: Cart,
+    sliderYear: noUiSlider.target,
+    sliderAmount: noUiSlider.target
+  ) {
+    const filtersHTML: Element | null = document.querySelector('.filters');
+    filtersHTML?.addEventListener('click', (event) => {
+      if (event.target instanceof HTMLElement) {
+        const target = event.target;
+        if (target.hasAttribute('data-brand')) {
+          const currentBrand: IFilters.Brands = target.getAttribute('data-brand') as IFilters.Brands;
+          this.setBrands(currentBrand, target);
+        }
+        if (target.hasAttribute('data-size')) {
+          const currentSize: IFilters.Sizes = target.getAttribute('data-size') as IFilters.Sizes;
+          this.setSizes(currentSize, target);
+        }
+        if (target.hasAttribute('data-color')) {
+          const currentColors: IFilters.Colors = target.getAttribute('data-color') as IFilters.Colors;
+          this.setColors(currentColors, target);
+        }
+        if (target.hasAttribute('data-electric')) {
+          const currentElectrics: IFilters.Electrics = target.getAttribute('data-electric') as IFilters.Electrics;
+          this.setElectrics(currentElectrics, target);
+        }
+        if (target.hasAttribute('data-sort')) {
+          const currentSort: string = target.getAttribute('data-sort') as string;
+          this.setSort(currentSort);
+        }
+        if (target.hasAttribute('reset-filters')) {
+          this.reset();
+          sliderYear.noUiSlider?.reset();
+          sliderAmount.noUiSlider?.reset();
+        }
+        if (target.hasAttribute('reset-settings')) {
+          localStorage.removeItem('filtersVitsk');
+          localStorage.removeItem('cartVitsk');
+        } else {
+          this.renderThroughFiltersValue(cart.products, cart.counter, allProducts);
+        }
+      }
+    });
   }
 }
