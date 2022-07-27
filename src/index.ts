@@ -7,6 +7,7 @@ import { Filters } from './components/filters/Filters';
 import * as IFilters from './components/interfaces/IFilters';
 import * as noUiSlider from 'nouislider';
 import { rangeSlider } from './components/filters/RangeSlider';
+import { Cart } from './components/cart/Cart';
 
 // Добавление картинок кнопкам с брендами
 brandsDraw();
@@ -27,8 +28,9 @@ const tempCarts: string = localStorage.getItem('cartVitsk') as string;
 const cartArr: string[] = JSON.parse(tempCarts);
 
 // счетчик добавленных в корзину товаров
-const CART_AMOUNT: HTMLElement = document.querySelector('.header__cart-amount') as HTMLElement;
-const CART: string[] = cartArr ? cartArr : [];
+const cartCounter: HTMLElement = document.querySelector('.header__cart-amount') as HTMLElement;
+const cartProducts: string[] = cartArr ? cartArr : [];
+const cart = new Cart(cartProducts, cartCounter);
 
 // подготавливает массив товаров для рендеринга
 const arrProducts: string[] = PRODUCTS.products.map((prod) => prod.render());
@@ -40,7 +42,7 @@ if (filtersFromLocaleStorage) {
 
 // считывает и применяет текущие фильтры, если в localStorage были данные
 if (tempFilters || tempCarts) {
-  filters.renderThroughFiltersValue(CART, CART_AMOUNT, PRODUCTS);
+  filters.renderThroughFiltersValue(cart.products, cart.counter, PRODUCTS);
   sliderYear.noUiSlider?.set(filters.getYears());
   sliderAmount.noUiSlider?.set(filters.getAmounts());
 }
@@ -52,7 +54,7 @@ if (search instanceof HTMLInputElement) {
   search.value = filters.search;
   search.oninput = function () {
     filters.setSearch(search.value);
-    filters.renderThroughFiltersValue(CART, CART_AMOUNT, PRODUCTS);
+    filters.renderThroughFiltersValue(cart.products, cart.counter, PRODUCTS);
   };
 }
 
@@ -90,36 +92,10 @@ filtersHTML?.addEventListener('click', (event) => {
       localStorage.removeItem('filtersVitsk');
       localStorage.removeItem('cartVitsk');
     } else {
-      filters.renderThroughFiltersValue(CART, CART_AMOUNT, PRODUCTS);
+      filters.renderThroughFiltersValue(cart.products, cart.counter, PRODUCTS);
     }
   }
 });
 
 // Слушатель для добавления товаров в корзину
-const itemsHTML: Element | null = document.querySelector('.items-list');
-itemsHTML?.addEventListener('click', (event) => {
-  if (event.target instanceof HTMLElement) {
-    const target: HTMLElement = event.target;
-    const bike: Element | null = target.closest('.item');
-    if (bike) {
-      const bikeId: string | null = bike.getAttribute('data-id');
-      if (bikeId) {
-        const index: number = CART.indexOf(bikeId);
-        if (index > -1) {
-          CART.splice(index, 1);
-          bike.classList.remove('in-cart');
-          CART_AMOUNT.innerText = CART.length + '';
-        } else {
-          if (CART.length >= 20) {
-            alert('Извините, все слоты заполнены');
-          } else {
-            CART.push(bikeId);
-            bike.classList.add('in-cart');
-            CART_AMOUNT.innerText = CART.length + '';
-          }
-        }
-        localStorage.setItem('cartVitsk', JSON.stringify(CART));
-      }
-    }
-  }
-});
+cart.startCartItemsListener();
