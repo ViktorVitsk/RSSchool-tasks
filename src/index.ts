@@ -47,15 +47,7 @@ if (tempFilters || tempCarts) {
 }
 
 // слушает input поиска и пропускает через фильтры
-const search: Element | null = document.getElementById('search');
-if (search instanceof HTMLInputElement) {
-  search.focus();
-  search.value = filters.search;
-  search.oninput = function () {
-    filters.setSearch(search.value);
-    filters.renderThroughFiltersValue(cart.products, cart.counter, PRODUCTS);
-  };
-}
+filters.startFiltersListenerOfSearch(PRODUCTS, cart, filters);
 // Слушатель фильтров
 filters.startFiltersItemsListener(PRODUCTS, cart, sliderYear, sliderAmount);
 // Слушатель для добавления товаров в корзину

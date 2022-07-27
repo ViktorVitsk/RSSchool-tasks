@@ -329,4 +329,16 @@ export class Filters {
       }
     });
   }
+
+  startFiltersListenerOfSearch(allProducts: AllProducts, cart: Cart, filters: this) {
+    const search: Element | null = document.getElementById('search');
+    if (search instanceof HTMLInputElement) {
+      search.focus();
+      search.value = this.search;
+      search.oninput = function () {
+        filters.setSearch(search.value);
+        filters.renderThroughFiltersValue(cart.products, cart.counter, allProducts);
+      };
+    }
+  }
 }
