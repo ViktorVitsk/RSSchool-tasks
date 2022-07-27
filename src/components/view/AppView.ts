@@ -8,9 +8,9 @@ export class AppView {
   }
   // добавляет/удаляет класс товарам которые были добавлены/удалены в корзину
   // (вызывается в методе renderThroughFiltersValue класса Filters)
-  static renderCART(cart: string[], cartAmount: HTMLElement): void {
+  static renderCart(cart: string[], cartAmount: HTMLElement): void {
     const bikes: NodeListOf<Element> = document.querySelectorAll('.item');
-    if (cart.length > 0 && cart.length < 21) {
+    if (cart.length >= 0 && cart.length < 21) {
       bikes.forEach((item: Element) => {
         const bikeId: string | null = item.getAttribute('data-id');
         if (bikeId) {
@@ -21,7 +21,7 @@ export class AppView {
           }
         }
       });
-    } else if (cart.length > 20) {
+    } else {
       alert('Извините, все слоты заполнены');
     }
     cartAmount.innerText = cart.length + '';

@@ -7,49 +7,34 @@ export function rangeSlider(filters: Filters): {
   sliderYear: noUiSlider.target;
   sliderAmount: noUiSlider.target;
 } {
-  const sliderYear: noUiSlider.target = document.getElementById('year') as noUiSlider.target;
+  const getSliderConfig = (type: string, range: number[]): noUiSlider.target => {
+    const slider: noUiSlider.target = document.getElementById(type) as noUiSlider.target;
 
-  if (sliderYear) {
-    noUiSlider.create(sliderYear, {
-      start: [2017, 2022],
-      connect: true,
-      range: {
-        min: 2017,
-        max: 2022,
-      },
-      step: 1,
-      behaviour: 'tap-drag',
-      tooltips: true,
-      format: wNumb({
-        decimals: 0,
-      }),
-    });
-    sliderYear.noUiSlider?.on('update', (val) => {
-      filters.setYears(val);
-    });
-  }
+    if (slider) {
+      noUiSlider.create(slider, {
+        start: range,
+        connect: true,
+        range: {
+          min: range[0],
+          max: range[1],
+        },
+        step: 1,
+        behaviour: 'tap-drag',
+        tooltips: true,
+        format: wNumb({
+          decimals: 0,
+        }),
+      });
+      slider.noUiSlider?.on('update', (val) => {
+        type === 'year' ? filters.setYears(val) : filters.setAmounts(val);
+      });
+    }
+    return slider;
+  };
 
-  const sliderAmount: noUiSlider.target = document.getElementById('amount') as noUiSlider.target;
+  const sliderYear: noUiSlider.target = getSliderConfig('year', [2017, 2022]);
 
-  if (sliderAmount) {
-    noUiSlider.create(sliderAmount, {
-      start: [1, 12],
-      connect: true,
-      range: {
-        min: 1,
-        max: 12,
-      },
-      step: 1,
-      behaviour: 'tap-drag',
-      tooltips: true,
-      format: wNumb({
-        decimals: 0,
-      }),
-    });
+  const sliderAmount: noUiSlider.target = getSliderConfig('amount', [1, 12]);
 
-    sliderAmount.noUiSlider?.on('update', (val) => {
-      filters.setAmounts(val);
-    });
-  }
   return { sliderYear, sliderAmount };
 }

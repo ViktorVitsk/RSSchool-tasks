@@ -1,10 +1,10 @@
-import { Brands, Sizes, Colors, Electrics, Range, IValues } from '../interfaces/IFilters';
+import * as IFilters from '../interfaces/IFilters';
 import { AllProducts } from '../products/AllProducts';
 import Item from '../products/Item';
 import { AppView } from '../view/AppView';
 
 export class Filters {
-  brands: IValues = {
+  brands: IFilters.IValues = {
     Bergamont: false,
     Bianchi: false,
     Bottecchia: false,
@@ -17,13 +17,13 @@ export class Filters {
     Scott: false,
   };
 
-  sizes: IValues = {
+  sizes: IFilters.IValues = {
     27: false,
     28: false,
     29: false,
   };
 
-  colors: IValues = {
+  colors: IFilters.IValues = {
     зеленый: false,
     белый: false,
     серый: false,
@@ -33,7 +33,7 @@ export class Filters {
     золотистый: false,
   };
 
-  electrics: IValues = {
+  electrics: IFilters.IValues = {
     да: false,
     нет: false,
   };
@@ -46,26 +46,26 @@ export class Filters {
 
   sort = '';
 
-  setBrands(value: Brands, target: HTMLElement): void {
+  setBrands(value: IFilters.Brands, target: HTMLElement): void {
     this.brands[value] = this.brands[value] ? false : true;
     this.brands[value] ? target.classList.add('btn_active') : target.classList.remove('btn_active');
   }
-  setSizes(value: Sizes, target: HTMLElement): void {
+  setSizes(value: IFilters.Sizes, target: HTMLElement): void {
     this.sizes[value] = this.sizes[value] ? false : true;
     this.sizes[value] ? target.classList.add('btn_active') : target.classList.remove('btn_active');
   }
-  setColors(value: Colors, target: HTMLElement): void {
+  setColors(value: IFilters.Colors, target: HTMLElement): void {
     this.colors[value] = this.colors[value] ? false : true;
     this.colors[value] ? target.classList.add('btn_active') : target.classList.remove('btn_active');
   }
-  setElectrics(value: Electrics, target: HTMLElement): void {
+  setElectrics(value: IFilters.Electrics, target: HTMLElement): void {
     this.electrics[value] = this.electrics[value] ? false : true;
     this.electrics[value] ? target.classList.add('btn_active') : target.classList.remove('btn_active');
   }
-  setAmounts(value: Range): void {
+  setAmounts(value: IFilters.Range): void {
     this.amounts = value;
   }
-  setYears(value: Range): void {
+  setYears(value: IFilters.Range): void {
     this.years = value;
   }
   setSearch(value: string): void {
@@ -86,14 +86,14 @@ export class Filters {
   getAllElectrics(): string[] {
     return this.getOnFiltersValue(this.electrics);
   }
-  private getOnFiltersValue(filtersObj: IValues): string[] {
+  private getOnFiltersValue(filtersObj: IFilters.IValues): string[] {
     const brandsKeys: string[] = Object.keys(filtersObj);
     return brandsKeys.filter((key) => filtersObj[key]);
   }
-  getAmounts(): Range {
+  getAmounts(): IFilters.Range {
     return this.amounts;
   }
-  getYears(): Range {
+  getYears(): IFilters.Range {
     return this.years;
   }
   getSearch(): string {
@@ -166,8 +166,8 @@ export class Filters {
     const arrFiltersSizes: string[] = this.getAllSizes();
     const arrFiltersColors: string[] = this.getAllColors();
     const arrFiltersElectrics: string[] = this.getAllElectrics();
-    const year: Range = this.getYears();
-    const amount: Range = this.getAmounts();
+    const year: IFilters.Range = this.getYears();
+    const amount: IFilters.Range = this.getAmounts();
     const search: string = this.getSearch();
     let currentProducts: Item[] = allProducts.products;
 
@@ -245,7 +245,7 @@ export class Filters {
     this.itemsClear();
     const arrProducts: string[] = currentProducts.map((prod) => prod.render());
     AppView.renderProducts(arrProducts);
-    AppView.renderCART(cart, cartAmount);
+    AppView.renderCart(cart, cartAmount);
     localStorage.setItem('filtersVitsk', JSON.stringify(this));
     localStorage.setItem('cartVitsk', JSON.stringify(cart));
     this.noElementAlert();

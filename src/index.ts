@@ -4,7 +4,7 @@ import data from '../src/components/products/data';
 import { AppView } from './components/view/AppView';
 import brandsDraw from './components/view/brands';
 import { Filters } from './components/filters/Filters';
-import { Brands, Sizes, Colors, Electrics } from './components/interfaces/IFilters';
+import * as IFilters from './components/interfaces/IFilters';
 import * as noUiSlider from 'nouislider';
 import { rangeSlider } from './components/filters/RangeSlider';
 
@@ -62,19 +62,19 @@ filtersHTML?.addEventListener('click', (event) => {
   if (event.target instanceof HTMLElement) {
     const target = event.target;
     if (target.hasAttribute('data-brand')) {
-      const currentBrand: Brands = target.getAttribute('data-brand') as Brands;
+      const currentBrand: IFilters.Brands = target.getAttribute('data-brand') as IFilters.Brands;
       filters.setBrands(currentBrand, target);
     }
     if (target.hasAttribute('data-size')) {
-      const currentSize: Sizes = target.getAttribute('data-size') as Sizes;
+      const currentSize: IFilters.Sizes = target.getAttribute('data-size') as IFilters.Sizes;
       filters.setSizes(currentSize, target);
     }
     if (target.hasAttribute('data-color')) {
-      const currentColors: Colors = target.getAttribute('data-color') as Colors;
+      const currentColors: IFilters.Colors = target.getAttribute('data-color') as IFilters.Colors;
       filters.setColors(currentColors, target);
     }
     if (target.hasAttribute('data-electric')) {
-      const currentElectrics: Electrics = target.getAttribute('data-electric') as Electrics;
+      const currentElectrics: IFilters.Electrics = target.getAttribute('data-electric') as IFilters.Electrics;
       filters.setElectrics(currentElectrics, target);
     }
     if (target.hasAttribute('data-sort')) {
