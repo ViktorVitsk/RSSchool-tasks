@@ -76,11 +76,22 @@
 }
 
 .winners__wrapper {
-  display: none;
   margin: 1vw;
+  color: #fff;
+  font-size: 1.6rem;
 }
 
+.table__car-img {
+  /* background: url(); */
+}
+table {
+  border-spacing: 10px ;
+}
 
 .paginator {
   margin: 1vw;
+}
+
+.none {
+  display: none;
 }
