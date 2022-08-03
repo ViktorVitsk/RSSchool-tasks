@@ -5,7 +5,7 @@
   height: 100vh;
   width: 100vw;
   flex-direction: column;
-  background: rgb(0, 0, 0);
+  background: rgba(105, 99, 41, 0.9);
 }
 
 .menu {
@@ -40,7 +40,7 @@
   align-items: center;
 }
 .road__car-name {
-  color: yellow;
+  color: rgb(255, 245, 111);
   font-size: 1.6em;
   margin-left: 1em;
 }
@@ -48,6 +48,9 @@
 .road__main {
   display: flex;
   justify-content: space-between;
+}
+.road__list {
+  margin: 1rem 0;
 }
 .road__start {
   display: flex;
@@ -72,7 +75,7 @@
   background-size: 3.5rem 5rem;
 }
 .road__foot {
-  border-bottom: 1px dashed #fff;
+  border-bottom: 1px dashed rgb(147, 255, 96);
 }
 
 .winners__wrapper {
@@ -81,9 +84,7 @@
   font-size: 1.6rem;
 }
 
-.table__car-img {
-  /* background: url(); */
-}
+
 table {
   border-spacing: 10px ;
 }

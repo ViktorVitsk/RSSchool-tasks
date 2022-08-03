@@ -13,6 +13,13 @@ html {
   -webkit-text-size-adjust: 100%; /* 2 */
   font-size: 10px;
 }
+ul {
+  margin-left: 0;
+  padding-left: 0;
+} 
+li {
+  list-style: none;
+}
 
 /* Sections
    ========================================================================== */
