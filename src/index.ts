@@ -19,8 +19,19 @@ const check = async () => {
   console.log(cars);
   console.log(startEngine);
   const stopEngine = await api.stopEngine('1');
+  await api.createWinner({
+    id: 4,
+    wins: 3,
+    time: 4.21,
+  });
+  await api.updateWinner('3', {
+    wins: 6,
+    time: 1,
+  });
+  // await api.deleteWinner('2');
   const winners = await api.getWinners();
   console.log('winners===', winners);
-  // console.log(stopEngine);
+  const winner = await api.getWinner('3');
+  console.log(winner);
 };
 check();

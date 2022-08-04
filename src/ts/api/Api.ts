@@ -1,4 +1,4 @@
-import { ICar } from '../interfaces/Icar';
+import { ICar } from '../interfaces/ICar';
 
 export default class Api {
   private url: string;
@@ -72,12 +72,45 @@ export default class Api {
   async getWinners(page = '1', sort?: string, order?: string) {
     const restParams = arguments.length === 3 ? `&_sort=${sort}&{_order}=${order}` : '';
     const response = await fetch(`${this.winners}?_page=${page}&_limit=10${restParams}`);
-    const winners: object[] = (await response.json()).map(async (winner: ICar) => ({
-      ...winner,
-      car: await this.getCar(winner.id),
-    }));
-    const totalWinners = response.headers.get('X-Total-Count');
-    console.log('total=== ', totalWinners);
-    return winners;
+    const cars = await response.json();
+    return {
+      cars: await Promise.all(
+        cars.map(async (winner: ICar) => {
+          const current = { ...winner, car: await this.getCar(winner.id) };
+          return current;
+        }),
+      ),
+      totalCars: response.headers.get('X-Total-Count'),
+    };
+  }
+
+  async getWinner(id: string) {
+    return (await fetch(`${this.winners}/${id}`)).json();
+  }
+
+  async createWinner(newWinner: object) {
+    return (
+      await fetch(this.winners, {
+        method: 'POST',
+        body: JSON.stringify(newWinner),
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      })
+    ).json();
+  }
+
+  async deleteWinner(id: string) {
+    return (await fetch(`${this.winners}/${id}`, { method: 'DELETE' })).json();
+  }
+
+  async updateWinner(id: string, changeWinner: object) {
+    return (
+      await fetch(`${this.winners}/${id}`, {
+        method: 'PUT',
+        body: JSON.stringify(changeWinner),
+        headers: { 'Content-Type': 'application/json' },
+      })
+    ).json();
   }
 }
