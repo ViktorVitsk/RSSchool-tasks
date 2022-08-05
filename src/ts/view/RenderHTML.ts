@@ -1,7 +1,8 @@
 import image from '../data/svg';
+import { ICar } from '../interfaces/ICar';
 
 class RenderHTML {
-  static render() {
+  static render(cars: ICar[], totalCars: number, carsPage: number) {
     const html = `
     <div class="menu">
       <button class="menu__button btn" id="garage-button">To garage</button>
@@ -28,7 +29,7 @@ class RenderHTML {
         <button class="race-btn__reset btn">Reset</button>
       </div>
       <div class="garage__race-track">
-        ${RenderHTML.renderRaceTrack()}
+        ${RenderHTML.renderRaceTrack(cars, totalCars, carsPage)}
         </div>
         </div>
         ${RenderHTML.renderWinners()}
@@ -43,37 +44,34 @@ class RenderHTML {
     document.body.appendChild(container);
   }
 
-  static renderRaceTrack() {
+  static renderRaceTrack(cars: ICar[], totalCars: number, carsPage: number) {
     return `
-    <h1 class="garage__title">Garage (100)</h1>
-    <h2 class="garage__page-num">Page #1</h2>
+    <h1 class="garage__title">Garage (${totalCars})</h1>
+    <h2 class="garage__page-num">Page #${carsPage}</h2>
     <ul class="race-track__road">
-      ${RenderHTML.renderRoadList()}
-      ${RenderHTML.renderRoadList()}
-      ${RenderHTML.renderRoadList()}
-      ${RenderHTML.renderRoadList()}
+      ${cars.map((car) => RenderHTML.renderRoadList(car.id, car.name, car.color)).join('\n')}
     </ul>
     `;
   }
 
-  static renderRoadList() {
+  static renderRoadList(id: number, name: string, color: string) {
     return `<li class="road__list">
     <div class="road__head">
-      <button class="road__select btn" car-select="1">Select</button>
-      <button class="road__remove btn" car-remove="1">Remove</button>
-      <h3 class="road__car-name">Toyota</h3>
+      <button class="road__select btn" car-select=${id}>Select</button>
+      <button class="road__remove btn" car-remove=${id}>Remove</button>
+      <h3 class="road__car-name">${name}</h3>
     </div>
     <div class="road__main">
       <div class="road__start">
         <div class="road__engine">
-          <button class="engine__start engine__btn" start-engine="1">A</button>
-          <button class="engine__stop engine__btn" stop-engine="1">B</button>
+          <button class="engine__start engine__btn" start-engine=${id} >A</button>
+          <button class="engine__stop engine__btn" stop-engine=${id} >B</button>
         </div>
-        <div class="road__car" car="1">
-          ${RenderHTML.renderCarImg('#000')}
+        <div class="road__car" car=car-${id}>
+          ${RenderHTML.renderCarImg(color)}
         </div>
       </div>
-      <div class="road__finish"></div>
+      <div class="road__finish" flag=${id}></div>
     </div>
     <div class="road__foot"></div>
   </li>`;

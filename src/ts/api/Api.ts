@@ -1,4 +1,5 @@
 import { ICar } from '../interfaces/ICar';
+import { IData } from '../interfaces/IData';
 
 export default class Api {
   private url: string;
@@ -16,17 +17,34 @@ export default class Api {
     this.winners = `${url}/winners`;
   }
 
-  async getCars(page: string): Promise<object> {
-    const response = await fetch(`${this.garage}?_${page}&_limit=7`);
+  async getData(carPage: number, winnerPage: number): Promise<IData> {
+    const { cars, totalCars } = await this.getCars(carPage);
+    const { winners, totalWinners } = await this.getWinners(winnerPage);
+    return {
+      carsPage: carPage,
+      cars,
+      totalCars,
+      winnersPage: winnerPage,
+      winners,
+      totalWinners,
+      animation: {},
+      view: 'garage',
+      sortBy: null,
+      sortOrder: null,
+    };
+  }
+
+  async getCars(page: number) {
+    const response = await fetch(`${this.garage}?_page=${page}&_limit=7`);
     const cars: [] = await response.json();
-    const totalCars: string | null = response.headers.get('X-Total-Count');
+    const totalCars: number | null = Number(response.headers.get('X-Total-Count'));
     return {
       cars,
       totalCars,
     };
   }
 
-  async getCar(id: string): Promise<ICar> {
+  async getCar(id: number): Promise<ICar> {
     return (await fetch(`${this.garage}/${id}`)).json();
   }
 
@@ -69,18 +87,18 @@ export default class Api {
     return drive.status === 200 ? { success: true } : { success: false };
   }
 
-  async getWinners(page = '1', sort?: string, order?: string) {
+  async getWinners(page = 1, sort?: string, order?: string) {
     const restParams = arguments.length === 3 ? `&_sort=${sort}&{_order}=${order}` : '';
     const response = await fetch(`${this.winners}?_page=${page}&_limit=10${restParams}`);
     const cars = await response.json();
     return {
-      cars: await Promise.all(
+      winners: await Promise.all(
         cars.map(async (winner: ICar) => {
           const current = { ...winner, car: await this.getCar(winner.id) };
           return current;
         }),
       ),
-      totalCars: response.headers.get('X-Total-Count'),
+      totalWinners: Number(response.headers.get('X-Total-Count')),
     };
   }
 
