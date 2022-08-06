@@ -45,8 +45,8 @@ class RenderHTML {
         ${RenderHTML.renderWinners(winners, totalWinners, winnersPage)}
     </div>
     <div class="paginator">
-        <button class="paginator__button btn" id="prev" disabled>Prev</button>
-        <button class="paginator__button btn" id="next" disabled>Next</button>
+        <button class="paginator__button btn" id="prev">Prev</button>
+        <button class="paginator__button btn" id="next">Next</button>
     </div>
   </div>
     `;

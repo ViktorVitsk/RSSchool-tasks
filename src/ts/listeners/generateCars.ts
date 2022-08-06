@@ -6,8 +6,8 @@ export default (api: Api) => {
   const generate = document.querySelector('.set-car__generate');
   generate?.addEventListener('click', async () => {
     const getRandomName = () => {
-      const model = models[Math.floor(Math.random() * models.length)];
-      const name = names[Math.floor(Math.random() * models.length)];
+      const model = models[Math.floor(Math.random() * models.length - 1)];
+      const name = names[Math.floor(Math.random() * names.length - 1)];
       return `${model} ${name}`;
     };
 
