@@ -11,7 +11,7 @@ export default (api: Api) => {
   track?.addEventListener('click', async (event) => {
     const target = event.target as EventTarget;
     if (target instanceof HTMLElement) {
-      if (target.classList.contains('road__select-car')) {
+      if (target.classList.contains('road__select-car') && selectId) {
         selectId = Number(target.getAttribute('car-select'));
         const { name } = await api.getCar(selectId);
         inputName.value = name;

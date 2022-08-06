@@ -5,6 +5,7 @@ import Api from './ts/api/Api';
 import menuListener from './ts/listeners/menu';
 import createNewCar from './ts/listeners/createNewCar';
 import updateCurrCar from './ts/listeners/updateCurrCar';
+import addRandomCars from './ts/listeners/generateCars';
 
 const URL = 'http://127.0.0.1:3000';
 const start = async () => {
@@ -14,6 +15,7 @@ const start = async () => {
   menuListener();
   createNewCar(api);
   updateCurrCar(api);
+  addRandomCars(api);
   // const car = await api.getCar('4');
   // await api.createCar({ name: 'Lambo', color: 'red' });
   // await api.deleteCar('5');
