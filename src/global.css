@@ -15,9 +15,9 @@
 .btn {
   text-transform: uppercase;
   padding: 0.2em;
-  margin-right: 0.1em;
+  margin-right: 0.1rem;
   font-weight: bold;
-  font-size: 1.5em;
+  font-size: 1.5rem;
 }
 .garage__wrapper {
   margin: 1vw;
@@ -26,10 +26,11 @@
 .garage__generate-cars {
   display: flex;
   flex-direction: column;
+  font-size: 1.6rem;
 }
 .garage__set-car {
   display: flex;
-  padding-bottom: 1em;
+  padding-bottom: 1rem;
 }
 
 .garage__title, .garage__page-num {
@@ -41,8 +42,8 @@
 }
 .road__car-name {
   color: rgb(255, 245, 111);
-  font-size: 1.6em;
-  margin-left: 1em;
+  font-size: 1.6rem;
+  margin-left: 1rem;
 }
 
 .road__main {
@@ -56,12 +57,12 @@
   display: flex;
 }
 .road__engine {
-  margin-right: 1em;
+  margin-right: 1rem;
 }
 .engine__btn {
-  height: 2em;
-  width: 2em;
-  padding: 0.2em;
+  height: 2rem;
+  width: 2rem;
+  padding: 0.2rem;
 }
 .road__car {
   align-self: end;

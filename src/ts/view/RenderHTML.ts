@@ -19,16 +19,16 @@ class RenderHTML {
     </div>
     <div class="garage__wrapper">
       <div class="garage__generate-cars">
-        <div class="garage__set-car" id="create">
+        <form class="garage__set-car" id="create">
           <input class="set-car__name" type="text" name="name" />
-          <input class="set-car__color" type="color" name="name" />
+          <input class="set-car__color" type="color" name="color" value="#ffffff" />
           <button class="btn" type="submit">Create</button>
-        </div>
-        <div class="garage__set-car" id="update">
-          <input class="set-car__name" type="text" name="name" disabled />
+        </form>
+        <form class="garage__set-car" id="update" >
+          <input class="set-car__name" type="text" name="name" disabled/>
           <input class="set-car__color" type="color" name="name" disabled />
-          <button class="btn" type="submit">Update</button>
-        </div>
+          <button class="btn" type="submit" disabled>Update</button>
+        </form>
         <div class="garage__set-car">
           <button class="set-car__generate btn">Generate cars</button>
         </div>
@@ -39,18 +39,38 @@ class RenderHTML {
       </div>
       <div class="garage__race-track">
         ${RenderHTML.renderRaceTrack(cars, totalCars, carsPage)}
-        </div>
-        </div>
+      </div>
+    </div>
+    <div class="winners__wrapper none">
         ${RenderHTML.renderWinners(winners, totalWinners, winnersPage)}
-        <div class="paginator">
+    </div>
+    <div class="paginator">
         <button class="paginator__button btn" id="prev" disabled>Prev</button>
         <button class="paginator__button btn" id="next" disabled>Next</button>
-      </div>
+    </div>
+  </div>
     `;
     const container = document.createElement('div');
     container.classList.add('container');
     container.innerHTML = html;
     document.body.appendChild(container);
+  }
+
+  static rerender(data: IData) {
+    const {
+      cars,
+      totalCars,
+      carsPage,
+      winners,
+      totalWinners,
+      winnersPage,
+    } = data;
+    const garage = document.querySelector('.garage__race-track') as HTMLDivElement;
+    const winner = document.querySelector('.winners__wrapper') as HTMLDivElement;
+    const garageUpdate = RenderHTML.renderRaceTrack(cars, totalCars, carsPage);
+    const winnersUpdate = RenderHTML.renderWinners(winners, totalWinners, winnersPage);
+    garage.innerHTML = garageUpdate;
+    winner.innerHTML = winnersUpdate;
   }
 
   static renderRaceTrack(cars: ICar[], totalCars: number, carsPage: number) {
@@ -66,8 +86,8 @@ class RenderHTML {
   static renderRoadList(id: number, name: string, color: string) {
     return `<li class="road__list">
     <div class="road__head">
-      <button class="road__select btn" car-select=${id}>Select</button>
-      <button class="road__remove btn" car-remove=${id}>Remove</button>
+      <button class="road__select-car btn" car-select=${id}>Select</button>
+      <button class="road__remove-car btn" car-remove=${id}>Remove</button>
       <h3 class="road__car-name">${name}</h3>
     </div>
     <div class="road__main">
@@ -89,7 +109,6 @@ class RenderHTML {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   static renderWinners(winners: any, totalWinners: number, winnersPage: number) {
     return `
-    <div class="winners__wrapper none">
     <h1 class="winners__title">Winners (${totalWinners})</h1>
     <h2 class="winners__page">Page #${winnersPage}</h2>
     <table class="winners__table">
@@ -115,7 +134,6 @@ class RenderHTML {
   ).join('')}
       </tbody>
     </table>
-  </div>
     `;
   }
 

@@ -3,6 +3,8 @@ import './global.css';
 import render from './ts/view/RenderHTML';
 import Api from './ts/api/Api';
 import menuListener from './ts/listeners/menu';
+import createNewCar from './ts/listeners/createNewCar';
+import updateCurrCar from './ts/listeners/updateCurrCar';
 
 const URL = 'http://127.0.0.1:3000';
 const start = async () => {
@@ -10,6 +12,8 @@ const start = async () => {
   await api.initData();
   render.render(api.data);
   menuListener();
+  createNewCar(api);
+  updateCurrCar(api);
   // const car = await api.getCar('4');
   // await api.createCar({ name: 'Lambo', color: 'red' });
   // await api.deleteCar('5');

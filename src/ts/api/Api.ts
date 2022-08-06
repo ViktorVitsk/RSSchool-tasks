@@ -70,11 +70,11 @@ export default class Api {
     ).json();
   }
 
-  async deleteCar(id: string) {
+  async deleteCar(id: number) {
     return (await fetch(`${this.garage}/${id}`, { method: 'DELETE' })).json();
   }
 
-  async updateCar(id: string, changeCar: object) {
+  async updateCar(id: number, changeCar: object) {
     return (
       await fetch(`${this.garage}/${id}`, {
         method: 'PUT',
@@ -84,15 +84,15 @@ export default class Api {
     ).json();
   }
 
-  async startEngine(id: string) {
+  async startEngine(id: number) {
     return (await fetch(`${this.engine}?id=${id}&status=started`, { method: 'PATCH' })).json();
   }
 
-  async stopEngine(id: string) {
+  async stopEngine(id: number) {
     return (await fetch(`${this.engine}?id=${id}&status=stopped`, { method: 'PATCH' })).json();
   }
 
-  async driveStatus(id: string) {
+  async driveStatus(id: number) {
     const drive = await fetch(`${this.engine}?id=${id}&status=drive`, { method: 'PATCH' }).catch();
     return drive.status === 200 ? { success: true } : { success: false };
   }
@@ -112,7 +112,7 @@ export default class Api {
     };
   }
 
-  async getWinner(id: string) {
+  async getWinner(id: number) {
     return (await fetch(`${this.winners}/${id}`)).json();
   }
 
@@ -128,11 +128,11 @@ export default class Api {
     ).json();
   }
 
-  async deleteWinner(id: string) {
+  async deleteWinner(id: number) {
     return (await fetch(`${this.winners}/${id}`, { method: 'DELETE' })).json();
   }
 
-  async updateWinner(id: string, changeWinner: object) {
+  async updateWinner(id: number, changeWinner: object) {
     return (
       await fetch(`${this.winners}/${id}`, {
         method: 'PUT',
