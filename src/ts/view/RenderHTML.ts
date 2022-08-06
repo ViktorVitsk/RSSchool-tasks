@@ -1,8 +1,17 @@
 import image from '../data/svg';
 import { ICar } from '../interfaces/ICar';
+import { IData } from '../interfaces/IData';
 
 class RenderHTML {
-  static render(cars: ICar[], totalCars: number, carsPage: number) {
+  static render(data: IData) {
+    const {
+      cars,
+      totalCars,
+      carsPage,
+      winners,
+      totalWinners,
+      winnersPage,
+    } = data;
     const html = `
     <div class="menu">
       <button class="menu__button btn" id="garage-button">To garage</button>
@@ -32,7 +41,7 @@ class RenderHTML {
         ${RenderHTML.renderRaceTrack(cars, totalCars, carsPage)}
         </div>
         </div>
-        ${RenderHTML.renderWinners()}
+        ${RenderHTML.renderWinners(winners, totalWinners, winnersPage)}
         <div class="paginator">
         <button class="paginator__button btn" id="prev" disabled>Prev</button>
         <button class="paginator__button btn" id="next" disabled>Next</button>
@@ -77,27 +86,33 @@ class RenderHTML {
   </li>`;
   }
 
-  static renderWinners() {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  static renderWinners(winners: any, totalWinners: number, winnersPage: number) {
     return `
     <div class="winners__wrapper none">
-    <h1 class="winners__title">Winners (1)</h1>
-    <h2 class="winners__page">Page #1</h2>
+    <h1 class="winners__title">Winners (${totalWinners})</h1>
+    <h2 class="winners__page">Page #${winnersPage}</h2>
     <table class="winners__table">
-      <thead>
-        <th>Number</th>
-        <th>Car</th>
-        <th>Name</th>
-        <th class="table__wins">Wins</th>
-        <th class="table__time">Best time (seconds)</th>
-      </thead>
-      <tbody>
-        <tr>
-          <td>1</td>
-          <td class="table__car-img">машина</td>
-          <td>Tesla</td>
-          <td>1</td>
-          <td>2.87</td>
-        </tr>
+    <thead>
+    <th>Number</th>
+    <th>Car</th>
+    <th>Name</th>
+    <th class="table__wins">Wins</th>
+    <th class="table__time">Best time (seconds)</th>
+    </thead>
+    <tbody>
+      ${winners.map(
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    (winner: any, i: number) => `
+      <tr>
+      <td>${i + 1}</td>
+      <td class="table__car-img">${this.renderCarImg(winner.car.color)}</td>
+      <td>${winner.car.name}</td>
+      <td>${winner.wins}</td>
+      <td>${winner.time}</td>
+      </tr>
+      `,
+  ).join('')}
       </tbody>
     </table>
   </div>

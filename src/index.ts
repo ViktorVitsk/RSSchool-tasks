@@ -2,13 +2,14 @@
 import './global.css';
 import render from './ts/view/RenderHTML';
 import Api from './ts/api/Api';
-import { IData } from './ts/interfaces/IData';
+import menuListener from './ts/listeners/menu';
 
 const URL = 'http://127.0.0.1:3000';
-const check = async () => {
+const start = async () => {
   const api: Api = new Api(URL);
-  const data: IData = await api.getData(1, 1);
-  render.render(data.cars, data.totalCars, data.carsPage);
+  await api.initData();
+  render.render(api.data);
+  menuListener();
   // const car = await api.getCar('4');
   // await api.createCar({ name: 'Lambo', color: 'red' });
   // await api.deleteCar('5');
@@ -16,8 +17,10 @@ const check = async () => {
   // const startEngine = await api.startEngine('1');
   // const status = await api.driveStatus('1');
   // console.log(status);
-  const cars = await api.getCars(2);
-  console.log(cars);
+  // const cars = await api.getCars(2);
+  // console.log(cars);
+  // console.log(api.data);
+  // await api.updateData(2, 1);
   // console.log(startEngine);
   // const stopEngine = await api.stopEngine('1');
   // await api.createWinner({
@@ -34,6 +37,7 @@ const check = async () => {
   // console.log('winners===', winners);
   // const winner = await api.getWinner('4');
   // console.log(winner);
-  console.log(data);
+  // console.log(api.data);
+  // console.log(data);
 };
-check();
+start();

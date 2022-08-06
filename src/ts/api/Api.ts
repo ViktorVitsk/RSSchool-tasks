@@ -10,6 +10,8 @@ export default class Api {
 
   private winners: string;
 
+  data!: IData;
+
   constructor(url: string) {
     this.url = url;
     this.garage = `${url}/garage`;
@@ -17,14 +19,22 @@ export default class Api {
     this.winners = `${url}/winners`;
   }
 
-  async getData(carPage: number, winnerPage: number): Promise<IData> {
-    const { cars, totalCars } = await this.getCars(carPage);
-    const { winners, totalWinners } = await this.getWinners(winnerPage);
+  async initData() {
+    this.data = await this.getData(1, 1);
+  }
+
+  async updateData(carsPage: number, winnersPage: number) {
+    this.data = await this.getData(carsPage, winnersPage);
+  }
+
+  async getData(carsPage: number, winnersPage: number): Promise<IData> {
+    const { cars, totalCars } = await this.getCars(carsPage);
+    const { winners, totalWinners } = await this.getWinners(winnersPage);
     return {
-      carsPage: carPage,
+      carsPage,
       cars,
       totalCars,
-      winnersPage: winnerPage,
+      winnersPage,
       winners,
       totalWinners,
       animation: {},
