@@ -8,19 +8,26 @@ export default (api: Api) => {
   const inputName = create.querySelector('.set-car__name') as HTMLInputElement;
   const inputColor = create.querySelector('.set-car__color') as HTMLInputElement;
   const btn = create.querySelector('.btn') as HTMLButtonElement;
+  function setDisabled(bool: boolean) {
+    btn.disabled = bool;
+    inputName.disabled = bool;
+    inputColor.disabled = bool;
+  }
   track?.addEventListener('click', async (event) => {
     const target = event.target as EventTarget;
     if (target instanceof HTMLElement) {
-      if (target.classList.contains('road__select-car') && selectId) {
+      if (target.classList.contains('road__select-car')) {
         selectId = Number(target.getAttribute('car-select'));
         const { name } = await api.getCar(selectId);
         inputName.value = name;
-        btn.disabled = false;
-        inputName.disabled = false;
-        inputColor.disabled = false;
+        setDisabled(false);
       } else if (target.classList.contains('road__remove-car')) {
         const removeId = Number(target.getAttribute('car-remove'));
         await api.deleteCar(removeId);
+        setDisabled(true);
+
+        await api.deleteWinner(removeId);
+
         await api.updateData(api.data.carsPage, api.data.winnersPage);
         render.rerender(api.data);
       }
@@ -38,9 +45,7 @@ export default (api: Api) => {
       inputName.value = '';
       render.rerender(api.data);
       selectId = null;
-      btn.disabled = true;
-      inputName.disabled = true;
-      inputColor.disabled = true;
+      setDisabled(true);
     }
   });
 };

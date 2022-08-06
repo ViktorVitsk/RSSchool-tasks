@@ -97,7 +97,7 @@ export default class Api {
     return drive.status === 200 ? { success: true } : { success: false };
   }
 
-  async getWinners(page = 1, sort?: string, order?: string) {
+  async getWinners(page = 1, sort?: string, order?: 'ASC' | 'DESC' | null) {
     const restParams = arguments.length === 3 ? `&_sort=${sort}&{_order}=${order}` : '';
     const response = await fetch(`${this.winners}?_page=${page}&_limit=10${restParams}`);
     const cars = await response.json();
@@ -140,5 +140,11 @@ export default class Api {
         headers: { 'Content-Type': 'application/json' },
       })
     ).json();
+  }
+
+  async setSortOrder(sortBy: 'wins' | 'time') {
+    this.data.sortOrder = this.data.sortOrder === 'ASC' ? 'DESC' : 'ASC';
+    const result = await this.getWinners(this.data.winnersPage, sortBy, this.data.sortOrder);
+    this.data.winners = result.winners;
   }
 }

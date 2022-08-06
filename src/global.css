@@ -88,6 +88,10 @@
 
 table {
   border-spacing: 10px ;
+  cursor: alias;
+}
+.table__wins, .table__time {
+  cursor: pointer;
 }
 
 .paginator {

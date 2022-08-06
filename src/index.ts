@@ -4,9 +4,10 @@ import render from './ts/view/RenderHTML';
 import Api from './ts/api/Api';
 import menuListener from './ts/listeners/menu';
 import createNewCar from './ts/listeners/createNewCar';
-import updateCurrCar from './ts/listeners/updateCurrCar';
+import updateOrRemoveCar from './ts/listeners/updateOrRemoveCurrCar';
 import addRandomCars from './ts/listeners/generateCars';
 import pagination from './ts/listeners/pagination';
+import sort from './ts/listeners/sort';
 
 const URL = 'http://127.0.0.1:3000';
 const start = async () => {
@@ -15,9 +16,10 @@ const start = async () => {
   render.render(api.data);
   menuListener();
   createNewCar(api);
-  updateCurrCar(api);
+  updateOrRemoveCar(api);
   addRandomCars(api);
   pagination(api);
+  await sort(api);
   // const car = await api.getCar('4');
   // await api.createCar({ name: 'Lambo', color: 'red' });
   // await api.deleteCar('5');
