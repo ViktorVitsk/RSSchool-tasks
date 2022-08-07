@@ -22,7 +22,7 @@ export default (api: Api) => {
         resetBtn.disabled = false;
         const winner = await race(api);
         displayWinners.innerHTML = `Congratulations ${winner.name} win!!! (time ${winner.time}s)`;
-        await api.saveWinner(winner.id, +winner.time);
+        await api.saveWinner(Number(winner.id), Number(winner.time));
         await api.updateData(api.data.carsPage, api.data.winnersPage);
         const table = document.querySelector('.table__body') as HTMLElement;
         const rendWins = render.renderWinnersCars(api.data.winners, api.data.winnersPage);

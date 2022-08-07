@@ -1,4 +1,5 @@
 import Api from '../api/Api';
+import { IResultOfWinner } from '../interfaces/IResultOfWinner';
 // import { ICarsRaceState } from '../interfaces/ICarsRaceState';
 import Animation from './animation';
 
@@ -44,8 +45,11 @@ const stop = async (id: number, api: Api) => {
   if (api.data.animation[id]) window.cancelAnimationFrame(api.data.animation[id].id);
 };
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-const getWinnersResults = async (winnersParams: string | any[], idArr: number[], api: Api) => {
+const getWinnersResults = async (
+  winnersParams: Promise<{ success: boolean; id: number; time: number }>[],
+  idArr: number[],
+  api: Api,
+): Promise<IResultOfWinner> => {
   const { success, id, time } = await Promise.race(winnersParams);
 
   if (!success) {
@@ -54,13 +58,16 @@ const getWinnersResults = async (winnersParams: string | any[], idArr: number[],
       ...winnersParams.slice(0, falseIndex),
       ...winnersParams.slice(falseIndex + 1, winnersParams.length),
     ];
+
     const restIdArr = [...idArr.slice(0, falseIndex), ...idArr.slice(falseIndex + 1, idArr.length)];
+
     return getWinnersResults(restWinnersParams, restIdArr, api);
   }
-  return { ...api.data.cars.find((car) => car.id === id), time: (time / 1000).toFixed(2) };
+  const result = { ...api.data.cars.find((car) => car.id === id), time: (time / 1000).toFixed(2) };
+  return result;
 };
 
-const race = async (api: Api) => {
+const race = async (api: Api): Promise<IResultOfWinner> => {
   const startAll = api.data.cars.map(({ id }) => start(id, api));
 
   const win = await getWinnersResults(
