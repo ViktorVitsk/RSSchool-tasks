@@ -116,8 +116,8 @@ class RenderHTML {
     <th class="table__wins">Wins</th>
     <th class="table__time">Best time (seconds)</th>
     </thead>
-    <tbody id="table-wins">
-      ${RenderHTML.renderWinnersCars(winners, totalWinners)}
+    <tbody class="table__body">
+      ${RenderHTML.renderWinnersCars(winners, winnersPage)}
       </tbody>
     </table>
     `;
