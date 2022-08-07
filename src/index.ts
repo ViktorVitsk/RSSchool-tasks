@@ -8,7 +8,7 @@ import updateOrRemoveCar from './ts/listeners/updateOrDelCurrCarLis';
 import addRandomCars from './ts/listeners/generateCarsListener';
 import pagination from './ts/listeners/paginationListener';
 import sort from './ts/listeners/sortListener';
-import startEngine from './ts/listeners/startListener';
+import startEngine from './ts/listeners/raceListener';
 
 const URL = 'http://127.0.0.1:3000';
 const start = async () => {
@@ -20,7 +20,7 @@ const start = async () => {
   updateOrRemoveCar(api);
   addRandomCars(api);
   pagination(api);
-  await startEngine(api);
+  startEngine(api);
   await sort(api);
   // const car = await api.getCar('4');
   // await api.createCar({ name: 'Lambo', color: 'red' });

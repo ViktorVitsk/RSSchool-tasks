@@ -142,6 +142,29 @@ export default class Api {
     ).json();
   }
 
+  async getWinnerStatus(id: number) {
+    return (await fetch(`${this.winners}/${id}`)).status;
+  }
+
+  async saveWinner(id: number, time: number) {
+    const winnerStatus = await this.getWinnerStatus(id);
+
+    if (winnerStatus === 404) {
+      await this.createWinner({
+        id,
+        wins: 1,
+        time,
+      });
+    } else {
+      const winner = await this.getWinner(id);
+      await this.updateWinner(id, {
+        id,
+        wins: winner.wins + 1,
+        time: time < winner.time ? time : winner.time,
+      });
+    }
+  }
+
   async setSortOrder(sortBy: 'wins' | 'time') {
     this.data.sortOrder = this.data.sortOrder === 'ASC' ? 'DESC' : 'ASC';
     const result = await this.getWinners(this.data.winnersPage, sortBy, this.data.sortOrder);

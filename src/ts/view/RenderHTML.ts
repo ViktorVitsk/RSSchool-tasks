@@ -4,36 +4,38 @@ import { IData } from '../interfaces/IData';
 import { IWinner } from '../interfaces/IWinner';
 
 class RenderHTML {
+  static topMenu = `    <div class="menu">
+  <button class="menu__button btn" id="garage-button">To garage</button>
+  <button class="menu__button btn" id="winners-button">To winners</button>
+</div>
+<div class="garage__wrapper">
+  <div class="garage__generate-cars">
+    <form class="garage__set-car" id="create">
+      <input class="set-car__name" type="text" name="name" />
+      <input class="set-car__color" type="color" name="color" value="#ffffff" />
+      <button class="btn" type="submit">Create</button>
+    </form>
+    <form class="garage__set-car" id="update" >
+      <input class="set-car__name" type="text" name="name" disabled/>
+      <input class="set-car__color" type="color" name="name" disabled />
+      <button class="btn" type="submit" disabled>Update</button>
+    </form>
+    <div class="garage__set-car">
+      <button class="set-car__generate btn">Generate cars</button>
+    </div>
+  </div>
+  <div class="garage__race-btn">
+    <button class="race-btn__start btn">Race</button>
+    <button class="race-btn__reset btn">Reset</button>
+  </div>`;
+
   static render(data: IData) {
     const {
       cars,
       totalCars, carsPage, winners, totalWinners, winnersPage,
     } = data;
     const html = `
-    <div class="menu">
-      <button class="menu__button btn" id="garage-button">To garage</button>
-      <button class="menu__button btn" id="winners-button">To winners</button>
-    </div>
-    <div class="garage__wrapper">
-      <div class="garage__generate-cars">
-        <form class="garage__set-car" id="create">
-          <input class="set-car__name" type="text" name="name" />
-          <input class="set-car__color" type="color" name="color" value="#ffffff" />
-          <button class="btn" type="submit">Create</button>
-        </form>
-        <form class="garage__set-car" id="update" >
-          <input class="set-car__name" type="text" name="name" disabled/>
-          <input class="set-car__color" type="color" name="name" disabled />
-          <button class="btn" type="submit" disabled>Update</button>
-        </form>
-        <div class="garage__set-car">
-          <button class="set-car__generate btn">Generate cars</button>
-        </div>
-      </div>
-      <div class="garage__race-btn">
-        <button class="race-btn__start btn">Race</button>
-        <button class="race-btn__reset btn">Reset</button>
-      </div>
+      ${RenderHTML.topMenu}
       <div class="garage__race-track">
         ${RenderHTML.renderRaceTrack(cars, totalCars, carsPage)}
       </div>
@@ -91,10 +93,10 @@ class RenderHTML {
       <div class="road__start">
         <div class="road__engine">
           <button class="engine__start engine__btn" start-engine=${id} >A</button>
-          <button class="engine__stop engine__btn" stop-engine=${id} >B</button>
+          <button class="engine__stop engine__btn" stop-engine=${id} disabled>B</button>
         </div>
         <div class="road__car" id=car-${id}>
-          ${RenderHTML.renderCarImg(color)}
+          ${RenderHTML.getCarImg(color)}
         </div>
       </div>
       <div class="road__finish" id=flag-${id}></div>
@@ -130,7 +132,7 @@ class RenderHTML {
         (winner: any, i: number) => `
         <tr>
         <td>${i + winnersPage * 10 - 9}</td>
-        <td class="table__car-img">${this.renderCarImg(winner.car.color)}</td>
+        <td class="table__car-img">${this.getCarImg(winner.car.color)}</td>
         <td>${winner.car.name}</td>
         <td>${winner.wins}</td>
         <td>${winner.time}</td>
@@ -140,7 +142,7 @@ class RenderHTML {
       .join('')}`;
   }
 
-  static renderCarImg(color: string) {
+  static getCarImg(color: string) {
     return image.replace('#ffffff', color);
   }
 }

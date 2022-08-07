@@ -16,7 +16,7 @@ export default class Animation {
     return distance;
   }
 
-  static animation(carElement: HTMLElement, distance: number, speed: number) {
+  static animation(carElement: HTMLElement, distance: number, time: number) {
     let start: number | null = null;
     const state = {
       id: NaN,
@@ -24,7 +24,7 @@ export default class Animation {
     function step(timestamp: number | null) {
       if (!start) start = timestamp;
       const progress = Number(timestamp) - Number(start);
-      const passed = Math.round(progress * (distance / speed));
+      const passed = Math.round(progress * (distance / time));
       // eslint-disable-next-line no-param-reassign
       carElement.style.transform = `translateX(${Math.min(passed, distance)}px)`;
       if (passed < distance) {
