@@ -2,13 +2,13 @@
 import './global.css';
 import render from './ts/view/RenderHTML';
 import Api from './ts/api/Api';
-import menuListener from './ts/listeners/menu';
-import createNewCar from './ts/listeners/createNewCar';
-import updateOrRemoveCar from './ts/listeners/updateOrRemoveCurrCar';
-import addRandomCars from './ts/listeners/generateCars';
-import pagination from './ts/listeners/pagination';
-import sort from './ts/listeners/sort';
-import startEngine from './ts/listeners/start';
+import menuListener from './ts/listeners/menuListener';
+import createNewCar from './ts/listeners/createNewCarListener';
+import updateOrRemoveCar from './ts/listeners/updateOrDelCurrCarLis';
+import addRandomCars from './ts/listeners/generateCarsListener';
+import pagination from './ts/listeners/paginationListener';
+import sort from './ts/listeners/sortListener';
+import startEngine from './ts/listeners/startListener';
 
 const URL = 'http://127.0.0.1:3000';
 const start = async () => {

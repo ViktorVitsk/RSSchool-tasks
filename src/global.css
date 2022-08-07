@@ -94,6 +94,10 @@ table {
 .table__wins, .table__time {
   cursor: pointer;
 }
+.table__car-img {
+  width: 10rem;
+}
+
 
 .paginator {
   margin: 1vw;
