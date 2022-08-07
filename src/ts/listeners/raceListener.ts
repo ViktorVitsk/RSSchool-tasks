@@ -18,7 +18,7 @@ export default (api: Api) => {
         if (target instanceof HTMLButtonElement) {
           target.disabled = true;
           const winner = await race(api);
-          await api.saveWinner(winner.id, winner.time);
+          await api.saveWinner(winner.id, +winner.time);
           await api.updateData(api.data.carsPage, api.data.winnersPage);
           const table = document.querySelector('.table__body') as HTMLElement;
           const rendWins = render.renderWinnersCars(api.data.winners, api.data.winnersPage);
