@@ -36,6 +36,14 @@
 .garage__title, .garage__page-num {
   color: #fff;
 }
+
+.garage__display-winner {
+  margin-left: 10vw;
+  font-size: 3rem;
+  text-shadow: #a7e5f7 0 0 10px; /* Свечение голубого цвета */
+  color: #d5ff60;
+}
+
 .road__head {
   display: flex;
   align-items: center;

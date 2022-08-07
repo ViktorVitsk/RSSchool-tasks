@@ -47,7 +47,6 @@ const stop = async (id: number, api: Api) => {
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const getWinnersResults = async (winnersParams: string | any[], idArr: number[], api: Api) => {
   const { success, id, time } = await Promise.race(winnersParams);
-  console.log(time);
 
   if (!success) {
     const falseIndex = idArr.findIndex((i) => i === id);

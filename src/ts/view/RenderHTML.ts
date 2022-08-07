@@ -27,6 +27,7 @@ class RenderHTML {
   <div class="garage__race-btn">
     <button class="race-btn__start btn">Race</button>
     <button class="race-btn__reset btn">Reset</button>
+    <span class='garage__display-winner'></span>
   </div>`;
 
   static render(data: IData) {
