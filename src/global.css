@@ -20,7 +20,7 @@
   font-size: 1.5rem;
 }
 .garage__wrapper {
-  margin: 1vw;
+  margin-left: 1vw;
 }
 
 .garage__generate-cars {
@@ -70,10 +70,10 @@
 .road__finish {
   margin-right: 110px;
   background: url(assets/img/flag.png);
-  height: 5rem;
-  width: 3.5rem;
+  width: 2.5rem;
+  height: 4rem;
   background-repeat: no-repeat;
-  background-size: 3.5rem 5rem;
+  background-size: 2.5rem 4rem;
 }
 .road__foot {
   border-bottom: 1px dashed rgb(147, 255, 96);
