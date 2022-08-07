@@ -66,6 +66,7 @@
 }
 .road__car {
   align-self: end;
+  width: 25%;
 }
 .road__finish {
   margin-right: 110px;

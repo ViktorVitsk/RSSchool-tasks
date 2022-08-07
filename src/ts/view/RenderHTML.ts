@@ -93,11 +93,11 @@ class RenderHTML {
           <button class="engine__start engine__btn" start-engine=${id} >A</button>
           <button class="engine__stop engine__btn" stop-engine=${id} >B</button>
         </div>
-        <div class="road__car" car=car-${id}>
+        <div class="road__car" id=car-${id}>
           ${RenderHTML.renderCarImg(color)}
         </div>
       </div>
-      <div class="road__finish" flag=${id}></div>
+      <div class="road__finish" id=flag-${id}></div>
     </div>
     <div class="road__foot"></div>
   </li>`;

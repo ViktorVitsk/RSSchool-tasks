@@ -12,7 +12,11 @@ export interface IData {
     wins: number;
   }[];
   totalWinners: number;
-  animation: object;
+  animation: {
+    [index: number]: {
+      id: number
+    };
+  };
   view: string;
   sortBy: 'id' | 'wins' | 'time' | null;
   sortOrder: 'ASC' | 'DESC' | null;
