@@ -21,22 +21,11 @@ export default (api: Api) => {
         const { name } = await api.getCar(selectId);
         inputName.value = name;
         setDisabled(false);
-      } else if (target.classList.contains('road__remove-car')) {
-        const removeId = Number(target.getAttribute('car-remove'));
-        await api.deleteCar(removeId);
-        setDisabled(true);
-
-        await api.deleteWinner(removeId);
-
-        await api.updateData(api.data.carsPage, api.data.winnersPage);
-        render.rerender(api.data);
       }
     }
   });
-
   create?.addEventListener('submit', async (event) => {
     event.preventDefault();
-
     if (selectId) {
       const name = inputName.value;
       const color = inputColor.value;
