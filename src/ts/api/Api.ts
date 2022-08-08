@@ -166,7 +166,7 @@ export default class Api {
   }
 
   async setSortOrder(sortBy: 'wins' | 'time') {
-    this.data.sortOrder = this.data.sortOrder === 'ASC' ? 'DESC' : 'ASC';
+    this.data.sortOrder = this.data.sortOrder === 'DESC' ? 'ASC' : 'DESC';
     const result = await this.getWinners(this.data.winnersPage, sortBy, this.data.sortOrder);
     this.data.winners = result.winners;
   }
