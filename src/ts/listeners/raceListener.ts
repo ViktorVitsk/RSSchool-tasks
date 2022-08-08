@@ -3,7 +3,7 @@ import Api from '../api/Api';
 import render from '../view/RenderHTML';
 import btnOff from '../race-animation/buttonsActivity';
 
-export default (api: Api) => {
+export default (api: Api): void => {
   document.body.addEventListener('click', async (event) => {
     const target = event.target as EventTarget;
     const displayWinners = document.querySelector('.garage__display-winner') as HTMLElement;

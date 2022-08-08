@@ -1,7 +1,7 @@
 import Api from '../api/Api';
 import render from '../view/RenderHTML';
 
-export default (api: Api) => {
+export default (api: Api): void => {
   const create = document.getElementById('create');
   create?.addEventListener('submit', async (event) => {
     event.preventDefault();

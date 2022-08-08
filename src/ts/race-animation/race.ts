@@ -20,16 +20,15 @@ const start = async (id: number, api: Api) => {
   const car = document.getElementById(`car-${id}`) as HTMLElement;
   const flag = document.getElementById(`flag-${id}`) as HTMLElement;
   const distanceCarToFlag = Math.floor(Animation.getDistance(car, flag)) + afterFinishDistance;
-
-  // eslint-disable-next-line no-param-reassign
-  api.data.animation[id] = Animation.animation(car, distanceCarToFlag, time);
+  const animation = Animation.animation(car, distanceCarToFlag, time);
+  api.setAnimation(id, animation);
   const { success } = await api.driveStatus(id);
   if (!success) window.cancelAnimationFrame(api.data.animation[id].id);
 
   return { success, id, time };
 };
 
-const stop = async (id: number, api: Api) => {
+const stop = async (id: number, api: Api): Promise<void> => {
   const btnStop = document.querySelector(`.engine__stop[stop-engine="${id}"]`) as HTMLButtonElement;
 
   btnStop.disabled = true;

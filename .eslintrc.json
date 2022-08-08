@@ -3,7 +3,6 @@
     "parser": "@typescript-eslint/parser",
     "plugins": ["prettier", "import", "@typescript-eslint"],
     "extends": [
-        // "plugin:prettier/recommended",
         "prettier",
         "eslint:recommended",
         "plugin:@typescript-eslint/recommended",
@@ -22,11 +21,11 @@
         "node": true
     },
     "rules": {
-        "no-debugger": "off",
-        "no-console": 0,
+        // "no-debugger": "off",
+        // "no-console": 0,
         // "class-methods-use-this": "off",
         "@typescript-eslint/no-explicit-any": "error",
-        "@typescript-eslint/no-var-requires": "off",
+        // "@typescript-eslint/no-var-requires": "off",
         "max-lines-per-function": [
             "error",
             40

@@ -1,4 +1,4 @@
-export default (off: boolean) => {
+export default (off: boolean): void => {
   const select = document.querySelectorAll('.road__select-car');
   const remove = document.querySelectorAll('.road__remove-car');
   const generate = document.querySelector('.set-car__generate') as HTMLButtonElement;

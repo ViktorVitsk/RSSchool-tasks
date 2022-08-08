@@ -1,5 +1,8 @@
 export default class Animation {
-  private static getPosition(el: Element) {
+  private static getPosition(el: Element): {
+    x: number;
+    y: number;
+  } {
     const {
       top, left, width, height,
     } = el.getBoundingClientRect();
@@ -9,19 +12,21 @@ export default class Animation {
     };
   }
 
-  static getDistance(car: HTMLElement, flag: HTMLElement) {
+  static getDistance(car: HTMLElement, flag: HTMLElement): number {
     const carPos = Animation.getPosition(car);
     const flagPos = Animation.getPosition(flag);
     const distance = Math.hypot(carPos.x - flagPos.x, carPos.y - flagPos.y);
     return distance;
   }
 
-  static animation(carElement: HTMLElement, distance: number, time: number) {
+  static animation(carElement: HTMLElement, distance: number, time: number): {
+    id: number
+  } {
     let start: number | null = null;
     const state = {
       id: NaN,
     };
-    function step(timestamp: number | null) {
+    function step(timestamp: number | null): void {
       if (!start) start = timestamp;
       const progress = Number(timestamp) - Number(start);
       const passed = Math.round(progress * (distance / time));

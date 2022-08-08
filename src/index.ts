@@ -11,7 +11,8 @@ import updateCarListener from './ts/listeners/updateCarListener';
 import deleteCarListener from './ts/listeners/deleteCarListener';
 
 const URL = 'http://127.0.0.1:3000';
-const start = async () => {
+
+const start = async (): Promise<void> => {
   const api: Api = new Api(URL);
   await api.initData();
   render.render(api.data);
@@ -24,4 +25,5 @@ const start = async () => {
   startEngine(api);
   sort(api);
 };
+
 start();

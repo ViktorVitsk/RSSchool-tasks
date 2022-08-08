@@ -1,7 +1,7 @@
 import Api from '../api/Api';
 import render from '../view/RenderHTML';
 
-export default (api: Api) => {
+export default (api: Api): void => {
   const track = document.querySelector('.garage__race-track');
   track?.addEventListener('click', async (event) => {
     const target = event.target as EventTarget;

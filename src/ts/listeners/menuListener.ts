@@ -1,4 +1,4 @@
-export default () => {
+export default (): void => {
   const menu = document.querySelector('.menu');
   menu?.addEventListener('click', (event) => {
     const clickOn = event.target;
