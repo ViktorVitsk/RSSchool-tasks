@@ -13,12 +13,12 @@ class RenderHTML {
     <form class="garage__set-car" id="create">
       <input class="set-car__name" type="text" name="name" />
       <input class="set-car__color" type="color" name="color" value="#ffffff" />
-      <button class="btn" type="submit">Create</button>
+      <button class="create-btn btn" type="submit">Create</button>
     </form>
     <form class="garage__set-car" id="update" >
       <input class="set-car__name" type="text" name="name" disabled/>
       <input class="set-car__color" type="color" name="name" disabled />
-      <button class="btn" type="submit" disabled>Update</button>
+      <button class="update-btn btn" type="submit" disabled>Update</button>
     </form>
     <div class="garage__set-car">
       <button class="set-car__generate btn">Generate cars</button>

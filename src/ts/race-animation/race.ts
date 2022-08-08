@@ -1,6 +1,5 @@
 import Api from '../api/Api';
 import { IResultOfWinner } from '../interfaces/IResultOfWinner';
-// import { ICarsRaceState } from '../interfaces/ICarsRaceState';
 import Animation from './animation';
 
 const start = async (id: number, api: Api) => {
