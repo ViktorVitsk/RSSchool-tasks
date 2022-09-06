@@ -13,11 +13,11 @@ export default (api: Api): void => {
     };
 
     const getRandomColor = (): string => {
-      const letters = '0123456789ABCDEF';
+      const colorSymbols = '0123456789ABCDEF';
       const colorLength = 6;
       let color = '#';
       for (let i = 0; i < colorLength; i += 1) {
-        color += letters[Math.floor(Math.random() * letters.length)];
+        color += colorSymbols[Math.floor(Math.random() * colorSymbols.length)];
       }
       return color;
     };

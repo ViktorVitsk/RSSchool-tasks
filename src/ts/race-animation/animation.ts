@@ -23,7 +23,7 @@ export default class Animation {
     id: number
   } {
     let start: number | null = null;
-    const state = {
+    const state: {id:number} = {
       id: NaN,
     };
     function step(timestamp: number | null): void {

@@ -1,4 +1,4 @@
-import { ICar } from '../interfaces/ICar';
+import { ICar, ICarsData } from '../interfaces/ICar';
 import { IData } from '../interfaces/IData';
 import { IEngine } from '../interfaces/IEngine';
 import { IWinner } from '../interfaces/IWinner';
@@ -47,10 +47,7 @@ export default class Api {
     };
   }
 
-  async getCars(page: number): Promise<{
-    cars: [];
-    totalCars: number;
-  }> {
+  async getCars(page: number): Promise<ICarsData> {
     const response = await fetch(`${this.garage}?_page=${page}&_limit=7`);
     const cars: [] = await response.json();
     const totalCars: number | null = Number(response.headers.get('X-Total-Count'));
