@@ -23,6 +23,7 @@
   },
   "homepage": "https://github.com/rolling-scopes-school/viktorvitsk-JSFE2022Q1#readme",
   "devDependencies": {
+    "@types/wnumb": "^1.2.3",
     "@typescript-eslint/eslint-plugin": "^5.30.6",
     "@typescript-eslint/parser": "^5.30.6",
     "clean-webpack-plugin": "^4.0.0",
