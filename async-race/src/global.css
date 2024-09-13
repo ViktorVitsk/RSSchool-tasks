@@ -1,0 +1,116 @@
+@import url(./css/normalize.css);
+
+.container {
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+  flex-direction: column;
+  background: rgba(0, 0, 0, 0.9);
+}
+
+.menu {
+  margin: 1vw;
+}
+
+.btn {
+  text-transform: uppercase;
+  padding: 0.2em;
+  margin-right: 0.1rem;
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+.garage__wrapper {
+  margin-left: 1vw;
+}
+
+.garage__generate-cars {
+  display: flex;
+  flex-direction: column;
+  font-size: 1.6rem;
+}
+.garage__set-car {
+  display: flex;
+  padding-bottom: 1rem;
+}
+
+.garage__title, .garage__page-num {
+  color: #fff;
+}
+
+.garage__display-winner {
+  margin-left: 10vw;
+  font-size: 3rem;
+  text-shadow: #a7e5f7 0 0 10px; /* Свечение голубого цвета */
+  color: #d5ff60;
+}
+
+.road__head {
+  display: flex;
+  align-items: center;
+}
+.road__car-name {
+  color: rgb(255, 245, 111);
+  font-size: 1.6rem;
+  margin-left: 1rem;
+}
+
+.road__main {
+  display: flex;
+  justify-content: space-between;
+}
+.road__list {
+  margin: 1rem 0;
+}
+.road__start {
+  display: flex;
+}
+.road__engine {
+  margin-right: 1rem;
+}
+.engine__btn {
+  height: 2rem;
+  width: 2rem;
+  padding: 0.2rem;
+}
+.road__car {
+  align-self: end;
+  width: 25%;
+}
+.road__finish {
+  margin-right: 110px;
+  background: url(assets/img/flag.png);
+  width: 2.5rem;
+  height: 4rem;
+  background-repeat: no-repeat;
+  background-size: 2.5rem 4rem;
+}
+.road__foot {
+  border-bottom: 1px dashed rgb(147, 255, 96);
+}
+
+.winners__wrapper {
+  margin: 1vw;
+  color: #fff;
+  font-size: 1.6rem;
+}
+
+
+table {
+  border-spacing: 10px ;
+  cursor: alias;
+}
+.table__wins, .table__time {
+  cursor: pointer;
+}
+.table__car-img {
+  width: 10rem;
+}
+
+
+.paginator {
+  margin: 1vw;
+}
+
+.none {
+  display: none;
+}
